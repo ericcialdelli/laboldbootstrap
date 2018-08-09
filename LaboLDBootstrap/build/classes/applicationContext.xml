@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/labold" />
+		<property name="username" value="labold" />
+		<property name="password" value="labold" />
+	</bean>
+
+	<!-- Hibernate SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
+		<property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration" />
+	</bean>
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Transaction manager for a single Hibernate SessionFactory (alternative 
+		to JTA) -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+
+  <!-- enable the configuration of transactional behavior based on annotations -->
+  <tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+	<!--  *******************-->
+	<!--     Respositories   -->
+	<!--  *******************-->
+
+	<bean id="abstractRepository" abstract="true">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+
+	<!--  *******************-->
+	<!--     DAOS            -->
+	<!--  *******************-->
+	<bean id="menuDAO" class="ar.com.labold.dao.MenuDAO" parent="abstractRepository" />
+	<bean id="loginDAO" class="ar.com.labold.dao.LoginDAO" parent="abstractRepository" />
+	<bean id="rolDAO" class="ar.com.labold.dao.RolDAO" parent="abstractRepository" />
+	<bean id="usuarioDAO" class="ar.com.labold.dao.UsuarioDAO" parent="abstractRepository" />
+	<bean id="pacienteDAO" class="ar.com.labold.dao.PacienteDAO" parent="abstractRepository" />
+	<bean id="obraSocialDAO" class="ar.com.labold.dao.ObraSocialDAO" parent="abstractRepository" />
+	<bean id="practicaDAO" class="ar.com.labold.dao.PracticaDAO" parent="abstractRepository" />
+	<bean id="estudioDAO" class="ar.com.labold.dao.EstudioDAO" parent="abstractRepository" />
+	<bean id="reportesDAO" class="ar.com.labold.dao.ReportesDAO" parent="abstractRepository" />
+	<bean id="medicoDAO" class="ar.com.labold.dao.MedicoDAO" parent="abstractRepository" />
+	<bean id="parametroDAO" class="ar.com.labold.dao.ParametroDAO" parent="abstractRepository" />
+	
+	
+	<!--  *******************-->
+	<!--     Fachadas        -->
+	<!--  *******************-->
+	<bean id="menuFachada" class="ar.com.labold.fachada.MenuFachada">
+		<constructor-arg ref="menuDAO" />
+	</bean>
+	<bean id="loginFachada" class="ar.com.labold.fachada.LoginFachada">
+		<constructor-arg ref="loginDAO" />
+	</bean>
+	<bean id="rolFachada" class="ar.com.labold.fachada.RolFachada">
+		<constructor-arg ref="rolDAO" />
+		<constructor-arg ref="usuarioDAO" />
+	</bean>
+	<bean id="usuarioFachada" class="ar.com.labold.fachada.UsuarioFachada">
+		<constructor-arg ref="usuarioDAO" />
+		<constructor-arg ref="rolFachada" />
+	</bean>	
+	<bean id="pacienteFachada" class="ar.com.labold.fachada.PacienteFachada">
+		<constructor-arg ref="pacienteDAO" />
+		<constructor-arg ref="obraSocialDAO" />		
+	</bean>	
+	<bean id="obraSocialFachada" class="ar.com.labold.fachada.ObraSocialFachada">
+		<constructor-arg ref="obraSocialDAO" />
+	</bean>
+	<bean id="practicaFachada" class="ar.com.labold.fachada.PracticaFachada">
+		<constructor-arg ref="practicaDAO" />
+	</bean>
+	<bean id="estudioFachada" class="ar.com.labold.fachada.EstudioFachada">
+		<constructor-arg ref="estudioDAO" />
+		<constructor-arg ref="pacienteDAO" />
+		<constructor-arg ref="practicaDAO" />
+		<constructor-arg ref="medicoDAO" />			
+	</bean>
+	<bean id="reportesFachada" class="ar.com.labold.fachada.ReportesFachada">
+		<constructor-arg ref="reportesDAO" />		
+	</bean>
+	<bean id="medicoFachada" class="ar.com.labold.fachada.MedicoFachada">
+		<constructor-arg ref="medicoDAO" />		
+	</bean>
+	<bean id="parametroFachada" class="ar.com.labold.fachada.ParametroFachada">
+		<constructor-arg ref="parametroDAO" />		
+	</bean>	
+	
+	
+	<!--  *******************-->
+	<!--       Parameters    -->
+	<!--  *******************-->
+
+	<bean id="version" class="java.lang.String">
+		<constructor-arg value="1.0" />
+	</bean>
+
+
+
+</beans>

@@ -1,0 +1,32 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://getahead.org/dwr/dwr30.dtd">
+
+<dwr>
+	<allow>
+		<convert converter="bean" match="ar.com.labold.negocio.SubItemPractica">
+			<param name="include" value="id,nombre" />
+		</convert>
+		<convert converter="bean" match="ar.com.labold.negocio.ObraSocial">
+			<param name="include" value="id,nombre" />
+		</convert>		
+		<convert converter="bean" match="ar.com.labold.negocio.Paciente">
+			<param name="include" value="id,nombre,apellido,direccion,telefono,email,dni,fechaNacimiento,fechaNacimientoString,obraSocial,nroCarnetObraSocial,observaciones" />
+		</convert>				
+		<convert converter="bean" match="ar.com.labold.negocio.Medico">
+			<param name="include" value="id,nombre,apellido,telefono,matricula,especialidad" />
+		</convert>
+
+		<create creator="spring" javascript="PracticaFachada">
+			<param name="beanName" value="practicaFachada" />
+		</create>
+		
+		<create creator="spring" javascript="PacienteFachada">
+			<param name="beanName" value="pacienteFachada" />
+		</create>
+		<create creator="spring" javascript="MedicoFachada">
+			<param name="beanName" value="medicoFachada" />
+		</create>		
+	</allow>
+
+</dwr> 

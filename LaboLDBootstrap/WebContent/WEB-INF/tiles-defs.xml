@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+	<!-- ======================================================= -->
+	<!-- Master definition -->
+	<!-- ======================================================= -->
+
+	<!-- Doc index page description -->
+	<definition name=".base" path="/jsp/tiles/layout.jsp">
+		<put name="title" value="Main Layout" />
+		<put name="header" value="/jsp/tiles/header.jsp" />
+		<put name="menu" value="/jsp/tiles/menu.jsp" />
+		
+		<!-- Nuevo Estilo -->
+		<!--<put name="menu" value="/menu.do?metodo=cargarMenu" />-->
+		<put name="footer" value="/jsp/tiles/footer.jsp" />
+		<put name="body" value="doc.portal.body" />
+	</definition>
+
+	<!-- ========== PAGES ========== -->
+
+
+	<definition name=".index" extends=".base">
+		<put name="title" value="Labo LD" />
+		<put name="body" value="/jsp/index.jsp" />
+	</definition>
+
+	<!-- BACKUP -->
+	<definition name=".realizarBackup" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/realizarBackup.jsp" />
+	</definition>
+	<!-- FIN BACKUP-->
+
+	<!-- PARAMETROS -->
+	<definition name=".mostrarParametros" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/mostrarParametros.jsp" />
+	</definition>
+	<!-- FIN PARAMETROS-->
+
+	<!-- USUARIO -->
+	<definition name=".altaUsuario" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/altaUsuario.jsp" />
+	</definition>
+
+	<definition name=".recuperarUsuarios" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarUsuarios.jsp" />
+	</definition>
+	<!-- FIN USUARIO -->
+	
+	<!-- PACIENTE -->
+	<definition name=".altaPaciente" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/altaPaciente.jsp" />
+	</definition>
+
+	<definition name=".recuperarPacientes" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarPacientes.jsp" />
+	</definition>
+
+	<definition name=".modificarPaciente" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/modificarPaciente.jsp" />
+	</definition>	
+	<!-- FIN PACIENTE -->	
+	
+	<!-- OBRA SOCIAL -->
+	<definition name=".altaObraSocial" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/altaObraSocial.jsp" />
+	</definition>
+
+	<definition name=".recuperarObrasSociales" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarObrasSociales.jsp" />
+	</definition>
+	
+	<definition name=".modificarObraSocial" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/modificarObraSocial.jsp" />
+	</definition>			
+	<!-- FIN OBRA SOCIAL -->	
+
+	<!-- MEDICO -->
+	<definition name=".altaMedico" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/altaMedico.jsp" />
+	</definition>	
+	
+	<definition name=".recuperarMedicos" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarMedicos.jsp" />
+	</definition>	
+	
+	<definition name=".modificarMedico" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/modificarMedico.jsp" />
+	</definition>			
+	<!-- FIN OBRA SOCIAL -->			
+	<!-- FIN MEDICO -->
+
+	<!-- PRACTICA -->
+	<definition name=".altaPractica" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/altaPractica.jsp" />
+	</definition>		
+
+	<definition name=".recuperarPracticasPorGrupo" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarPracticasPorGrupo.jsp" />
+	</definition>	
+
+	<definition name=".modificarPractica" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/modificarPractica.jsp" />
+	</definition>	
+	
+	<definition name=".altaGrupoPractica" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/altaGrupoPractica.jsp" />
+	</definition>		
+
+	<definition name=".recuperarGruposPractica" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarGruposPractica.jsp" />
+	</definition>
+
+	<definition name=".modificarGrupoPractica" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/modificarGrupoPractica.jsp" />
+	</definition>
+
+	<definition name=".altaSubItemPractica" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/altaSubItemPractica.jsp" />
+	</definition>		
+	
+	<definition name=".altaEstudioPreSeteado" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/altaEstudioPreSeteado.jsp" />
+	</definition>	
+
+	<definition name=".recuperarEstudiosPreSeteados" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarEstudiosPreSeteados.jsp" />
+	</definition>		
+
+	<definition name=".modificarEstudioPreSeteado" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/modificarEstudioPreSeteado.jsp" />
+	</definition>		
+	<!-- FIN PRACTICA -->	
+
+	<!-- ESTUDIO -->
+	<definition name=".altaEstudio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<!--  <put name="body" value="/jsp/altaEstudio.jsp" />-->
+		<put name="body" value="/jsp/altaEstudioAntesEstudiosPreSeteados.jsp" /><!-- PRESELECCION -->
+	</definition>	
+	
+	<definition name=".recuperarEstudios" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarEstudios.jsp" />
+	</definition>	
+	
+	<definition name=".modificarEstudio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/modificarEstudio.jsp" />
+	</definition>	
+
+	<definition name=".consultaEstudio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/consultaEstudio.jsp" />
+	</definition>		
+
+	<definition name=".completarEstudio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/completarEstudio.jsp" />
+	</definition>	
+
+	<definition name=".agregarPracticasAEstudio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/agregarPracticasAEstudio.jsp" />
+	</definition>
+
+	<definition name=".eliminarPracticasDeEstudio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/eliminarPracticasDeEstudio.jsp" />
+	</definition>	
+
+	<definition name=".eliminarEstudio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/eliminarEstudio.jsp" />
+	</definition>	
+
+	<definition name=".presupuestoEstudio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/presupuestoEstudio.jsp" />
+	</definition>	
+
+	<definition name=".entregarEstudio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/entregarEstudio.jsp" />
+	</definition>
+	
+	<definition name=".pasarEstudiosAHistorico" extends=".base"><!--ESTUDIO_HISTORICO-->	
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/pasarEstudiosAHistorico.jsp" />
+	</definition>
+	
+	<definition name=".recuperarEstudiosDeHistorico" extends=".base"><!--RECUPERAR_ESTUDIO_HISTORICO-->	
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarEstudiosDeHistorico.jsp" />
+	</definition>	
+
+	<definition name=".pasarEstudiosAHistoricoPorNro" extends=".base"><!--ESTUDIO_HISTORICO POR NRO-->	
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/pasarEstudiosAHistoricoPorNro.jsp" />
+	</definition>	
+
+	<definition name=".recuperarEstudiosDeHistoricoPorNro" extends=".base"><!--RECUPERAR_ESTUDIO_HISTORICO_POR_NRO-->	
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarEstudiosDeHistoricoPorNro.jsp" />
+	</definition>	
+
+	<definition name=".mostrarRecuperarEstudiosPorMedicoObraSocial" extends=".base"><!--MOSTRAR RECUPERAR_ESTUDIOS_POR_MEDICO_OBRA_SOCIAL-->	
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/mostrarRecuperarEstudiosPorMedicoObraSocial.jsp" />
+	</definition>		
+
+	<definition name=".recuperarEstudiosPorMedicoObraSocial" extends=".base"><!--RECUPERAR_ESTUDIOS_POR_MEDICO_OBRA_SOCIAL-->	
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/recuperarEstudiosPorMedicoObraSocial.jsp" />
+	</definition>		
+	
+	<!-- FIN ESTUDIO -->		
+
+	<!-- REPORTES -->
+	<definition name=".reporteEstudiosEntreFechas" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/reporteEstudiosEntreFechas.jsp" />
+	</definition>	
+
+	<definition name=".generarReportesEstudios" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/generarReportesEstudios.jsp" />
+	</definition>		
+	<!-- FIN REPORTES -->		
+	
+	<!-- FACTURACION -->
+	<definition name=".eliminarPracticaParaFacturacion" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/eliminarPracticaParaFacturacion.jsp" />
+	</definition>
+
+	<definition name=".restablecerPracticaParaFacturacion" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/restablecerPracticaParaFacturacion.jsp" />
+	</definition>		
+	
+	<definition name=".modificarValorUnidadFacturacion" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/modificarValorUnidadFacturacion.jsp" />
+	</definition>	
+	<!-- FIN FACTURACION -->		
+	
+	<definition name=".error" extends=".base">
+		<put name="title" value="Error en LaboLD" />
+		<put name="body" value="/jsp/error.jsp" />
+	</definition>
+
+</tiles-definitions>

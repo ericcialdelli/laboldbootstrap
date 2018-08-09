@@ -1,0 +1,718 @@
+.footer {	
+	background-color: #333333;
+	height: 1.2em;
+	width: 100%;
+	text-align: center;	
+}
+
+.header {
+	width: 100%;
+	text-align: center;
+	font-family: helvetica;
+	font-size: 11;
+	font-weight: bold;
+}
+
+.content {
+	height: 75%;
+}
+
+.negrita {
+	font-weight: bold;
+}
+
+.negritaLeft {
+	font-weight: bold;
+	text-align: left;
+	font-size: 10px;
+}
+
+.botonerab {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: normal;
+}
+
+.botonerabGrande {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: normal;
+}
+
+.informe{
+	font-family: Courier New;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: normal;	
+}
+
+.botonerabRojo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: normal;
+	color: #FF0000;
+}
+
+.botonerabRight {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: normal;
+	text-align: right;
+}
+
+.alignLeft {
+	text-align: left;
+}
+
+.floatLeft {
+	float: left
+}
+
+.azulAjustado {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	/*background-color: #33628C;*/
+	background-color: #0B610B;
+	text-align: center;8
+	vertical-align: middle;
+	font-style: normal;
+	color: white;
+}
+
+.verdeSubtituloTabla {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #0B610B;
+	text-align: center;8
+	vertical-align: middle;
+	font-style: normal;
+	color: white;
+}
+
+.azulOpcion {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #33628C;
+	text-align: left;
+	vertical-align: middle;
+	font-style: normal;
+	color: white;
+	cursor: pointer;
+}
+
+.grisSubtituloSinAlign {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #BDBDBD;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.grisSubtitulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #BDBDBD;
+	text-align: left;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.grisSubtituloCenter {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #BDBDBD;
+	text-align: center;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.grisClaroSubtituloCenter {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #DBD7D7;
+	text-align: center;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.grisMuyClaroSubtituloCenter {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #E9E5E5;
+	text-align: center;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.verdeClaroSubtituloCenter {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #BACE8D;
+	text-align: center;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.verdeSubtitulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #5FB404;
+	text-align: left;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.verdeSeleccionFila {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #5FB404;
+	text-align: middle;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.teal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: teal;
+	text-align: left;
+	vertical-align: middle;
+	font-style: normal;
+	color: white;
+}
+
+.cuadrado {
+	text-align: center;
+	border: 1px #CCCCCC solid;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 14px;	
+}
+
+.cuadradoSinBorde {
+	text-align: center;
+	border: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 14px
+}
+
+.cuadradoSinBordeLeft {
+	text-align: left;
+	border: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 14px
+}
+
+.botoneralNegrita {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: 14px;
+	text-align: center;
+	vertical-align: center;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	font-weight: bold;
+}
+
+.botoneralNegritaRight {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: 14px;
+	text-align: right;
+	vertical-align: center;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	font-weight: bold;
+}
+
+.botonera2NegritaRight {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; color: black; FONT-FAMILY: Arial, Helvetica, sans-serif; text-align: right;
+}
+
+.botoneralNegritaLeft {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: 14px;
+	text-align: left;
+	vertical-align: center;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	font-weight: bold;
+}
+
+.botoneralNegritaLeftGrande {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: 14px;
+	text-align: left;
+	vertical-align: center;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	font-weight: bold;
+}
+
+.botoneralNegritaGrande {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: 14px;
+	text-align: center;
+	vertical-align: center;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	font-weight: bold;
+}
+
+.botoneralNegritaCenter {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: 14px;
+	text-align: center;
+	vertical-align: center;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	font-weight: bold;
+}
+
+.rojoAdvertenciaChico {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	font-variant: normal;
+	text-transform: none;
+	border: 0px solid #CCCCCC;
+}
+
+.rojoAdvertencia {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	font-variant: normal;
+	text-transform: none;
+	border: 0px solid #CCCCCC;
+}
+
+.rojoAdvertenciaLeft {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: left;
+	vertical-align: middle;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	font-variant: normal;
+	text-transform: none;
+	border: 0px solid #CCCCCC;
+}
+
+.verdeExito {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #006633;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	font-variant: normal;
+	text-transform: none;
+	border: 0px solid #CCCCCC;
+}
+
+.verdeExitoLeft {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #006633;
+	text-align: left;
+	vertical-align: middle;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	font-variant: normal;
+	text-transform: none;
+	border: 0px solid #CCCCCC;
+}
+
+.par {
+	background-color: #BDD3E8;
+	/*background-color: #FAF3DD;*/	
+}
+
+.seleccionado {
+	background-color: #5FB404;
+}
+
+.tachado{text-decoration:line-through;}
+
+
+.cuadradoSinBordeBootstrap {
+	text-align: center;
+	border: none;
+  	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  	font-size: 14px;
+	line-height: 14px
+}
+
+.cuadradoSinBordeBootstrapSinFont {
+	text-align: center;
+	border: none;
+}
+
+.fontNegritaRightBootstrap {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	text-align: right;
+	vertical-align: center;
+	font-weight: bold;
+	color: #000;
+}
+
+.fontNegritaCenterBootstrap {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	text-align: center;
+	vertical-align: center;
+	font-weight: bold;
+}
+
+.fontNegritaLeftBootstrap {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	text-align: left;
+	vertical-align: center;
+	font-weight: bold;
+}
+
+.cuadradoConBordeBootstrapSinFont {	
+	
+	BORDER-LEFT: #8ebfdd 1px solid;
+	border-right: #8ebfdd 1px solid;
+	border-bottom: #8ebfdd 1px solid;
+	border-top: #8ebfdd 1px solid;
+	border-radius: 3px;
+}
+
+.verdeSeleccionFilaBootstrap {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #5FB404;
+	text-align: middle;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.btn-primary-bootstrap {
+  color: #fff;
+  background-color: #0080b7;
+  border-color: #2e6da4;
+}
+
+.btn-primary-bootstrap:hover {
+  color: #fff;
+  background-color: #026690;
+  border-color: #026690;
+}
+
+.well-bootstrap {
+  min-height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.well-sm-bootstrap {
+  padding: 3px;
+  border-radius: 6px;
+}
+
+/*.azulAjustado {*/
+.tituloTablaVerde {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	background-color: #0B610B;
+	text-align: center;8
+	vertical-align: middle;
+	font-style: normal;
+	color: white;
+	border-radius: 3px;
+}
+
+/*Multas*/
+.tituloOpcion {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.lineaColor {
+	BORDER-RIGHT: #8ebfdd 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #8ebfdd 0px solid; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; BORDER-LEFT: #8ebfdd 0px solid; COLOR: #373737; LINE-HEIGHT: 17px; PADDING-TOP: 2px; BORDER-BOTTOM: #8ebfdd 1px solid; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.TDtablaBoldRight {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; color: black; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f4f9fd; text-align: right;
+}
+.TDtablaNormal {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #535353; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f4f9fd
+}
+.TDtabla {
+	BORDER-RIGHT: #e1e8fb 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #def1f5 1px solid; PADDING-LEFT: 4px; FONT-WEIGHT: normal; FONT-SIZE: 11px; LIST-STYLE-IMAGE: none; PADDING-BOTTOM: 2px; BORDER-LEFT: 0px solid; COLOR: #535353; LINE-HEIGHT: 17px; PADDING-TOP: 2px; BORDER-BOTTOM: 0px solid; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f4f9fd
+}
+.tituloTabla {
+	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 24px; BACKGROUND-COLOR: #0080b7; border-radius: 3px;
+}
+.subTituloTabla {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 24px; BACKGROUND-COLOR: #0080b7; border-radius: 3px;
+}
+
+  /*********************************/
+ /******* Botones Bootstrap *******/
+/*********************************/
+	/*	.btn {
+		  display: inline-block;
+		  padding: 6px 12px;
+		  margin-bottom: 0;
+		  font-size: 14px;
+		  font-weight: normal;
+		  line-height: 1.42857143;
+		  text-align: center;
+		  white-space: nowrap;
+		  vertical-align: middle;
+		  -ms-touch-action: manipulation;
+		      touch-action: manipulation;
+		  cursor: pointer;
+		  -webkit-user-select: none;
+		     -moz-user-select: none;
+		      -ms-user-select: none;
+		          user-select: none;
+		  background-image: none;
+		  border: 1px solid transparent;
+		  border-radius: 4px;
+		}
+		.btn-success {
+		  color: #fff;
+		  background-color: #5cb85c;
+		  border-color: #4cae4c;
+		}
+		.btn-success:focus,
+		.btn-success.focus {
+		  color: #fff;
+		  background-color: #449d44;
+		  border-color: #255625;
+		}
+		.btn-success:hover {
+		  color: #fff;
+		  background-color: #449d44;
+		  border-color: #398439;
+		}
+		.btn-success:active,
+		.btn-success.active,
+		.open > .dropdown-toggle.btn-success {
+		  color: #fff;
+		  background-color: #449d44;
+		  border-color: #398439;
+		}
+		.btn-success:active:hover,
+		.btn-success.active:hover,
+		.open > .dropdown-toggle.btn-success:hover,
+		.btn-success:active:focus,
+		.btn-success.active:focus,
+		.open > .dropdown-toggle.btn-success:focus,
+		.btn-success:active.focus,
+		.btn-success.active.focus,
+		.open > .dropdown-toggle.btn-success.focus {
+		  color: #fff;
+		  background-color: #398439;
+		  border-color: #255625;
+		}
+		.btn-success:active,
+		.btn-success.active,
+		.open > .dropdown-toggle.btn-success {
+		  background-image: none;
+		}
+		.btn-success.disabled,
+		.btn-success[disabled],
+		fieldset[disabled] .btn-success,
+		.btn-success.disabled:hover,
+		.btn-success[disabled]:hover,
+		fieldset[disabled] .btn-success:hover,
+		.btn-success.disabled:focus,
+		.btn-success[disabled]:focus,
+		fieldset[disabled] .btn-success:focus,
+		.btn-success.disabled.focus,
+		.btn-success[disabled].focus,
+		fieldset[disabled] .btn-success.focus,
+		.btn-success.disabled:active,
+		.btn-success[disabled]:active,
+		fieldset[disabled] .btn-success:active,
+		.btn-success.disabled.active,
+		.btn-success[disabled].active,
+		fieldset[disabled] .btn-success.active {
+		  background-color: #5cb85c;
+		  border-color: #4cae4c;
+		}
+		.btn-success .badge {
+		  color: #5cb85c;
+		  background-color: #fff;
+		}
+*/
+
+  /*********************************/
+ /******* Alerts Bootstrap ********/
+/*********************************/
+	/*	.alert {
+		  padding: 15px;
+		  margin-bottom: 20px;
+		  border: 1px solid transparent;
+		  border-radius: 4px;
+		  font-family: sans-serif;
+		  text-align: center;
+		}
+		.alert h4 {
+		  margin-top: 0;
+		  color: inherit;
+		}
+		.alert .alert-link {
+		  font-weight: bold;
+		}
+		.alert > p,
+		.alert > ul {
+		  margin-bottom: 0;
+		}
+		.alert > p + p {
+		  margin-top: 5px;
+		}
+		.alert-dismissable,
+		.alert-dismissible {
+		  padding-right: 35px;
+		}
+		.alert-dismissable .close,
+		.alert-dismissible .close {
+		  position: relative;
+		  top: -2px;
+		  right: -21px;
+		  color: inherit;
+		}
+		.alert-success {
+		  color: #3c763d;
+		  background-color: #dff0d8;
+		  border-color: #d6e9c6;
+		}
+		.alert-success hr {
+		  border-top-color: #c9e2b3;
+		}
+		.alert-success .alert-link {
+		  color: #2b542c;
+		}
+		.alert-info {
+		  color: #31708f;
+		  background-color: #d9edf7;
+		  border-color: #bce8f1;
+		}
+		.alert-info hr {
+		  border-top-color: #a6e1ec;
+		}
+		.alert-info .alert-link {
+		  color: #245269;
+		}
+		.alert-warning {
+		  color: #8a6d3b;
+		  background-color: #fcf8e3;
+		  border-color: #faebcc;
+		}
+		.alert-warning hr {
+		  border-top-color: #f7e1b5;
+		}
+		.alert-warning .alert-link {
+		  color: #66512c;
+		}
+		.alert-danger {
+		  color: #a94442;
+		  background-color: #f2dede;
+		  border-color: #ebccd1;
+		}
+		.alert-danger hr {
+		  border-top-color: #e4b9c0;
+		}
+		.alert-danger .alert-link {
+		  color: #843534;
+		}*/

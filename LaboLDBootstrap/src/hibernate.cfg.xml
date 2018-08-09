@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- vim: set ts=2 et sw=2 : -->
+<!DOCTYPE hibernate-configuration
+  PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<mapping class='ar.com.labold.negocio.Rol' />
+		<mapping class='ar.com.labold.negocio.ItemMenu' />
+		<mapping class='ar.com.labold.negocio.Usuario' />
+		<mapping class='ar.com.labold.negocio.Paciente' />
+		<mapping class='ar.com.labold.negocio.ObraSocial' />
+		<mapping class='ar.com.labold.negocio.Practica' />
+		<mapping class='ar.com.labold.negocio.Estudio' />
+		<mapping class='ar.com.labold.negocio.Reporte' />
+		<mapping class='ar.com.labold.negocio.GrupoPractica'/>
+		<mapping class='ar.com.labold.negocio.ValorPractica'/>
+		<mapping class='ar.com.labold.negocio.ValoresEstudio'/>
+		<mapping class='ar.com.labold.negocio.SubItemPractica'/>	
+		<mapping class='ar.com.labold.negocio.ValorSubItemPractica'/>
+		<mapping class='ar.com.labold.negocio.ValorUnidadFacturacion'/>
+		<mapping class='ar.com.labold.negocio.Medico'/>				 
+		<mapping class='ar.com.labold.negocio.EstudioHistorico'/><!-- ESTUDIO_HISTORICO -->
+		<mapping class='ar.com.labold.negocio.ValoresEstudioHistorico'/><!-- ESTUDIO_HISTORICO -->
+		<mapping class='ar.com.labold.negocio.ValorPracticaHistorico'/><!-- ESTUDIO_HISTORICO -->
+		<mapping class='ar.com.labold.negocio.ValorSubItemPracticaHistorico'/><!-- ESTUDIO_HISTORICO -->					
+		<mapping class='ar.com.labold.negocio.Parametro'/>
+		<mapping class='ar.com.labold.negocio.EstudioPreSeteado'/><!-- PRESELECCION -->
+	
+	</session-factory>
+</hibernate-configuration>
+

@@ -1,0 +1,2 @@
+<DIV class="footer"></DIV>
+
