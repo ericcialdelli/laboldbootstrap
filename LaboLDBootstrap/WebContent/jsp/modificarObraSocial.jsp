@@ -26,12 +26,25 @@
 	}	
 </script>
 
-<div id="errores" class="rojoAdvertencia">${error}</div>
+<%-- 
+<div id="errores" class="rojoAdvertencia">${error}</div> <!-- Estilo Viejo -->
+--%>
+
+<!-- Estilo Nuevo -->
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="errores" class="alert alert-danger" style="display: none"></div>
+			</td>
+		</tr>
+	</table>	
+<!-- Estilo Nuevo -->
 
 <html:form action="obraSocial" styleId="obraSocialFormId">
 	<html:hidden property="metodo" value="modificacionObraSocial"/>
 	<html:hidden property="obraSocialDTO.id" value="${obraSocial.id}"/>
 	
+<!--	
 	<table border="0" class="cuadrado" align="center" width="60%" cellpadding="2">
 		<tr>
 			<td colspan="2"  class="azulAjustado" >Modificación de Obra Social</td>
@@ -66,10 +79,10 @@
 			<td height="10" colspan="2"></td>
 		</tr>									
 	</table>
-
+-->
 
 <!-- Nuevo Estilo -->
-<!--
+
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -77,7 +90,7 @@
 	
 				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
 					<tr>
-						<td colspan="2"  class="tituloTabla" >Modificaciï¿½n de Obra Social</td>
+						<td colspan="2"  class="tituloTabla" >Modificación de Obra Social</td>
 					</tr>
 					<tr>
 						<td height="20" colspan="2"></td>
@@ -89,7 +102,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td width="40%" class="fontNegritaRightBootstrap">Valor Unidad Bioquï¿½mica</td>
+						<td width="40%" class="fontNegritaRightBootstrap">Valor Unidad Bioquímica</td>
 						<td align="left">						
 							<html:text styleClass="botonerab" property="obraSocialDTO.valorUnidadBioquimica" value="${obraSocial.valorUnidadBioquimica}" 
 									styleId="valor"/>						
@@ -97,7 +110,7 @@
 						</td>
 					</tr>							
 					<tr>
-						<td height="10" colspan="2"></td>
+						<td height="15" colspan="2"></td>
 					</tr>									
 				</table>
 
@@ -112,14 +125,14 @@
 						</td>
 					</tr>
 					<tr>
-						<td height="10"></td>
+						<td height="20"></td>
 					</tr>									
 				</table>
 			</div>
 		</td>
 	</tr>
 	</table>
--->
+
 </html:form>
 <script type="text/javascript">
 

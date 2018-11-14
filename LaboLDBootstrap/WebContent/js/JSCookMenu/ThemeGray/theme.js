@@ -3,7 +3,7 @@
  */
 
 // directory of where all the images are
-var cmThemeGrayBase = '/LaboLD/js/JSCookMenu/ThemeGray/';
+var cmThemeGrayBase = '/LaboLDBootstrap/js/JSCookMenu/ThemeGray/';
 
 var cmThemeGray =
 {

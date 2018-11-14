@@ -73,7 +73,7 @@
 		<action path="/menu" type="ar.com.labold.struts.actions.MenuAction"
 			parameter="metodo" >
 			<!-- Nuevo Estilo -->
-			<!-- <forward name="cargarMenu" path="/jsp/tiles/menu2.jsp" />-->
+			<forward name="cargarMenu" path="/jsp/tiles/menu2.jsp" />
 		</action>		
 	
 		<!-- LOGIN -->

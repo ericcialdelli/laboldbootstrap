@@ -67,8 +67,17 @@
 		</table>		
 	</c:if>
 
- 
-<table border="0" class="cuadrado" align="center" width="80%"
+<!-- Estilo Nuevo -->
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="65%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="errores" class="alert alert-danger" style="display: none"></div>
+			</td>
+		</tr>
+	</table>	
+<!-- Estilo Nuevo -->
+ <%-- 
+<table border="0" class="cuadrado" align="center" width="65%"
 	cellpadding="2">
 	<tr>
 		<td class="azulAjustado" colspan="2">
@@ -112,9 +121,9 @@
 		<td height="10" colspan="2"></td>
 	</tr>	
 </table>
-
+--%>
 <!-- Nuevo Estilo -->
-<!-- 
+ 
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -124,7 +133,7 @@
 					<tr>
 						<td class="tituloTabla" colspan="2">
 							<c:if test="${forward=='modificacionPaciente'}">
-								Modificaciï¿½n de Pacientes
+								Modificación de Pacientes
 							</c:if>
 							<c:if test="${forward=='eliminarPaciente'}">
 								Eliminar Paciente
@@ -167,4 +176,4 @@
 		</td>
 	</tr>
 	</table>		
--->		
+		

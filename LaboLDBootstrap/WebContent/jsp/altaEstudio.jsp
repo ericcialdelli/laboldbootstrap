@@ -8,8 +8,7 @@
 <script type="text/javascript" src="<html:rewrite page='/js/validarNum.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/js/agregarModificarMedico.js'/>"></script>
 
-<!-- Nuevo Estilo -->
-<!-- 
+<!-- Nuevo Estilo  
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
 <link rel="stylesheet" href="<html:rewrite page='/css/jquery-ui_1_11_3.css'/>" type="text/css">
@@ -30,6 +29,7 @@
 
 <link rel="stylesheet" href="<html:rewrite page='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css'/>"
 	type="text/css">
+
 <!-- Estilo Viejo -->
 
 <script type="text/javascript">
@@ -454,7 +454,7 @@
 	}
 	*/
 </script>
-
+  
 <div id="exitoGrabado" class="verdeExito"><br>${exitoGrabado}<br></div>
 <div id="errores" class="rojoAdvertencia"><br>${error}<br></div>
 

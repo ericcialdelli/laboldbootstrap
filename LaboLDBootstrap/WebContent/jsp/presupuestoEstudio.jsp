@@ -242,9 +242,14 @@
 	<html:hidden property="metodo" value="generarReportePresupuestoEstudio"/>	
 	<input type="hidden" name="valorEstudio" id="idValorEstudio">
 	
-	<table border="0" class="cuadrado" align="center" width="85%" cellpadding="2" cellspacing="2">
+	
+<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="85%" cellpadding="2" cellspacing="0">
+<tr><td>
+<div class="well-sm-bootstrap well-bootstrap">	
+	
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2" cellspacing="2">
 		<tr>
-			<td class="azulAjustado" >Presupuesto de Estudio</td>
+			<td class="tituloTabla" >Presupuesto de Estudio</td>
 		</tr>	
 		<tr>
 			<td height="20"></td>
@@ -265,13 +270,6 @@
 			</tr>	
 			<tr style="display: none" id="trGrupo<c:out value='${iGrupo.index}'></c:out>">
 				<td>
-				
-				
-<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2" cellspacing="0">
-<tr><td>
-<div class="well-sm-bootstrap well-bootstrap">				
-				
-				
 					<table border="0" class="cuadrado" align="left" width="100%" cellpadding="2" >
 						<tr>
 							<td height="5" colspan="4" align="right">
@@ -393,14 +391,7 @@
 							</tr>							
 						</c:forEach>
 						
-					</table>
-					
-			
-</div>
-</td></tr>
-</table>			
-					
-						
+					</table>		
 				</td>
 			</tr>					
 		</c:forEach>		
@@ -408,6 +399,10 @@
 			<td height="20"></td>
 		</tr>		
 	</table>		
+	
+</div>
+</td></tr>
+</table>	
 	
 	<div id="dialogoValor" style="display: none" >
 		<table border="0" class="cuadrado" align="center" width="80%" cellpadding="2" cellspacing="0">
@@ -432,14 +427,16 @@
 				<td height="10" colspan="3"></td>
 			</tr>	
 			<tr>
-				<td width="48%" class="botonerab" align="right">
+				<td width="55%" class="botonerab" align="right">
 				  	<!--  <button type="button" class="btn btn-primary" onclick="javascript:generarReporte();">Generar Informe</button>-->
-					<input type="button" class="botonerab" value="Generar Informe" onclick="javascript:generarReporte();">				
+					<!--  <input type="button" class="botonerab" value="Generar Informe" onclick="javascript:generarReporte();">-->
+					<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Generar Informe" onclick="javascript:generarReporte();">				
 				</td>		
 				<td width="4%"></td>			
-				<td width="48%" class="botonerab" align="left">
+				<td width="41%" class="botonerab" align="left">
 					<!--  <button type="button" class="btn btn-primary" onclick="javascript:cerrarVentanaValor();">Salir</button>-->
-					<input type="button" class="botonerab" value="Salir" onclick="javascript:cerrarVentanaValor();">
+					<!--  <input type="button" class="botonerab" value="Salir" onclick="javascript:cerrarVentanaValor();">-->
+					<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Salir" onclick="javascript:cerrarVentanaValor();">
 				</td>							
 			</tr>
 			<tr>
@@ -455,9 +452,9 @@
 		<tr>
 			<td align="center">
 				<!-- Nuevo Estilo -->
-				<!--  <button type="button" class="btn btn-primary-bootstrap btn-sm" onclick="javascript:submitir();">Aceptar</button>-->				
-				
-				<input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:submitir();">
+				<!--  <button type="button" class="btn btn-primary-bootstrap btn-sm" onclick="javascript:submitir();">Aceptar</button>-->								
+				<!--  <input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:submitir();">-->
+				<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Aceptar" onclick="javascript:submitir();">
 			</td>
 		</tr>
 		<tr>

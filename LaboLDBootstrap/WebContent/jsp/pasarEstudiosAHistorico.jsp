@@ -45,18 +45,33 @@
 </script>
 
 <div id="confirmacionEliminar" style="display: none">
-	<b>Esta seguro de pasar los Estudios a Historico?</b>
+	<b>Esta seguro que desea pasar los Estudios a Historico?</b>
 </div>
 
-<div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>
-<%-- errores de validaciones AJAX --%>
+<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>-->
+<c:if test="${exitoGrabado != null}">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
+		<tr>
+			<td>
+				<div id="exitoGrabado" class="alert alert-success"><b>${exitoGrabado}</b></div>
+			</td>
+		</tr>
+	</table>
+</c:if>	
 
- <div id="errores" class="rojoAdvertencia">${error}</div>
-
+<!--  <div id="errores" class="rojoAdvertencia">${error}</div>-->
+<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<div id="errores" class="alert alert-danger" style="display: none"></div>
+		</td>
+	</tr>
+</table>
 	  
 <html:form action="estudio" styleId="estudioFormId">
 	<html:hidden property="metodo" value="pasarEstudiosAHistorico"/>	  
 	  
+	<%--   
 	<table border="0" class="cuadrado" align="center" width="60%"
 		cellpadding="2">
 		<tr>
@@ -94,6 +109,57 @@
 		<tr>
 			<td height="10" colspan="4"></td>
 		</tr>
+	</table>--%>
+
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="4" class="tituloTabla">
+							Pasar Estudios a Historico
+						</td>
+					</tr>
+					<tr>
+						<td height="20" colspan="4"></td>
+					</tr>
+					<tr>
+						<td class="fontNegritaRightBootstrap" width="42%" >Fecha Desde</td>
+						<td align="left">			
+							<input id="datepicker" type="text" name="fechaDesde" class="botonerab">
+							<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>				
+						</td>
+					</tr>
+					<tr>	
+						<td class="fontNegritaRightBootstrap" width="42%" >Fecha Hasta</td>
+						<td align="left">			
+							<input id="datepicker2" type="text" name="fechaHasta" class="botonerab">
+							<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>				
+						</td>			
+						
+					</tr>		
+					
+					<tr>
+						<td height="20" colspan="4"></td>
+					</tr>
+				</table>	
+				<table border="0" class="cuadradoSinBorde" align="center" width="100%" cellpadding="2" cellspacing="0">
+					<tr>
+						<td height="10"></td>
+					</tr>			
+					<tr>
+						<td align="center">
+							<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Aceptar" onclick="javascript:confirmar();">									
+						</td>
+					</tr>
+					<tr>
+						<td height="20"></td>
+					</tr>									
+				</table>
+			</div>
+		</td>
+	</tr>
 	</table>
 
 </html:form>

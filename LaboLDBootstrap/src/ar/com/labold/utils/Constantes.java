@@ -9,7 +9,7 @@ public class Constantes {
 	// USUARIO
 	public static final String TITULO_ALTA_USUARIO = "Alta de Usuario";
 
-	public static final String TITULO_MODIFICACION_USUARIO = "Modificaci贸n de Usuario";// solo
+	public static final String TITULO_MODIFICACION_USUARIO = "Modificaci髇 de Usuario";// solo
 																						// para
 																						// cuando
 																						// no
@@ -18,7 +18,7 @@ public class Constantes {
 
 	public static final String EXISTE_USUARIO = "Ya existe un Usuario con este nombre";
 
-	public static final String USUARIO_INVALIDO = "Usuario y/o Contrase帽a invalido";
+	public static final String USUARIO_INVALIDO = "Usuario y/o Contrase馻 invalido";
 
 	public static final String EXITO_ALTA_USUARIO = "El Usuario se ha dado de alta con exito";
 
@@ -26,11 +26,11 @@ public class Constantes {
 
 	public static final String ERROR_ALTA_USUARIO = "Ha ocurrido un error en el alta del usuario";
 
-	public static final String ERROR_MODIFICACION_USUARIO = "Ha ocurrido un error en la modificaci贸n del usuario";
+	public static final String ERROR_MODIFICACION_USUARIO = "Ha ocurrido un error en la modificaci髇 del usuario";
 
-	public static final String ERROR_RECUPERACION_USUARIOS = "Ha ocurrido un error en la recuperaci贸n de los usuarios";
+	public static final String ERROR_RECUPERACION_USUARIOS = "Ha ocurrido un error en la recuperaci髇 de los usuarios";
 
-	public static final String ERROR_RECUPERACION_USUARIO = "Ha ocurrido un error en la recuperaci贸n del usuario";
+	public static final String ERROR_RECUPERACION_USUARIO = "Ha ocurrido un error en la recuperaci髇 del usuario";
 
 	public static final String ERROR_LOGIN_USUARIO = "Ha ocurrido un error en el login del usuario";
 	// FIN USUARIO
@@ -46,15 +46,15 @@ public class Constantes {
 
 	public static final String ERROR_ALTA_ROL = "Ha ocurrido un error en el alta del rol";
 
-	public static final String ERROR_MODIFICACION_ROL = "Ha ocurrido un error en la modificaci贸n del rol";
+	public static final String ERROR_MODIFICACION_ROL = "Ha ocurrido un error en la modificaci髇 del rol";
 
-	public static final String ERROR_RECUPERACION_ROLES = "Ha ocurrido un error en la recuperaci贸n de los roles";
+	public static final String ERROR_RECUPERACION_ROLES = "Ha ocurrido un error en la recuperaci髇 de los roles";
 
-	public static final String ERROR_RECUPERACION_ROL = "Ha ocurrido un error en la recuperaci贸n del rol";
+	public static final String ERROR_RECUPERACION_ROL = "Ha ocurrido un error en la recuperaci髇 del rol";
 
-	public static final String ERROR_RECUPERACION_MENUES = "Ha ocurrido un error en la recuperaci贸n de los menues";
+	public static final String ERROR_RECUPERACION_MENUES = "Ha ocurrido un error en la recuperaci髇 de los menues";
 
-	public static final String ERROR_RECUPERACION_MENU = "Ha ocurrido un error en la recuperaci贸n del men煤";
+	public static final String ERROR_RECUPERACION_MENU = "Ha ocurrido un error en la recuperaci髇 del men煤";
 	// FIN ROL
 
 	//OBRA SOCIAL
@@ -82,19 +82,19 @@ public class Constantes {
 	//FIN PACIENTE	
 	
 	//PRACTICA
-	public static final String EXITO_ALTA_PRACTICA = "La Pr谩ctica se ha dado de alta con exito";
+	public static final String EXITO_ALTA_PRACTICA = "La Pr醕tica se ha dado de alta con exito";
 	
 	public static final String EXITO_ALTA_GRUPO_PRACTICA = "El Grupo Practica se ha dado de alta con exito";
 	
 	public static final String EXITO_ALTA_SUBITEM_PRACTICA = "El SubItem se ha dado de alta con exito";
 	
-	public static final String EXITO_MODIFICACION_PRACTICA = "La Pr谩ctica se ha modificado con exito";
+	public static final String EXITO_MODIFICACION_PRACTICA = "La Pr醕tica se ha modificado con exito";
 	
 	public static final String EXITO_MODIFICACION_GRUPO_PRACTICA = "El Grupo se ha modificado con exito";	
 	
-	public static final String EXISTE_PRACTICA = "Ya existe una Pr谩ctica con ese nombre";
+	public static final String EXISTE_PRACTICA = "Ya existe una Pr醕tica con ese nombre";
 	
-	public static final String EXISTE_GRUPO_PRACTICA = "Ya existe un Grupo Pr谩ctica con ese nombre";
+	public static final String EXISTE_GRUPO_PRACTICA = "Ya existe un Grupo Pr醕tica con ese nombre";
 	
 	public static final String EXITO_ALTA_ESTUDIO_PRESETEADO = "El Estudio Pre Seteado se ha dado de alta con exito";
 	

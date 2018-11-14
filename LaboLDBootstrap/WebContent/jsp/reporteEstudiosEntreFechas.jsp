@@ -33,6 +33,7 @@ function generarReporte(){
 	
 	if(fechaDesde != "" && fechaHasta != ""){
 		$("#error").html("");
+		$("#error").hide();
 		var especificaciones = 'top=0,left=0,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable';
 		if(type == "IE"){
 			window.open("./reporte.do?metodo="+metodo+"&fechaDesde="+fechaDesde+"&fechaHasta="+fechaHasta,"",especificaciones);
@@ -41,16 +42,31 @@ function generarReporte(){
 		}
 	}
 	else{
-		var textoError1 = (fechaDesde == "")?"* Fecha Desde es un dato obligatorio<br>":"";
-		var textoError2 = (fechaHasta == "")?"* Fecha Hasta es un dato obligatorio":"";
-		$("#error").html(textoError1 + textoError2);		
+		$("#error").html("");
+		var textoError1 = (fechaDesde == "")?"<b>* Fecha Desde es un dato obligatorio<br></b>":"";
+		var textoError2 = (fechaHasta == "")?"<b>* Fecha Hasta es un dato obligatorio</b>":"";
+		$("#error").html(textoError1 + textoError2);
+		$("#error").show();
 	}
 }
 
 </script>
    
-<div id="error" class="rojoAdvertencia"></div>
+<!--  <div id="error" class="rojoAdvertencia"></div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="65%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="error" class="alert alert-danger" style="display: none"></div>
+			</td>
+		</tr>
+	</table>	
+<!-- Estilo Nuevo -->
+
 <html:hidden styleId="idMetodo" value="${metodo}" property=""/>
+
+<%-- 
 <table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">
 	<tr>
 		<td class="azulAjustado">
@@ -98,3 +114,56 @@ function generarReporte(){
 		<td height="20"></td>
 	</tr>
 </table>
+--%>
+
+<!-- Nuevo Estilo -->  
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="2" class="tituloTabla">
+							Reporte de Estudios a Realizar Entre Fechas
+						</td>
+					</tr>
+					<tr>
+						<td height="45" colspan="2"></td>
+					</tr>
+					<tr>
+						<td width="40%" class="fontNegritaRightBootstrap">Fecha Desde</td>
+						<td align="left">
+							<input id="idFechaDesde" class="botonerab" type="text" size="23" readonly="readonly">
+							<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>
+						</td>
+					</tr>
+					<tr>
+						<td width="40%" class="fontNegritaRightBootstrap">Fecha Hasta</td>
+						<td align="left">						
+							<input id="idFechaHasta" class="botonerab" type="text" size="23" readonly="readonly">
+							<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>						
+						</td>
+					</tr>
+					<tr>
+						<td height="15" colspan="2"></td>
+					</tr>
+				</table>	
+
+				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
+					<tr>
+						<td height="10"></td>
+					</tr>			
+					<tr>
+						<td align="center">							
+							<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Generar Reporte" onclick="generarReporte();">
+						</td>
+					</tr>
+					<tr>
+						<td height="20"></td>
+					</tr>									
+				</table>
+			</div>
+		</td>
+	</tr>
+	</table>

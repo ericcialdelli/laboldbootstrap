@@ -217,13 +217,21 @@
 </script>
 
 <div id="exitoGrabado" class="verdeExito"><br>${exitoGrabado}<br></div>
-<div id="errores" class="rojoAdvertencia"><br>${error}<br></div>
+<!--  <div id="errores" class="rojoAdvertencia"><br>${error}<br></div>-->
+<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="85%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<div id="errores" class="alert alert-danger" style="display: none"></div>
+		</td>
+	</tr>
+</table>
 
 
 <html:form action="estudioPreSeteado" styleId="estudioPreSeteadoFormId">
 	<html:hidden property="metodo" value="modificacionEstudioPreSeteado"/>
 	<html:hidden property="id" value="${estudio.idEstudioPreSeteado}" styleId="idEstudio"/>
 	
+	<%-- 
 	<table border="0" class="cuadrado" align="center" width="85%" cellpadding="2" cellspacing="0">
 		<tr>
 			<td colspan="2"  class="azulAjustado" >
@@ -392,7 +400,187 @@
 		<tr>
 			<td height="20"></td>
 		</tr>		
-	</table>		
+	</table>--%>		
+	
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="85%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">		
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2" cellspacing="0">
+					<tr>
+						<td colspan="2"  class="tituloTabla" >
+							<c:if test="${forward=='modificacionEstudioPreSeteado'}">
+								Modificacion de Estudio Pre Seteado
+							</c:if>
+							<c:if test="${forward=='eliminarEstudioPreSeteado'}">
+								Eliminar Estudio Pre Seteado
+							</c:if>				
+						</td>
+					</tr>
+					<tr>
+						<td height="20" colspan="2"></td>
+					</tr>				
+					<tr>
+						<td class="fontNegritaRightBootstrap" width="30%" >Nombre</td>
+						<td align="left" width="70%">			
+							<html:text property="nombre" value="${estudio.nombre}" styleClass="botonerab" size="45"/>
+						</td>
+										
+					</tr>	
+															
+					<tr>
+						<td height="20" colspan="2"></td>
+					</tr>
+				</table>
+				
+				<table border="0" class="cuadrado" align="center" width="100%" cellpadding="2" cellspacing="2">
+					<tr>
+						<td height="20"></td>
+					</tr>
+					<%int i=0; %>
+					<c:forEach items="${gruposPracticas}" var="grupo" varStatus="iGrupo">
+						<tr onclick="expandirGrupo(<c:out value='${iGrupo.index}'></c:out>)" class="grisSubtitulo"
+								id="grupo<c:out value='${iGrupo.index}'></c:out>" width="85%" 									
+								onmouseover="javascript:pintarFila('grupo',<c:out value='${iGrupo.index}'></c:out>);"
+								onmouseout="javascript:despintarFila('grupo',<c:out value='${iGrupo.index}'></c:out>);">
+								
+							<td id="grupo<c:out value='${iGrupo.index}'></c:out>" width="85%">					
+								${grupo.nombre}									
+								<c:if test="${grupo.codigoFaba != null && grupo.codigoFaba != ''}">					
+									- (${grupo.codigoFaba})
+								</c:if>							
+							</td>									
+						</tr>	
+						<tr style="display: none" id="trGrupo<c:out value='${iGrupo.index}'></c:out>">
+							<td>
+								<table border="0" class="cuadrado" align="left" width="100%" cellpadding="2" >
+									<tr>
+										<td height="5" colspan="4" align="right">
+											<a href="javascript:seleccionarTodos(<c:out value='${iGrupo.index}'></c:out>)">Seleccionar Todos</a>
+											/
+											<a href="javascript:desSeleccionarTodos(<c:out value='${iGrupo.index}'></c:out>)">Deseleccionar Todos</a>
+										</td>
+									</tr>				
+									<c:forEach items="${grupo.practicas}" var="practica" varStatus="iPractica">
+										<c:if test="${practica.subItemPractica == null}">
+											<tr id="trPractica<%=i%>"
+												class="trG<c:out value='${iGrupo.index}'></c:out>" 
+												onmouseover="javascript:pintarPractica(<%=i%>);"
+												onmouseout="javascript:despintarPractica(<%=i%>);">
+												
+												<td width="5%">
+													<input type="hidden" class="grupo<c:out value='${iGrupo.index}'></c:out>" value="<%=i%>">									
+													<input type="hidden" name="listaPracticas[<%=i%>].id" 
+														id="hiddenPractica<%=i%>">
+														
+													<input type="hidden" id="valorIndice${practica.id}" value="<%=i%>"><!-- PRESELECCION -->
+													<input type="hidden" id="valorGrupo${practica.id}" value="<c:out value='${iGrupo.index}'></c:out>"><!-- PRESELECCION -->											
+														
+													<input type="checkbox" class="checkG<c:out value='${iGrupo.index}'></c:out>"
+														onchange="clickCheck(<%=i%>)" 
+														id="checkPractica<%=i%>"
+														value="${practica.id}">
+												</td>
+												<td align="left" width="65%" onclick="javascript:clickCheckFila(<%=i%>);">
+													${practica.nombre}
+												</td>
+												<td align="right" width="25%">
+													<c:if test="${practica.codigoFaba != null && practica.codigoFaba != ''}">
+														Codigo Faba
+													</c:if>	
+												</td>
+												<td align="left" width="5%">
+													${practica.codigoFaba}
+												</td>																						
+											</tr>	
+											<%i++; %>	
+										</c:if>											
+									</c:forEach>
+									
+									<c:forEach items="${grupo.subItemsPractica}" var="subItem" varStatus="iSubItem">
+										<tr>
+											<td colspan="4" height="10">&nbsp;</td>							
+										</tr>
+										<tr>
+											<td width="5%">
+											</td>
+											<td width="65%" class="negritaLeft">
+												${subItem.nombre}	
+												<c:if test="${subItem.codigoFaba != null && subItem.codigoFaba != ''}">					
+													- (${subItem.codigoFaba})										
+												</c:if>	
+											</td>
+											<td colspan="2" align="right">
+												<a href="javascript:seleccionarTodosSubItem(<c:out value='${iGrupo.index},${iSubItem.index}'></c:out>)">Seleccionar Todos</a>
+												/
+												<a href="javascript:desSeleccionarTodosSubItem(<c:out value='${iGrupo.index},${iSubItem.index}'></c:out>)">Deseleccionar Todos</a>									
+											</td>															
+										</tr>
+										<tr>
+											<td width="5%">
+											</td>
+											<td width="95%" colspan="3">
+												<table border="0" class="cuadrado" align="left" width="100%" cellpadding="2" >
+													<tr>
+														<td height="5" colspan="2"></td>
+													</tr>															
+													<c:forEach items="${subItem.practicas}" var="prac" varStatus="iPrac">											
+														<tr id="trPractica<%=i%>"
+															class="trG<c:out value='${iGrupo.index}'></c:out>"
+															onmouseover="javascript:pintarPractica(<%=i%>);"
+															onmouseout="javascript:despintarPractica(<%=i%>);">
+															
+															<td width="5%">	
+																<input type="hidden" class="grupo<c:out value='${iGrupo.index}'></c:out>" 
+																	value="<%=i%>">
+																<input type="hidden" class="subItem<c:out value='${iGrupo.index}'></c:out>-<c:out value='${iSubItem.index}'></c:out>" 
+																	value="<%=i%>">															
+																																										
+																<input type="hidden" name="listaPracticas[<%=i%>].id" 
+																	id="hiddenPractica<%=i%>">												
+												
+																<input type="hidden" id="valorIndice${prac.id}" value="<%=i%>"><!-- PRESELECCION -->
+																<input type="hidden" id="valorGrupo${prac.id}" value="<c:out value='${iGrupo.index}'></c:out>"><!-- PRESELECCION -->									
+												
+																<input type="checkbox" 
+																	class="checkG<c:out value='${iGrupo.index}'></c:out> checkSI<c:out value='${iGrupo.index}'></c:out>-<c:out value='${iSubItem.index}'></c:out>"
+																	onchange="clickCheck(<%=i%>)" 
+																	id="checkPractica<%=i%>"
+																	value="${prac.id}">													
+															</td>														
+															<td align="left" width="80%" onclick="javascript:clickCheckFila(<%=i%>);">
+																${prac.nombre}
+															</td>
+															<td align="left" width="10%">
+																<c:if test="${prac.codigoFaba != null && prac.codigoFaba != ''}">
+																	Codigo Faba
+																</c:if>	
+															</td>
+															<td align="left" width="5%">
+																${prac.codigoFaba}
+															</td>																
+														</tr>
+														<%i++; %>						
+													</c:forEach>																		
+												</table>							
+											</td>							
+										</tr>							
+									</c:forEach>
+									
+								</table>	
+							</td>
+						</tr>					
+					</c:forEach>		
+					<tr>
+						<td height="20"></td>
+					</tr>		
+				</table>	
+	
+			</div>
+		</td>
+	</tr>
+	</table>	
 	
 	<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
 		<tr>
@@ -404,14 +592,16 @@
 				<!--  <button type="button" class="btn btn-primary btn-sm" onclick="javascript:submitir();">Aceptar</button>-->				
 				
 				<c:if test="${forward=='modificacionEstudioPreSeteado'}">
-					<input type="button" class="botonerab" value="Modificar" id="enviar" onclick="javascript:submitir();">
+					<!--  <input type="button" class="botonerab" value="Modificar" id="enviar" onclick="javascript:submitir();">-->
+					<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Modificar" onclick="javascript:submitir();">
 				</c:if>
 				<c:if test="${forward=='eliminarEstudioPreSeteado'}">
-					<input type="button" class="botonerab" value="Eliminar" id="enviar" onclick="javascript:eliminar();">
+					<!--  -<input type="button" class="botonerab" value="Eliminar" id="enviar" onclick="javascript:eliminar();">-->
+					<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Eliminar" onclick="javascript:eliminar();">
 				</c:if>					
-					
-				
-				<input type="button" class="botonerab" value="Volver" id="enviar" onclick="javascript:volver();">
+									
+				<!--  <input type="button" class="botonerab" value="Volver" id="enviar" onclick="javascript:volver();">-->
+				<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Volver" onclick="javascript:volver();">
 			</td>
 		</tr>
 		<tr>

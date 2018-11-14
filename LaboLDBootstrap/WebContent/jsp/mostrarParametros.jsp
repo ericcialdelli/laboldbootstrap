@@ -60,51 +60,73 @@
 	
 </script>
 
-<div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>
-<table border="0" class="cuadrado" align="center" width="80%"
-	cellpadding="2">
-	<tr>
-		<td class="azulAjustado">Parametros</td>
-	</tr>
-	<tr>
-		<td height="20"></td>
-	</tr>
+<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+<c:if test="${exitoGrabado != null}">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="80%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
+		<tr>
+			<td>
+				<div id="exitoGrabado" class="alert alert-success"><b>${exitoGrabado}</b></div>
+			</td>
+		</tr>
+	</table>
+</c:if>	
+
+	<!-- Nuevo Estilo -->  
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="80%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
-			<table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">
-				<tr>
-					<td class="azulAjustado">Clave</td>
-					<td class="azulAjustado">Valor</td>
-					<td class="azulAjustado">Descripcion</td>
-					<td class="azulAjustado"></td>
-				</tr>
-				<%String clase=""; %>
-				<c:forEach items="${listaParametros}" var="parametro" varStatus="i">
-					<%clase=(clase.equals("")?"par":""); %>
-
-					<tr class="<%=clase%>" onmouseover="javascript:pintarFila('idTr<c:out value='${i.index}'></c:out>');"
-						onmouseout="javascript:despintarFila('idTr<c:out value='${i.index}'></c:out>');"
-						id="idTr<c:out value='${i.index}'></c:out>">					
-										
-						<td>${parametro.clave}</td>
-						<td>${parametro.valor}</td>
-						<td>${parametro.descripcion}</td>
+			<div class="well-sm-bootstrap well-bootstrap">
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td class="tituloTabla">
+							Parametros
+						</td>
+					</tr>	
+					<tr>
+						<td height="20"></td>
+					</tr>
+					<tr>
 						<td>
-							<input type="hidden" value="${parametro.valor}" id="val${parametro.clave}">
-							<input type="hidden" value="${parametro.descripcion}" id="desc${parametro.clave}">
-							<a href="javascript:abrirVentanaModificarParametro(${parametro.clave});">
-								Seleccionar
-							</a>
+							<table border="0" class="cuadrado" align="center" width="85%" cellpadding="2">
+								<tr>
+									<td class="subTituloTabla">Clave</td>
+									<td class="subTituloTabla">Valor</td>
+									<td class="subTituloTabla">Descripcion</td>
+									<td class="subTituloTabla"></td>
+								</tr>
+								<%String clase=""; %>
+								<c:forEach items="${listaParametros}" var="parametro" varStatus="i">
+									<%clase=(clase.equals("")?"par":""); %>
+				
+									<tr class="<%=clase%>" onmouseover="javascript:pintarFila('idTr<c:out value='${i.index}'></c:out>');"
+										onmouseout="javascript:despintarFila('idTr<c:out value='${i.index}'></c:out>');"
+										id="idTr<c:out value='${i.index}'></c:out>">					
+														
+										<td>${parametro.clave}</td>
+										<td>${parametro.valor}</td>
+										<td>${parametro.descripcion}</td>
+										<td>
+											<input type="hidden" value="${parametro.valor}" id="val${parametro.clave}">
+											<input type="hidden" value="${parametro.descripcion}" id="desc${parametro.clave}">
+											<a href="javascript:abrirVentanaModificarParametro(${parametro.clave});">
+												Seleccionar
+											</a>
+										</td>
+									</tr>
+								</c:forEach>
+							</table>
 						</td>
 					</tr>
-				</c:forEach>
-			</table>
+					<tr>
+						<td height="10"></td>
+					</tr>	
+				</table>
+			</div>
 		</td>
 	</tr>
-	<tr>
-		<td height="10"></td>
-	</tr>	
-</table>
+	</table>
 
 <div id="dialogo" style="display: none" >	
 		

@@ -26,13 +26,15 @@
 	}	
 </script>
 
-<div id="errores" class="rojoAdvertencia">${error}</div>
+<!--<div id="errores" class="rojoAdvertencia">${error}</div>--> <!-- Estilo Viejo -->
+
+
 
 <html:form action="paciente" styleId="pacienteFormId">
 	<html:hidden property="metodo" value="" styleId="idMetodo"/>
 	<html:hidden property="pacienteDTO.id" value="${paciente.id}"/>
 	
-	
+	<%-- 
 	<table border="0" class="cuadrado" align="center" width="60%" cellpadding="2">
 
 		<tr>
@@ -145,9 +147,8 @@
 			<td height="10" colspan="2"></td>
 		</tr>									
 	</table>	
-	
+	--%>
 	<!-- Nuevo Estilo -->
-	<!-- 
 	<table border="0" class="cuadrado" align="center" width="60%" cellpadding="2">
 
 		<tr>
@@ -258,7 +259,6 @@
 			<td height="10" colspan="2"></td>
 		</tr>									
 	</table>
-	-->
 </html:form>
 <script type="text/javascript">
 

@@ -28,7 +28,19 @@
 	}	
 </script>
 	
-<div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>	
+<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+<c:if test="${exitoGrabado != null}">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
+		<tr>
+			<td>
+				<div id="exitoGrabado" class="alert alert-success"><b>${exitoGrabado}</b></div>
+			</td>
+		</tr>
+	</table>
+</c:if>
+	<%-- 
 	<table border="0" class="cuadrado" align="center" width="60%"
 		cellpadding="2">
 		<tr>
@@ -69,6 +81,54 @@
 			<td height="10" colspan="2"></td>
 		</tr>
 	</table>
+--%>
 
-
-
+	<!-- Nuevo Estilo -->  
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="2" class="tituloTabla">
+							Modificacion de Grupo Práctica
+						</td>
+					</tr>
+					<tr>
+						<td height="20" colspan="2"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<table border="0" class="cuadrado" align="center" width="60%" cellpadding="2">
+								<tr>
+									<td class="subTituloTabla">Nombre</td>
+									<td class="subTituloTabla"></td>
+								</tr>
+								<%String clase=""; %>
+								<c:forEach items="${listaGrupos}" var="grupo" varStatus="i">
+									<%clase=(clase.equals("")?"par":""); %>
+				
+									<tr class="<%=clase%>" onmouseover="javascript:pintarFila('idTr<c:out value='${i.index}'></c:out>');"
+										onmouseout="javascript:despintarFila('idTr<c:out value='${i.index}'></c:out>');"
+										id="idTr<c:out value='${i.index}'></c:out>">					
+														
+										<td>${grupo.nombre}</td>
+										<td>
+											<a href="javascript:recuperarGrupo(${grupo.id});">
+												Seleccionar
+											</a>
+										</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="10" colspan="2"></td>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+	</table>

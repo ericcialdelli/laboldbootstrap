@@ -9,18 +9,13 @@
 <script type="text/javascript" src="<html:rewrite page='/js/validarLetras.js'/>"></script>
 <script type="text/javascript" src="<html:rewrite page='/js/validarNum.js'/>"></script>
 
-<!--  
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-
-<link rel="stylesheet" href="<html:rewrite page='/css/jquery-ui_1_11_3.css'/>" type="text/css">
--->
 
 <script type="text/javascript"
 	src="<html:rewrite page='/js/JQuery/ui/jquery-ui-1.8.10.custom.min.js'/>"></script>	
 
 <link rel="stylesheet" href="<html:rewrite page='/css/ui-lightness/jquery-ui-1.8.10.custom.css'/>"
 	type="text/css">
-
+	
 <script type="text/javascript">
 
 	function recuperarEstudios(){
@@ -56,6 +51,7 @@
 
 <div id="errores" class="rojoAdvertencia">${error}</div>
 
+<%--
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
 	<tr><td>
 	<div class="well well-sm">
@@ -159,7 +155,108 @@
 	</td></tr>	
 				
 	</table>
-	
+--%>	
+
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
+	<tr><td>
+	<div class="well-sm-bootstrap well-bootstrap">
+
+		<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2" cellspacing="0">
+			<tr>
+				<td colspan="2"  class="tituloTabla" >Recuperar Estudios</td>
+			</tr>
+			<tr>
+				<td height="20" colspan="2"></td>
+			</tr>				
+			<tr>
+				<td width="40%" align="right" class="fontNegritaRightBootstrap"><b>Fecha Desde</b></td>
+				<td align="left">
+					<input id="fechaDesde" class="botonerab" type="text" size="15">						
+					<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>
+				</td>
+			</tr>	
+			<tr>
+				<td width="40%" align="right" class="fontNegritaRightBootstrap"><b>Fecha Hasta</b></td>
+				<td  align="left">
+					<input id="fechaHasta" class="botonerab" type="text" size="15" name="pacienteDTO.fechaNacimiento">						
+					<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>			
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" align="right" class="fontNegritaRightBootstrap">
+					<b>Medicos</b>
+				</td>
+				<td  align="left">					
+					<select id="idMedico" class="botonerab">
+						<option value="-1">
+							-Seleccione un médico-
+						</option>		
+						<c:forEach items="${medicos}" var="m">
+							<option value="${m.id}">
+								<c:out value="${m.apellido}"></c:out>, <c:out value="${m.nombre}"></c:out> - <c:out value="${m.matricula}"></c:out> 
+							</option>
+						</c:forEach>										
+					</select>					
+				</td>
+			</tr>			
+			<tr>
+				<td width="40%" align="right" class="fontNegritaRightBootstrap">
+					<b>Obra Social</b>
+				</td>
+				<td  align="left">
+					<select id="idObraSocial" class="botonerab">
+						<option value="-1">
+							-Seleccione una Obra Social-
+						</option>		
+						<c:forEach items="${obrasSociales}" var="os">
+							<option value="${os.id}">
+								<c:out value="${os.nombre}"></c:out>
+							</option>
+						</c:forEach>										
+					</select>			
+				</td>
+			</tr>				
+			<tr>
+				<td height="20" colspan="2"></td>
+			</tr>									
+		</table>
+		
+		<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
+			<tr>
+				<td height="10"></td>
+			</tr>			
+			<tr>
+				<td align="center">	
+					<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Aceptar" onclick="javascript:recuperarEstudios();">			
+				</td>
+			</tr>
+			<tr>
+				<td height="10"></td>
+			</tr>									
+		</table>
+		
+		<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
+			<tr>
+				<td height="20"></td>
+			</tr>
+			<tr>
+			</tr>	
+			<tr>
+				<td>
+					<div id="divModificacion"></div>
+				</td>
+			</tr>
+			<tr>
+				<td height="10"></td>
+			</tr>		
+		</table>		
+		
+		
+	</div>
+	</td></tr>	
+				
+	</table>
+
 	<input type="hidden" value="<c:out value='${fDesde}'></c:out>" id="fDesde"/>
 	<input type="hidden" value="<c:out value='${fHasta}'></c:out>" id="fHasta"/>
 	<input type="hidden" value="<c:out value='${idMed}'></c:out>" id="idMed"/>

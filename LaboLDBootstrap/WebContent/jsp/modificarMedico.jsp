@@ -26,12 +26,24 @@
 	}	
 </script>
 
-<div id="errores" class="rojoAdvertencia">${error}</div>
+<%-- 
+<div id="errores" class="rojoAdvertencia">${error}</div> <!-- Estilo Viejo -->
+--%>
+
+<!-- Estilo Nuevo -->
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="65%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="errores" class="alert alert-danger" style="display: none"></div>
+			</td>
+		</tr>
+	</table>	
+<!-- Estilo Nuevo -->
 
 <html:form action="medico" styleId="medicoFormId">
 	<html:hidden property="metodo" value="modificacionMedico"/>
 	<html:hidden property="medicoDTO.id" value="${medico.id}"/>
-	
+	<!--
 	<table border="0" class="cuadrado" align="center" width="60%" cellpadding="2">
 		<tr>
 			<td colspan="2"  class="azulAjustado" >Modificación de Médico</td>
@@ -86,10 +98,10 @@
 		<tr>
 			<td height="10" colspan="2"></td>
 		</tr>									
-	</table>
+	</table>-->
 
 	<!-- Nuevo Estilo -->
-	<!-- 
+	 
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -137,7 +149,7 @@
 						</td>
 					</tr>			
 					<tr>
-						<td height="10" colspan="2"></td>
+						<td height="15" colspan="2"></td>
 					</tr>									
 				</table>
 				
@@ -153,14 +165,14 @@
 						</td>
 					</tr>
 					<tr>
-						<td height="10"></td>
+						<td height="15"></td>
 					</tr>									
 				</table>
 			</div>
 		</td>
 	</tr>
 	</table>				
-	-->
+
 
 </html:form>
 <script type="text/javascript">

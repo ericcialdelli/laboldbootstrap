@@ -9,7 +9,7 @@
 <script type="text/javascript" src="<html:rewrite page='/js/agregarModificarMedico.js'/>"></script>
 
 <!-- Nuevo Estilo -->
-<!-- 
+<!--
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
 <link rel="stylesheet" href="<html:rewrite page='/css/jquery-ui_1_11_3.css'/>" type="text/css">
@@ -25,6 +25,7 @@
 	src="<html:rewrite page='/dwr/interface/PracticaFachada.js'/>"></script>
 
 <!-- Estilo Viejo -->
+ 
 <script type="text/javascript"
 	src="<html:rewrite page='/js/JQuery/ui/jquery-ui-1.8.10.custom.min.js'/>"></script>	
 
@@ -33,6 +34,7 @@
 
 <link rel="stylesheet" href="<html:rewrite page='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css'/>"
 	type="text/css">
+	
 <!-- Estilo Viejo -->
 
 <script type="text/javascript">
@@ -550,10 +552,11 @@
 						onclick="abrirVentantModificarPaciente()">					
 					
 					<!-- Nuevo Estilo -->
-					<!--<button type="button" class="btn btn-primary-bootstrap btn-xs" onclick="abrirVentantAgregarPaciente()">Agregar</button>
+					<!--
+					<button type="button" class="btn btn-primary-bootstrap btn-xs" onclick="abrirVentantAgregarPaciente()">Agregar</button>
 					<button type="button" class="btn btn-primary-bootstrap btn-xs" onclick="abrirVentantModificarPaciente()" 
-						id="botonModificar" disabled="disabled">Modificar</button>-->
-										
+						id="botonModificar" disabled="disabled">Modificar</button>
+					-->					
 				</div>
 				<div style="display: none" id="inputPaciente">
 					<input type="text" value="" id="nombrePacienteAgregado" readonly="readonly">
@@ -576,16 +579,16 @@
 							</option>
 						</c:forEach>										
 					</select>
-					
+					 
 					<input type="button" value="Agregar" class="botonerab" onclick="abrirVentantAgregarMedico()">
 					<input id="botonModificarMedico" disabled="disabled" type="button" value="Modificar" class="botonerab" onclick="abrirVentantModificarMedico();">					
 					
 					<!-- Nuevo Estilo -->
-					<!--  
+					 <!--
 					<button type="button" class="btn btn-primary btn-xs" onclick="abrirVentantAgregarMedico()">Agregar</button>
 					<button type="button" class="btn btn-primary btn-xs" onclick="abrirVentantModificarMedico()" 
-						id="botonModificarMedico" disabled="disabled">Modificar</button>-->																	
-					
+						id="botonModificarMedico" disabled="disabled">Modificar</button>																	
+					-->
 				</div>	
 				<div style="display: none" id="inputMedico">
 					<input type="text" value="" id="nombreMedicoAgregado" readonly="readonly" size="25">

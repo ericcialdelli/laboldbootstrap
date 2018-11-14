@@ -54,7 +54,20 @@
 	
 </script>
 
-<div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>
+<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+<c:if test="${exitoGrabado != null}">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
+		<tr>
+			<td>
+				<div id="exitoGrabado" class="alert alert-success"><b>${exitoGrabado}</b></div>
+			</td>
+		</tr>
+	</table>
+</c:if>	
+
+<%-- 
 <table border="0" class="cuadrado" align="center" width="60%"
 	cellpadding="2">
 	<tr>
@@ -63,7 +76,6 @@
 	<tr>
 		<td height="20" colspan="2"></td>
 	</tr>
-	
 	<tr>
 		<td width="40%" class="botoneralNegritaRight">Grupo Practica</td>
 		<td align="left">
@@ -79,11 +91,9 @@
 			</select>
 		</td>
 	</tr>	
-	
 	<tr>
 		<td height="10" colspan="2"></td>
 	</tr>	
-	
 	<tr>
 		<td colspan="2">
 			<div id="bloquePracticas"></div>
@@ -92,8 +102,55 @@
 	<tr>
 		<td height="10" colspan="2"></td>
 	</tr>	
-	
 </table>
+--%>
+
+	<!-- Nuevo Estilo -->  
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="2" class="tituloTabla">
+							Modificación de Prácticas
+						</td>
+					</tr>	
+					<tr>
+						<td height="20" colspan="2"></td>
+					</tr>
+					<tr>
+						<td width="40%" class="fontNegritaRightBootstrap">Grupo Practica</td>
+						<td align="left">
+							<select id="selectGrupoPractica" class="botonerab" onchange="cargarPracticas();">
+								<option value="-1">
+									Seleccione un Grupo...
+								</option>		
+								<c:forEach items="${listaGrupos}" var="grupo">
+									<option value="${grupo.id}">
+										<c:out value="${grupo.nombre}"></c:out>
+									</option>
+								</c:forEach>										
+							</select>
+						</td>
+					</tr>	
+					<tr>
+						<td height="10" colspan="2"></td>
+					</tr>	
+					<tr>
+						<td colspan="2">
+							<div id="bloquePracticas"></div>
+						</td>
+					</tr>
+					<tr>
+						<td height="10" colspan="2"></td>
+					</tr>	
+				</table>
+			</div>
+		</td>
+	</tr>
+	</table>
 
 <script type="text/javascript">
 	var idGrupoParam = ${idGrupo};

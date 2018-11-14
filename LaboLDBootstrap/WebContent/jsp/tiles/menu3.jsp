@@ -29,7 +29,7 @@
 	            <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">${menu.item} <span class="caret"></span></button>
 	            <ul class="dropdown-menu">
 	            	<c:forEach items="${menu.hijos}" var="hijo" varStatus="i">
-	            		<li><a href="/LaboLD${hijo.url}">${hijo.item}</a></li>
+	            		<li><a href="/LaboLDBootstrap${hijo.url}">${hijo.item}</a></li>
 	            	</c:forEach>
 	            </ul>
 	        </div>			

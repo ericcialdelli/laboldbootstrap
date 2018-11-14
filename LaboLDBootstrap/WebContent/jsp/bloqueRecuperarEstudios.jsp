@@ -21,11 +21,11 @@
 		<c:when test="${fn:length(listaEstudios)>0}">
 			<table border="0" class="cuadrado" align="center" width="80%" cellpadding="2">
 				<tr>
-					<td class="grisSubtituloCenter">Número</td>
-					<td class="grisSubtituloCenter">Paciente</td>
-					<td class="grisSubtituloCenter">Fecha</td>
-					<td class="grisSubtituloCenter">Estado</td>
-					<td class="grisSubtituloCenter"></td>
+					<td class="subTituloTabla">Número</td>
+					<td class="subTituloTabla">Paciente</td>
+					<td class="subTituloTabla">Fecha</td>
+					<td class="subTituloTabla">Estado</td>
+					<td class="subTituloTabla"></td>
 				</tr>
 				<%String clase=""; %>
 				<c:forEach items="${listaEstudios}" var="estudio" varStatus="i">

@@ -50,21 +50,31 @@
 		});*/
 </script>
 
-<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>-->
-<br>
-	<c:if test="${exitoGrabado != null}">
-		<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="65%" cellpadding="2" cellspacing="0">
-			<tr>
-				<td>
-					<div class="alert alert-success">
-					  <strong>${exitoGrabado}</strong>
-					</div>
-				</td>
-			</tr>
-		</table>		
-	</c:if>
+<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>--> <!-- Estilo Viejo -->
 
-<div id="errores" class="rojoAdvertencia">${error}</div>
+<!-- Estilo Nuevo -->
+<c:if test="${exitoGrabado != null}">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
+		<tr>
+			<td>
+				<div id="exitoGrabado" class="alert alert-success"><b>${exitoGrabado}</b></div>
+			</td>
+		</tr>
+	</table>
+</c:if>	
+<!-- Estilo Nuevo -->
+
+<!--<div id="errores" class="rojoAdvertencia">${error}</div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="errores" class="alert alert-danger" style="display: none"></div>
+			</td>
+		</tr>
+	</table>	
+<!-- Estilo Nuevo -->
 
 <html:form action="paciente" styleId="pacienteFormId">
 	<html:hidden property="metodo" value="altaPaciente"/>
@@ -176,11 +186,11 @@
 
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
 	<tr><td>
-	<div class="well well-sm">
+	<div class="well-sm-bootstrap well-bootstrap">
 
 		<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2" cellspacing="0">
 			<tr>
-				<td colspan="2"  class="azulAjustado" >Alta de Paciente</td>
+				<td colspan="2"  class="tituloTabla" >Alta de Paciente</td>
 			</tr>
 			<tr>
 				<td height="20" colspan="2"></td>
@@ -214,7 +224,7 @@
 			</tr>				
 			<tr>
 				<td width="40%" align="right" class="fontNegritaRightBootstrap">
-					<b>Direcciï¿½n</b>
+					<b>Dirección</b>
 				</td>
 				<td  align="left">
 					<html:text property="pacienteDTO.direccion" value="" styleClass="botonerab"/>			
@@ -270,7 +280,7 @@
 				</td>
 			</tr>								
 			<tr>
-				<td height="20" colspan="2"></td>
+				<td height="15" colspan="2"></td>
 			</tr>									
 		</table>
 
@@ -279,13 +289,12 @@
 				<td height="10"></td>
 			</tr>			
 			<tr>
-				<td align="center">				
-					<input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:submitir();">
-					<!--  <input type="button" class="btn btn-primary btn-sm" value="Aceptar" id="enviar" onclick="javascript:submitir();">-->
+				<td align="center">									
+					<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Aceptar" onclick="javascript:submitir();">
 				</td>
 			</tr>
 			<tr>
-				<td height="10"></td>
+				<td height="20"></td>
 			</tr>									
 		</table>
 	</div>

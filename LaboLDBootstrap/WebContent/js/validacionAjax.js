@@ -9,15 +9,17 @@
 	}
 	
 	function validarFormCallBack(xmlDoc){
+		
 	   	var nodos = xmlDoc.getElementsByTagName('error');
 	    if (nodos.length==0){
     	   	var nodos = xmlDoc.getElementsByTagName('formId');
     	   	var idForm = nodos[0].firstChild.nodeValue;
 	    	$('#'+idForm).submit();
-	    } else {
+	    } else {	    	
 	    	$('#errores').text("");
+	    	$('#errores').show();//Estilo Nuevo
 		    for(var i=0; i < nodos.length; i++) { 
-			    $('#errores').append( '<div>* ' + nodos[i].firstChild.nodeValue + '</div>');
+			    $('#errores').append( '<div><b>* ' + nodos[i].firstChild.nodeValue + '</b></div>');
 		    }
 		 	
 		 	posValidar();
@@ -47,7 +49,7 @@
 			$("#enviar").removeAttr('disabled'); 
 		}
 
-		//muevo el cursor hasta donde están definidos los errores
+		//muevo el cursor hasta donde estï¿½n definidos los errores
 		moverAErrores();
 	}
 

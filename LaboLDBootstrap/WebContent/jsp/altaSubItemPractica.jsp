@@ -13,15 +13,37 @@
 	}
 </script>
 
+<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>--> <!-- Estilo Viejo -->
 
-<div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>
-<%-- errores de validaciones AJAX --%>
-<div id="errores" class="rojoAdvertencia">${error}</div>
+<!-- Estilo Nuevo -->
+<c:if test="${exitoGrabado != null}">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
+		<tr>
+			<td>
+				<div id="exitoGrabado" class="alert alert-success"><b>${exitoGrabado}</b></div>
+			</td>
+		</tr>
+	</table>
+</c:if>	
+<!-- Estilo Nuevo -->
+
+<!--<div id="errores" class="rojoAdvertencia">${error}</div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="errores" class="alert alert-danger" style="display: none"></div>
+			</td>
+		</tr>
+	</table>	
+<!-- Estilo Nuevo -->
 
 <html:form action="grupoPractica" styleId="subItemPracticaFormId" onsubmit="javascript:submitir();">
 
 	<html:hidden property="metodo" value="altaSubItemPractica" />
 	
+	<%-- 
 	<table border="0" class="cuadrado" align="center" width="60%"
 		cellpadding="2">
 		<tr>
@@ -74,6 +96,74 @@
 		<tr>
 			<td height="10" colspan="2"></td>
 		</tr>
+	</table>
+	--%>
+
+	<!-- Nuevo Estilo -->  
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="2" class="tituloTabla">
+							Alta de SubItem Práctica
+						</td>
+					</tr>		
+					<tr>
+						<td height="20" colspan="2"></td>
+					</tr>
+					<tr>
+						<td width="40%" class="fontNegritaRightBootstrap">Grupo Practica</td>
+						<td align="left">
+							<select id="grupoPractica" class="botonerab" name="subItemPracticaDTO.grupoPractica.id">
+								<option value="-1">
+									Seleccione un Grupo...
+								</option>		
+								<c:forEach items="${listaGrupos}" var="grupo">
+									<option value="${grupo.id}">
+										<c:out value="${grupo.nombre}"></c:out>
+									</option>
+								</c:forEach>										
+							</select>
+						</td>
+					</tr>				
+					<tr>
+						<td width="40%" class="fontNegritaRightBootstrap">Nombre SubItem</td>
+						<td align="left">
+							<html:text styleClass="botonerab" property="subItemPracticaDTO.nombre" value="" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
+						</td>
+					</tr>
+					
+					<tr>
+						<td width="40%" class="fontNegritaRightBootstrap">Código Faba</td>
+						<td align="left">
+							<html:text styleClass="botonerab" property="subItemPracticaDTO.codigoFaba" value="" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
+						</td>
+					</tr>		
+					<tr>
+						<td height="15" colspan="2"></td>
+					</tr>
+				</table>
+				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
+					<tr>
+						<td height="10"></td>
+					</tr>			
+					<tr>
+						<td align="center">
+							<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Aceptar" onclick="javascript:submitir();">									
+						</td>
+					</tr>
+					<tr>
+						<td height="20"></td>
+					</tr>									
+				</table>				
+			</div>
+		</td>
+	</tr>
 	</table>
 
 </html:form>

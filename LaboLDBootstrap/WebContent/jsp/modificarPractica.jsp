@@ -79,7 +79,17 @@
 	
 </script>
 
-<div id="errores" class="rojoAdvertencia">${error}</div>
+<!--<div id="errores" class="rojoAdvertencia">${error}</div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="errores" class="alert alert-danger" style="display: none"></div>
+			</td>
+		</tr>
+	</table>	
+<!-- Estilo Nuevo -->
 
 <html:form action="practica" styleId="practicaFormId">
 	<html:hidden property="metodo" value="modificacionPractica"/>
@@ -94,7 +104,8 @@
 			<html:hidden property="practicaDTO.subItemPracticaDTO.id" value="0"/>
 		</c:otherwise>		
 	</c:choose>
-	
+
+<%-- 
 	<table border="0" class="cuadrado" align="center" width="60%" cellpadding="2">
 		<tr>
 			<td colspan="2"  class="azulAjustado" >Modificación de Práctica</td>
@@ -262,7 +273,194 @@
 			<td height="10" colspan="2"></td>
 		</tr>									
 	</table>
-
+--%>	
+	
+	<!-- Nuevo Estilo -->  
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="2" class="tituloTabla">
+							Modificación de Práctica
+						</td>
+					</tr>
+					
+					
+					<tr>
+						<td height="20" colspan="2"></td>
+					</tr>				
+					<tr>
+						<td class="fontNegritaRightBootstrap" width="40%">Nombre</td>
+						<td align="left">
+							<html:text property="practicaDTO.nombre" value="${practica.nombre}" styleClass="botonerab" styleId="nombre" size="40"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="fontNegritaRightBootstrap" width="40%">Orden</td>
+						<td align="left">
+							<html:text property="practicaDTO.orden" value="${practica.orden}" styleClass="botonerab" styleId="nombre"/>
+						</td>
+					</tr>		
+					<tr>
+						<td class="fontNegritaRightBootstrap" width="40%">Unidad</td>
+						<td align="left">
+							<html:text property="practicaDTO.unidad" value="${practica.unidad}" styleClass="botonerab" styleId="nombre"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="fontNegritaRightBootstrap" width="40%">Metodo</td>
+						<td align="left">
+							<html:text property="practicaDTO.metodo" value="${practica.metodo}" styleClass="botonerab" styleId="nombre"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="fontNegritaRightBootstrap" width="40%">Unidad Bioquimica</td>
+						<td align="left">
+							<html:text property="practicaDTO.unidadBioquimica" value="${practica.unidadBioquimica}" styleClass="botonerab" styleId="nombre"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="fontNegritaRightBootstrap" width="40%">Código Faba</td>
+						<td align="left">
+							<html:text property="practicaDTO.codigoFaba" value="${practica.codigoFaba}" styleClass="botonerab" styleId="nombre"/>
+						</td>
+					</tr>							
+					<tr>
+						<td colspan="2" class="fontNegritaCenterBootstrap">
+							<input type="hidden" name="checkValor" value="SV" id="idCheckValor">
+							<c:choose>
+								<c:when test="${practica.valorReferencia != null}">
+									<input type="radio" name="valores" onchange="cambiarValores();" value="SV">Sin Valor
+									<input type="radio" name="valores" onchange="cambiarValores();" value="DH">Valores Desde/Hasta
+									<input type="radio" name="valores" onchange="cambiarValores();" value="Ref" checked="checked">Valor Referencia
+									<input type="radio" name="valores" onchange="cambiarValores();" value="Libre">Valor Referencia Libre
+									<script type="text/javascript">
+										var tr = "trValorReferencia"
+									</script>
+								</c:when>
+								<c:when test="${practica.valorNormalDesde != null}">
+									<input type="radio" name="valores" onchange="cambiarValores();" value="SV">Sin Valor
+									<input type="radio" name="valores" onchange="cambiarValores();" value="DH" checked="checked">Valores Desde/Hasta
+									<input type="radio" name="valores" onchange="cambiarValores();" value="Ref">Valor Referencia
+									<input type="radio" name="valores" onchange="cambiarValores();" value="Libre">Valor Referencia Libre
+									<script type="text/javascript">
+										var tr = "trValorDesdeHasta";
+									</script>						
+								</c:when>
+								<c:when test="${practica.valorRefLibre != null}">
+									<input type="radio" name="valores" onchange="cambiarValores();" value="SV">Sin Valor
+									<input type="radio" name="valores" onchange="cambiarValores();" value="DH">Valores Desde/Hasta
+									<input type="radio" name="valores" onchange="cambiarValores();" value="Ref">Valor Referencia
+									<input type="radio" name="valores" onchange="cambiarValores();" value="Libre" checked="checked">Valor Referencia Libre
+									<script type="text/javascript">
+										var tr = "trTextArea";
+									</script>						
+								</c:when>					
+								<c:otherwise>
+									<input type="radio" name="valores" onchange="cambiarValores();" value="SV" checked="checked">Sin Valor
+									<input type="radio" name="valores" onchange="cambiarValores();" value="DH">Valores Desde/Hasta
+									<input type="radio" name="valores" onchange="cambiarValores();" value="Ref">Valor Referencia
+									<input type="radio" name="valores" onchange="cambiarValores();" value="Libre">Valor Referencia Libre
+									<script type="text/javascript">
+										var tr = "";
+									</script>					
+								</c:otherwise>						
+							</c:choose>		
+						</td>
+					</tr>	
+					
+					<tr style="display: none" id="trValorDesdeHasta">
+						<td colspan="2">
+							<table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">		
+								<tr>
+									<td width="40%" class="botoneralNegritaRight">Valor Normal Desde</td>
+									<td align="left">
+										<html:text styleClass="botonerab DH" property="practicaDTO.valorNormalDesde" value="${practica.valorNormalDesde}" 
+												styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
+									</td>
+								</tr>
+								<tr>
+									<td width="40%" class="botoneralNegritaRight">Valor Normal Hasta</td>
+									<td align="left">
+										<html:text styleClass="botonerab DH" property="practicaDTO.valorNormalHasta" value="${practica.valorNormalHasta}" 
+												styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
+									</td>
+								</tr>
+							</table>			
+						</td>
+					</tr>			
+					<tr style="display: none" id="trValorReferencia">
+						<td colspan="2">
+							<table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">										
+								<tr>
+									<td width="40%" class="botoneralNegritaRight">Valor de Referencia</td>
+									<td align="left">
+										<html:text styleClass="botonerab refe" property="practicaDTO.valorReferencia" value="${practica.valorReferencia}" 
+												styleId="nombre" onkeypress="return evitarAutoSubmit(event)" />
+									</td>
+								</tr>		
+								<tr>
+									<td width="40%" class="botoneralNegritaRight">Mayor/Menor</td>
+									<td align="left">
+										<c:choose>
+											<c:when test="${practica.mayorMenor == '<'}">
+												<input type="hidden" class="refe" name="practicaDTO.mayorMenor" value="<" id="idMayorMenor">
+												<input type="radio" name="referencia" onchange="cambiarMayorMenor();"
+													value="mayor" id="radioMayor">Mayor
+												<input type="radio" name="referencia" checked="checked" onchange="cambiarMayorMenor();" 
+													value="menor" id="radioMenor">Menor
+											</c:when>
+											<c:otherwise>
+												<input type="hidden" class="refe" name="practicaDTO.mayorMenor" value=">" id="idMayorMenor">
+												<input type="radio" name="referencia" checked="checked" onchange="cambiarMayorMenor();"
+													value="mayor" id="radioMayor">Mayor
+												<input type="radio" name="referencia" onchange="cambiarMayorMenor();" value="menor"
+												 	id="radioMenor">Menor								
+											</c:otherwise>	
+										</c:choose>		
+									</td>
+								</tr>		
+							</table>			
+						</td>
+					</tr>		
+			
+					<tr style="display: none" id="trTextArea">
+						<td colspan="2">
+							<table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">										
+								<tr>
+									<td align="center">
+										<textarea id="idTextArea" rows="5" cols="60" name="practicaDTO.valorRefLibre">${practica.valorRefLibre}</textarea>
+									</td>
+								</tr>		
+							</table>			
+						</td>
+					</tr>
+												
+					<tr>
+						<td height="15" colspan="2"></td>
+					</tr>
+				</table>
+				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
+					<tr>
+						<td height="10"></td>
+					</tr>			
+					<tr>
+						<td align="center">
+							<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Aceptar" onclick="javascript:submitir();">
+							<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Volver" onclick="javascript:volver();">									
+						</td>
+					</tr>
+					<tr>
+						<td height="20"></td>
+					</tr>									
+				</table>				
+			</div>
+		</td>
+	</tr>
+	</table>
 </html:form>
 <script type="text/javascript">
 

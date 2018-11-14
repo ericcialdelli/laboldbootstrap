@@ -14,18 +14,40 @@
 </script>
 
 
-<div id="exitoGrabado" class="verdeExito">${mensaje}</div>
+<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+<c:if test="${mensaje != null}">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="80%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
+		<tr>
+			<td>
+				<div id="exitoGrabado" class="alert alert-success"><b>${mensaje}</b></div>
+			</td>
+		</tr>
+	</table>
+</c:if>	
+<!-- Estilo Nuevo -->
+
 <%-- errores de validaciones AJAX --%>
 
- <div id="errores" class="rojoAdvertencia">${error}</div>
-	
+<!--<div id="errores" class="rojoAdvertencia">${error}</div>--> <!-- Estilo Viejo -->
 
+<!-- Estilo Nuevo -->
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="80%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="errores" class="alert alert-danger" style="display: none"></div>
+			</td>
+		</tr>
+	</table>	
+<!-- Estilo Nuevo -->
+ 
 
 <html:form action="backup" styleId="backupFormId" onsubmit="javascript:submitir();">
 
 	<html:hidden property="metodo" value="realizarBackup" />
 	
-	  
+	 <%--  
 	<table border="0" class="cuadrado" align="center" width="80%"
 		cellpadding="2">
 		<tr>
@@ -56,11 +78,10 @@
 			<td height="10" colspan="2"></td>
 		</tr>
 	</table>
-
+--%>
 
 <!-- Nuevo Estilo -->
-<!--  
-	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="80%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
 			<div class="well-sm-bootstrap well-bootstrap">
@@ -68,30 +89,22 @@
 				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
 					<tr>
 						<td colspan="2" class="tituloTabla">
-							Alta Obra Social
+							Realizar Backup
 						</td>
-					</tr>
+					</tr>		
 					<tr>
 						<td height="20" colspan="2"></td>
 					</tr>
 					<tr>
-						<td width="40%" class="fontNegritaRightBootstrap">Nombre</td>
+						<td width="14%" class="botoneralNegritaRight">Nombre</td>
 						<td align="left">
-							<html:text styleClass="botonerab" property="obraSocialDTO.nombre" value="" 
-									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
-						</td>
-					</tr>
-					<tr>
-						<td width="40%" class="fontNegritaRightBootstrap">Valor Unidad Bioquimica</td>
-						<td align="left">						
-							<html:text styleClass="botonerab" property="obraSocialDTO.valorUnidadBioquimica" value="" 
-									styleId="valor" onkeypress="return evitarAutoSubmit(event)"/>						
-									
+							<html:text styleClass="botonerab" property="nombre" value="${nombreArchivo}" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)" size="110"/>
 						</td>
 					</tr>		
-
+					
 					<tr>
-						<td height="10" colspan="2"></td>
+						<td height="20" colspan="2"></td>
 					</tr>
 				</table>
 
@@ -105,14 +118,13 @@
 						</td>
 					</tr>
 					<tr>
-						<td height="10"></td>
+						<td height="20"></td>
 					</tr>									
 				</table>
 			</div>
 		</td>
 	</tr>
-	</table>			
--->
+	</table>				
 </html:form>
 <script type="text/javascript">
 

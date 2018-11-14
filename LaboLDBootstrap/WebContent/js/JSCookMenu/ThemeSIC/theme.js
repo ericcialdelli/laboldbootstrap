@@ -1,6 +1,6 @@
 
 // directory of where all the images are
-var cmThemeSICBase = '/LaboLD/js/JSCookMenu/ThemeSIC/';
+var cmThemeSICBase = '/LaboLDBootstrap/js/JSCookMenu/ThemeSIC/';
 
 
 var cmThemeSIC=

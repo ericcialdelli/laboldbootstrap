@@ -17,7 +17,7 @@
 		<put name="menu" value="/jsp/tiles/menu.jsp" />
 		
 		<!-- Nuevo Estilo -->
-		<!--<put name="menu" value="/menu.do?metodo=cargarMenu" />-->
+		<!--  <put name="menu" value="/menu.do?metodo=cargarMenu" />-->
 		<put name="footer" value="/jsp/tiles/footer.jsp" />
 		<put name="body" value="doc.portal.body" />
 	</definition>

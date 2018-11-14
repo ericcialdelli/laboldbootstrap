@@ -9,19 +9,43 @@
 <script type="text/javascript">
 
 	function submitir(){
+		$("#tablaExitoGrabado").hide();//Estilo Nuevo
 		validarForm("medicoFormId","../medico","validarMedicoForm","MedicoForm");
 	}
 </script>
 
 
-<div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>
-<%-- errores de validaciones AJAX --%>
-<div id="errores" class="rojoAdvertencia">${error}</div>
+<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+<c:if test="${exitoGrabado != null}">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="65%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
+		<tr>
+			<td>
+				<div id="exitoGrabado" class="alert alert-success"><b>${exitoGrabado}</b></div>
+			</td>
+		</tr>
+	</table>
+</c:if>	
+<!-- Estilo Nuevo -->
+
+<!--<div id="errores" class="rojoAdvertencia">${error}</div>--> <!-- Estilo Viejo -->
+
+<!-- Estilo Nuevo -->
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="65%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="errores" class="alert alert-danger" style="display: none"></div>
+			</td>
+		</tr>
+	</table>	
+<!-- Estilo Nuevo -->
 
 <html:form action="medico" styleId="medicoFormId" onsubmit="javascript:submitir();">
 
 	<html:hidden property="metodo" value="altaMedico" />
-	  
+	
+	<!--    
 	<table border="0" class="cuadrado" align="center" width="60%"
 		cellpadding="2">
 		<tr>
@@ -79,9 +103,8 @@
 			<td height="10" colspan="2"></td>
 		</tr>
 	</table>
-	
-	<!-- Nuevo Estilo -->
-	<!--  
+	-->
+	<!-- Nuevo Estilo -->  
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -132,7 +155,7 @@
 						</td>
 					</tr>					
 					<tr>
-						<td height="10" colspan="2"></td>
+						<td height="15" colspan="2"></td>
 					</tr>
 				</table>	
 
@@ -146,13 +169,13 @@
 						</td>
 					</tr>
 					<tr>
-						<td height="10"></td>
+						<td height="20"></td>
 					</tr>									
 				</table>
 			</div>
 		</td>
 	</tr>
-	</table>-->
+	</table>
 
 </html:form>
 <script type="text/javascript">
