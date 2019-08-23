@@ -19,13 +19,13 @@
 </script>
 	<c:choose>
 		<c:when test="${fn:length(listaEstudios)>0}">
-			<table border="0" class="cuadrado" align="center" width="80%" cellpadding="2">
+			<table border="0" class="cuadradoLista" align="center" width="80%" cellpadding="2">
 				<tr>
-					<td class="subTituloTabla">Número</td>
+					<td class="subTituloTabla rounded-left">Número</td>
 					<td class="subTituloTabla">Paciente</td>
 					<td class="subTituloTabla">Fecha</td>
 					<td class="subTituloTabla">Estado</td>
-					<td class="subTituloTabla"></td>
+					<td class="subTituloTabla rounded-right"></td>
 				</tr>
 				<%String clase=""; %>
 				<c:forEach items="${listaEstudios}" var="estudio" varStatus="i">

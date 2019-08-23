@@ -34,8 +34,6 @@
 	}
 
 	function recuperarEstudio(nroProtocolo){
-		//var urlSeleccionGuia = $('#paramUrlSeleccionGuia').val();
-		//parent.location=contextRoot() + "/guia.do?metodo="+urlSeleccionGuia+"&id="+id;
 		
 		var forward = $("#forward").val();
 		parent.location=contextRoot() + "/estudio.do?metodo="+forward+"&nroProtocolo="+nroProtocolo;
@@ -68,20 +66,21 @@
 		
 		clase = $('#'+idTr).attr("class");
 		$('#'+idTr).removeClass(clase);
-		$('#'+idTr).addClass("verdeSeleccionFila");		
+		//$('#'+idTr).addClass("verdeSeleccionFila");
+		$('#'+idTr).addClass("verdeSeleccionFilaLista");
 	}
 
 	function despintarFila(idTr){
 		
 		$('#'+idTr).addClass(clase);
-		$('#'+idTr).removeClass("verdeSeleccionFila");
+		//$('#'+idTr).removeClass("verdeSeleccionFila");
+		$('#'+idTr).removeClass("verdeSeleccionFilaLista");
 	}	
 	
 </script>
 
-<!--  <div id="exitoGrabado" class="verdeExito"><br>${exitoGrabado}<br></div>-->
 <c:if test="${exitoGrabado != null}">
-	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="70%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
 		<tr>
 			<td>
 				<div id="exitoGrabado" class="alert alert-success"><b>${exitoGrabado}</b></div>
@@ -90,8 +89,7 @@
 	</table>
 </c:if>	
 
-<!--  <div id="errores" class="rojoAdvertencia"><br>${error}<br></div>-->
-<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0">
+<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="70%" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
 			<div id="errores" class="alert alert-danger" style="display: none"></div>
@@ -100,144 +98,61 @@
 </table>
 
 <input type="hidden" value="${forward}" id="forward">
-<%-- 
-<table border="0" class="cuadrado" align="center" width="60%" cellpadding="2">
-	<tr>
-		<td class="azulAjustado">${titulo}</td>
-	</tr>
-	<tr>
-		<td height="20"></td>
-	</tr>
-	
-	<tr>
-		<td>		
-			<table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">
-				<tr>
-					<td height="20"></td>
-				</tr>
-				<tr>
-					<td width="30%" class="botoneralNegritaRight">
-						Nro de Protocolo
-					</td>
-					<td width="10%">
-						
-					</td>						
-					<td align="left">
-						<input class="botonerab" type="text" size="20" name="estudioDTO.numero" 
-								onkeypress="javascript:esNumerico(event); return evitarAutoSubmit(event)" id="nroProtocolo">
-						<input class="botonerab" type="button" value="Buscar" onclick="javascript:submitir();">
-					</td>	
-								
-				</tr>				
-				<tr>
-					<td height="20"></td>
-				</tr>
-			</table>						
-		</td>
-	</tr>
-	
-	<tr>
-		<td>	
-			<table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">
-				<tr>
-					<td height="20"></td>
-				</tr>				
-				
-				<tr>
-					<td width="30%" class="botoneralNegritaRight">
-						Paciente
-					</td>
-					<td width="10%">
-						
-					</td>						
-					<td align="left">
-						<select id="selectPacientes" class="botonerab" onchange="cargarEstudios()">
-							<option value="-1">Seleccione un Paciente...</option>
-							<c:forEach items="${listaPacientes}" var="paciente" varStatus="i">
-								<option value="${paciente.id}">
-									${paciente.apellido}, ${paciente.nombre}
-								</option>									
-							</c:forEach>
-						</select>
-					</td>	
-								
-				</tr>				
-				<tr>
-					<td height="20"></td>
-				</tr>				
-			</table>		
-		</td>
-	</tr>	
-	
-	<tr>
-		<td height="10"></td>
-	</tr>	
-	
-	<tr>
-		<td>
-			<div id="bloqueEstudios"></div>
-		</td>
-	</tr>
-	<tr>
-		<td height="10"></td>
-	</tr>	
-</table>--%>
 
-<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="70%" cellpadding="2" cellspacing="0">
 <tr>
 	<td>
 		<div class="well-sm-bootstrap well-bootstrap">
 		
 			<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
 				<tr>
-					<td class="tituloTabla">${titulo}</td>
+					<td class="tituloTablaBoots">${titulo}</td>
 				</tr>
 				<tr>
 					<td height="20"></td>
 				</tr>
 				<tr>
 					<td>		
-						<table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">
+						<table border="0" class="cuadrado" align="center" width="80%" cellpadding="2">
 							<tr>
-								<td height="20"></td>
+								<td height="20" colspan="5"></td>
 							</tr>
 							<tr>
-								<td width="30%" class="botoneralNegritaRight">
+								<td width="30%" align="right" class="labelForm">
 									Nro de Protocolo
 								</td>
-								<td width="10%">
-									
-								</td>						
+								<td width="3%"></td>						
 								<td align="left">
-									<input class="botonerab" type="text" size="20" name="estudioDTO.numero" 
-											onkeypress="javascript:esNumerico(event); return evitarAutoSubmit(event)" id="nroProtocolo">
-									<!--  <input class="botonerab" type="button" value="Buscar" onclick="javascript:submitir();">-->
-									<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Buscar" onclick="javascript:submitir();">
+								  <div class="input-group-append">
+									  <input type="text" class="form-control form-control-sm" aria-describedby="button-addon2" 
+									  		 onkeypress="javascript:esNumerico(event); return evitarAutoSubmit(event)" id="nroProtocolo" name="estudioDTO.numero" >								  
+								    <button class="btn btn-sm btn-primary" type="button" id="button-addon2" onclick="javascript:submitir();">Buscar</button>
+								  </div>								
 								</td>	
-											
+								<td width="25%"></td>			
 							</tr>				
 							<tr>
-								<td height="20"></td>
+								<td height="20" colspan="5"></td>
 							</tr>
 						</table>						
 					</td>
 				</tr>
 				<tr>
 					<td>	
-						<table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">
+						<table border="0" class="cuadrado" align="center" width="80%" cellpadding="2">
 							<tr>
-								<td height="20"></td>
+								<td height="20" colspan="4"></td>
 							</tr>				
 							
 							<tr>
-								<td width="30%" class="botoneralNegritaRight">
+								<td width="30%" align="right" class="labelForm">
 									Paciente
 								</td>
-								<td width="10%">
+								<td width="3%">
 									
 								</td>						
 								<td align="left">
-									<select id="selectPacientes" class="botonerab" onchange="cargarEstudios()">
+									<select id="selectPacientes" class="custom-select custom-select-sm" onchange="cargarEstudios()">
 										<option value="-1">Seleccione un Paciente...</option>
 										<c:forEach items="${listaPacientes}" var="paciente" varStatus="i">
 											<option value="${paciente.id}">
@@ -246,10 +161,10 @@
 										</c:forEach>
 									</select>
 								</td>	
-											
+								<td width="22%"></td>			
 							</tr>				
 							<tr>
-								<td height="20"></td>
+								<td height="20" colspan="4"></td>
 							</tr>				
 						</table>		
 					</td>
@@ -263,7 +178,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td height="10"></td>
+					<td height="20"></td>
 				</tr>	
 			</table>
 

@@ -181,7 +181,7 @@ public abstract class ProviderDominio {
 	}	
 	
 	//Se usa en la modificacion de la Practica
-	public static Practica getPractica(Practica practica, PracticaDTO practicaDTO){
+	public static Practica getPractica(Practica practica, GrupoPractica grupo, SubItemPractica subItem, PracticaDTO practicaDTO){
 
 		practica.setNombre(practicaDTO.getNombre());
 		practica.setUnidad(practicaDTO.getUnidad());
@@ -194,6 +194,8 @@ public abstract class ProviderDominio {
 		practica.setMayorMenor(practicaDTO.getMayorMenor());
 		practica.setValorRefLibre(practicaDTO.getValorRefLibre());
 		practica.setOrden(practicaDTO.getOrden());
+		practica.setGrupoPractica(grupo);
+		practica.setSubItemPractica(subItem);		
 		
 		return practica;
 	}		

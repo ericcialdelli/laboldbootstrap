@@ -13,8 +13,13 @@
 		$('#apellidoMedico').val("");
 		$('#telefonoMedico').val("");
 		$('#matriculaMedico').val("");
-		$('#especialidadMedico').val("");			
-		$('#dialogoMedico').dialog({title: 'Agregar Médico', height: 350, width: 500, modal: true});
+		$('#especialidadMedico').val("");
+		
+		$('#idTituloAltaMedico').show();
+		$('#idTituloModificacionMedico').hide();
+		$('#idTablaError').hide();
+		
+		//$('#dialogoMedico').dialog({title: 'Agregar Mï¿½dico', height: 350, width: 500, modal: true});		
 	}
 
 	function agregarMedico(){
@@ -35,9 +40,10 @@
 	    } else {
 	    	$('#textoErrorMedico').text("");
 		    for(var i=0; i < nodos.length; i++) { 
-			    $('#textoErrorMedico').append( '<div>* ' + nodos[i].firstChild.nodeValue + '</div>');
+			    $('#textoErrorMedico').append( '<div><b>* ' + nodos[i].firstChild.nodeValue + '</b></div>');
 		    }
-		    $('#textoErrorMedico').show();
+		    //$('#textoErrorMedico').show();
+		    $('#idTablaError').show();
 	    }
 	}
 
@@ -66,16 +72,19 @@
 //------Modificar Medico---------//
 	
 	function abrirVentantModificarMedico(){
-		MedicoFachada.getMedico($('#idMedico').val(),mostrarMedicoModificacionCallback);
 		
+		$('#idTituloAltaMedico').hide();
+		$('#idTituloModificacionMedico').show();
+		MedicoFachada.getMedico($('#idMedico').val(),mostrarMedicoModificacionCallback);		
 	}
 
 	function mostrarMedicoModificacionCallback(medico){
 		
 		$('#textoErrorMedico').text("");
+		$('#idTablaError').hide();
 		$('#tdAceptarMedico').hide();
 		$('#tdModificarMedico').show();
-		$('#dialogoMedico').dialog({title: 'Modificar Medico', height: 350, width: 500, modal: true});
+		//$('#dialogoMedico').dialog({title: 'Modificar Medico', height: 350, width: 500, modal: true});
 		
 		$('#medico').val(medico.id);
 		$('#nombreMedico').val(medico.nombre);
@@ -103,16 +112,20 @@
 	    } else {
 	    	$('#textoErrorMedico').text("");
 		    for(var i=0; i < nodos.length; i++) { 
-			    $('#textoErrorMedico').append( '<div>* ' + nodos[i].firstChild.nodeValue + '</div>');
+			    $('#textoErrorMedico').append( '<div><b>* ' + nodos[i].firstChild.nodeValue + '</b></div>');
 		    }
-		    $('#textoErrorMedico').show();
+		    //$('#textoErrorMedico').show();
+		    $('#idTablaError').show();
 	    }
 	}
 
 	function cerrarVentanaAgregarMedico(){
 
-		$('#textoErrorMedico').hide();		
-		$('#dialogoMedico').dialog( "close" );
+		$('#textoErrorMedico').text("");
+		$('#idTablaError').hide();		
+		//$('#dialogoMedico').dialog( "close" );
+		//$('#dialogoMedico2').dialog( "close" );
+		$("#ventanaAgregarMedico .close").click()
 	}
 		
 //------Fin Modificar Medico---------//

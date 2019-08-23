@@ -25,13 +25,15 @@
 		
 		clase = $('#'+idTr).attr("class");
 		$('#'+idTr).removeClass(clase);
-		$('#'+idTr).addClass("verdeSeleccionFila");		
+		//$('#'+idTr).addClass("verdeSeleccionFila");
+		$('#'+idTr).addClass("verdeSeleccionFilaLista");		
 	}
 
 	function despintarFila(idTr){
 		
 		$('#'+idTr).addClass(clase);
-		$('#'+idTr).removeClass("verdeSeleccionFila");
+		//$('#'+idTr).removeClass("verdeSeleccionFila");
+		$('#'+idTr).removeClass("verdeSeleccionFilaLista");
 	}
 	
 </script>
@@ -51,59 +53,13 @@
 	</table>
 </c:if>	
 <!-- Estilo Nuevo -->
-
-<%-- 
-<table border="0" class="cuadrado" align="center" width="70%"
-	cellpadding="2">
-	<tr>
-		<td class="azulAjustado">Modificación de Médicos</td>
-	</tr>
-	<tr>
-		<td height="20"></td>
-	</tr>
-	<tr>
-		<td>
-			<table border="0" class="cuadrado" align="center" width="70%" cellpadding="2">
-				<tr>
-					<td class="azulAjustado">Apellido</td>
-					<td class="azulAjustado">Nombre</td>
-					<td class="azulAjustado">Matricula</td>
-					<td class="azulAjustado"></td>
-				</tr>
-				<%String clase=""; %>
-				<c:forEach items="${medicos}" var="medico" varStatus="i">
-					<%clase=(clase.equals("")?"par":""); %>
-
-					<tr class="<%=clase%>" onmouseover="javascript:pintarFila('idTr<c:out value='${i.index}'></c:out>');"
-						onmouseout="javascript:despintarFila('idTr<c:out value='${i.index}'></c:out>');"
-						id="idTr<c:out value='${i.index}'></c:out>">					
-										
-						<td>${medico.apellido}</td>
-						<td>${medico.nombre}</td>
-						<td>${medico.matricula}</td>
-						<td>
-							<a href="javascript:recuperarMedico(${medico.id});">
-								Seleccionar
-							</a>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td height="10"></td>
-	</tr>	
-</table>--%>
-
-
-<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="70%"
-	cellpadding="2">
+<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="70%" cellpadding="2">
 	
 	<tr>
 		<td>
 			<div class="well-sm-bootstrap well-bootstrap">
 	
+	<%--
 				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">	
 	
 					<tr>
@@ -145,7 +101,53 @@
 					<tr>
 						<td height="10"></td>
 					</tr>
+				</table>	
+	--%>
+	
+	   
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">	
+	
+					<tr>
+						<td class="tituloTablaBoots">Modificación de Médicos</td>
+					</tr>
+					<tr>
+						<td height="20"></td>
+					</tr>
+					<tr>
+						<td>
+							<table border="0" class="cuadradoLista" align="center" width="70%" cellpadding="2">
+								<tr>
+									<td class="subTituloTabla rounded-left">Apellido</td>
+									<td class="subTituloTabla">Nombre</td>
+									<td class="subTituloTabla">Matricula</td>
+									<td class="subTituloTabla rounded-right"></td>
+								</tr>
+								<%String clase=""; %>
+								<c:forEach items="${medicos}" var="medico" varStatus="i">
+									<%clase=(clase.equals("")?"par":""); %>
+				
+									<tr class="<%=clase%>" onmouseover="javascript:pintarFila('idTr<c:out value='${i.index}'></c:out>');"
+										onmouseout="javascript:despintarFila('idTr<c:out value='${i.index}'></c:out>');"
+										id="idTr<c:out value='${i.index}'></c:out>">					
+														
+										<td>${medico.apellido}</td>
+										<td>${medico.nombre}</td>
+										<td>${medico.matricula}</td>
+										<td>
+											<a href="javascript:recuperarMedico(${medico.id});">
+												Seleccionar
+											</a>
+										</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="10"></td>
+					</tr>
 				</table>
+				
 			</div>
 		</td>
 	</tr>						

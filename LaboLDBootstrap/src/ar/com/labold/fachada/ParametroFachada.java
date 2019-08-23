@@ -33,6 +33,11 @@ public class ParametroFachada {
 		return parametroDAO.getNombreCarpetaMotorBD();
 	}
 	
+	public String getPeriodicidadBackup() {
+		
+		return parametroDAO.getPeriodicidadBackup();
+	}	
+	
 	public List<Parametro> getParametros(){
 		
 		return parametroDAO.getParametros();

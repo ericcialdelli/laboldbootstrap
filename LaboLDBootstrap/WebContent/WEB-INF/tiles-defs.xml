@@ -14,10 +14,10 @@
 	<definition name=".base" path="/jsp/tiles/layout.jsp">
 		<put name="title" value="Main Layout" />
 		<put name="header" value="/jsp/tiles/header.jsp" />
-		<put name="menu" value="/jsp/tiles/menu.jsp" />
+		<!--  <put name="menu" value="/jsp/tiles/menu.jsp" />-->
 		
 		<!-- Nuevo Estilo -->
-		<!--  <put name="menu" value="/menu.do?metodo=cargarMenu" />-->
+		<put name="menu" value="/menu.do?metodo=cargarMenu" />
 		<put name="footer" value="/jsp/tiles/footer.jsp" />
 		<put name="body" value="doc.portal.body" />
 	</definition>

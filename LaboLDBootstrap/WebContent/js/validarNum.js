@@ -1,4 +1,4 @@
-//Función que permite que sólo se ingresen números si el campo es de tipo numerico
+//Funciï¿½n que permite que sï¿½lo se ingresen nï¿½meros si el campo es de tipo numerico
 var type;
 if (navigator.userAgent.indexOf("Opera")!=-1 && document.getElementById) type="OP"; 
 if (document.all) type="IE"; 
@@ -32,6 +32,29 @@ function esNumerico(event) {
 	}
 }
 
+function validarNumeroConDecimal(e, field) {
+
+	key = e.keyCode ? e.keyCode : e.which
+	// backspace
+	if (key == 8) return true
+	// 0-9
+	if (key > 47 && key < 58) {
+
+	    if (field.value == "") return true
+	    regexp = /.[0-9]{20}$/
+		return !(regexp.test(field.value))
+	}
+
+	// .
+	if (key == 46) {
+	    if (field.value == "") return false
+	    regexp = /^[0-9]+$/
+		return regexp.test(field.value)
+	}
+	// other key
+	return false
+}
+
 function esNumericoConDecimal(event) {
 	var ok;
  	var key;
@@ -55,7 +78,7 @@ function esDouble(ob) {
 	
 		var valor = parseFloat(ob.value);	
 		if (isNaN(valor)) { 
-			alert("No es un valor válido");
+			alert("No es un valor vï¿½lido");
 			ob.focus();
 		} else ob.value = valor;
 	}

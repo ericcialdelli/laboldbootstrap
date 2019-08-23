@@ -28,6 +28,12 @@ public class ParametroDAO extends HibernateDaoSupport {
 		return p.getValor();
 	}
 	
+	public String getPeriodicidadBackup(){
+
+		Parametro p = this.getParametro(3L);
+		return p.getValor();		
+	}	
+	
 	public List<Parametro> getParametros(){
 		
 		Criteria criteria = getSession().createCriteria(Parametro.class);

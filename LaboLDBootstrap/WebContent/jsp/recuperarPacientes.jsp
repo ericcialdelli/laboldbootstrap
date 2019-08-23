@@ -53,10 +53,9 @@
 	
 </script>
 
-<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>-->
-
+<!-- Estilo Nuevo -->
 	<c:if test="${exitoGrabado != null}">
-		<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="65%" cellpadding="2" cellspacing="0">
+		<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="75%" cellpadding="2" cellspacing="0">
 			<tr>
 				<td>
 					<div class="alert alert-success">
@@ -67,8 +66,7 @@
 		</table>		
 	</c:if>
 
-<!-- Estilo Nuevo -->
-	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="65%" cellpadding="0" cellspacing="0">
+	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="75%" cellpadding="0" cellspacing="0">
 		<tr>
 			<td>
 				<div id="errores" class="alert alert-danger" style="display: none"></div>
@@ -76,54 +74,9 @@
 		</tr>
 	</table>	
 <!-- Estilo Nuevo -->
- <%-- 
-<table border="0" class="cuadrado" align="center" width="65%"
-	cellpadding="2">
-	<tr>
-		<td class="azulAjustado" colspan="2">
-			<c:if test="${forward=='modificacionPaciente'}">
-				Modificación de Pacientes
-			</c:if>
-			<c:if test="${forward=='eliminarPaciente'}">
-				Eliminar Paciente
-			</c:if>				
-		</td>
-	</tr>
-	<tr>
-		<td height="20" colspan="2"></td>
-	</tr>
-	<tr>
-		<td width="40%" class="botoneralNegritaRight">Paciente</td>
-		<td align="left">
-			<select id="selectPacientes" class="botonerab" onchange="cargarPaciente();">
-				<option value="-1">
-					Seleccione un Paciente...
-				</option>		
-				<c:forEach items="${listaPacientes}" var="paciente">
-					<option value="${paciente.id}">
-						<c:out value="${paciente.nombreApellidoDni}"></c:out>
-					</option>
-				</c:forEach>										
-			</select>
-		</td>
-	</tr>	
-	
-	<tr>
-		<td height="10" colspan="2"></td>
-	</tr>	
-	
-	<tr>
-		<td colspan="2">
-			<div id="bloquePacientes"></div>
-		</td>
-	</tr>	
-	<tr>
-		<td height="10" colspan="2"></td>
-	</tr>	
-</table>
---%>
+
 <!-- Nuevo Estilo -->
- 
+	<%-- 
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -170,6 +123,61 @@
 					</tr>	
 					<tr>
 						<td height="10" colspan="2"></td>
+					</tr>	
+				</table>
+			</div>
+		</td>
+	</tr>
+	</table>		
+	--%> 	
+		
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="75%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">			
+					<tr>
+						<td class="tituloTablaBoots" colspan="3">
+							<c:if test="${forward=='modificacionPaciente'}">
+								Modificación de Pacientes
+							</c:if>
+							<c:if test="${forward=='eliminarPaciente'}">
+								Eliminar Paciente
+							</c:if>				
+						</td>
+					</tr>
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>
+					<tr>
+						<td width="35%" align="right" class="labelForm">Paciente</td>
+						<td align="left">
+							<select id="selectPacientes" class="custom-select custom-select-sm" onchange="cargarPaciente();">
+								<option value="-1">
+									Seleccione un Paciente...
+								</option>		
+								<c:forEach items="${listaPacientes}" var="paciente">
+									<option value="${paciente.id}">
+										<c:out value="${paciente.nombreApellidoDni}"></c:out>
+									</option>
+								</c:forEach>										
+							</select>
+						</td>
+						<td width="25%"></td>
+					</tr>	
+					
+					<tr>
+						<td height="10" colspan="3"></td>
+					</tr>	
+					
+					<tr>
+						<td colspan="3">
+							<div id="bloquePacientes"></div>
+						</td>
+					</tr>	
+					<tr>
+						<td height="10" colspan="3"></td>
 					</tr>	
 				</table>
 			</div>

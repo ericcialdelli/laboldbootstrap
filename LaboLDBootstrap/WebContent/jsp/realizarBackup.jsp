@@ -13,9 +13,6 @@
 	}
 </script>
 
-
-<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>--> <!-- Estilo Viejo -->
-
 <!-- Estilo Nuevo -->
 <c:if test="${mensaje != null}">
 	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="80%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
@@ -26,13 +23,7 @@
 		</tr>
 	</table>
 </c:if>	
-<!-- Estilo Nuevo -->
 
-<%-- errores de validaciones AJAX --%>
-
-<!--<div id="errores" class="rojoAdvertencia">${error}</div>--> <!-- Estilo Viejo -->
-
-<!-- Estilo Nuevo -->
 	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="80%" cellpadding="0" cellspacing="0">
 		<tr>
 			<td>
@@ -46,41 +37,9 @@
 <html:form action="backup" styleId="backupFormId" onsubmit="javascript:submitir();">
 
 	<html:hidden property="metodo" value="realizarBackup" />
-	
-	 <%--  
-	<table border="0" class="cuadrado" align="center" width="80%"
-		cellpadding="2">
-		<tr>
-			<td colspan="2" class="azulAjustado">
-				Realizar Backup
-			</td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td width="14%" class="botoneralNegritaRight">Nombre</td>
-			<td align="left">
-				<html:text styleClass="botonerab" property="nombre" value="${nombreArchivo}" 
-						styleId="nombre" onkeypress="return evitarAutoSubmit(event)" size="110"/>
-			</td>
-		</tr>		
-		
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2">
-				<input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:submitir();"> 
-			</td>
-		</tr>
-		<tr>
-			<td height="10" colspan="2"></td>
-		</tr>
-	</table>
---%>
 
 <!-- Nuevo Estilo -->
+	<%-- 
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="80%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -124,7 +83,56 @@
 			</div>
 		</td>
 	</tr>
-	</table>				
+	</table>
+	--%>
+	
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="80%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="3" class="tituloTablaBoots">
+							Realizar Backup
+						</td>
+					</tr>		
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>
+					<tr>
+						<td width="15%" align="right" class="labelForm">Nombre</td>
+						<td align="left">
+							<html:text styleClass="form-control form-control-sm" property="nombre" value="${nombreArchivo}" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)" size="110"/>
+						</td>
+						<td width="10%"></td>
+					</tr>							
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>
+				</table>
+
+				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">		
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>			
+					<tr>
+						<td width="45%"></td>						
+						<td align="center">
+							<input type="button" class="btn btn-primary  btn-block" value="Aceptar" onclick="javascript:submitir();">									
+						</td>
+						<td width="45%"></td>
+					</tr>
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>												
+				</table>
+			</div>
+		</td>
+	</tr>
+	</table>	
+					
 </html:form>
 <script type="text/javascript">
 

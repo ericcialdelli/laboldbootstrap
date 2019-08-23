@@ -82,7 +82,7 @@
 -->
 
 <!-- Nuevo Estilo -->
-
+<%-- 
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -132,6 +132,63 @@
 		</td>
 	</tr>
 	</table>
+--%>
+
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="3"  class="tituloTablaBoots" >Modificación de Obra Social</td>
+					</tr>
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>				
+					<tr>
+						<td align="right" class="labelForm" width="35%">Nombre</td>
+						<td align="left">
+							<html:text property="obraSocialDTO.nombre" value="${obraSocial.nombre}" styleClass="form-control form-control-sm" styleId="nombre"/>
+						</td>
+						<td width="30%"></td>
+					</tr>
+					<tr>
+						<td align="right" class="labelForm" width="35%">Valor Unidad Bioquímica</td>
+						<td align="left">						
+							<html:text styleClass="form-control form-control-sm" property="obraSocialDTO.valorUnidadBioquimica" value="${obraSocial.valorUnidadBioquimica}" 
+									styleId="valor" onkeypress="return validarNumeroConDecimal(event, this)"/>						
+							<td width="30%"></td>		
+						</td>
+					</tr>							
+					<tr>
+						<td height="15" colspan="3"></td>
+					</tr>									
+				</table>
+
+				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
+					<tr>
+						<td height="10" colspan="4"></td>
+					</tr>			
+					<tr>
+						<td width="35%"></td>
+						<td width="15%">
+							<input type="button" class="btn btn-primary btn-block" value="Aceptar" id="enviar" onclick="javascript:submitir();">
+						</td>	
+						<td width="15%">	
+							<input type="button" class="btn btn-primary btn-block" value="Volver" id="enviar" onclick="javascript:volver();">														
+						</td>
+						<td width="35%"></td>
+					</tr>
+					<tr>
+						<td height="15" colspan="4"></td>
+					</tr>									
+				</table>
+			</div>
+		</td>
+	</tr>
+	</table>
+
 
 </html:form>
 <script type="text/javascript">

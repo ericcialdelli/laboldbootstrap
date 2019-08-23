@@ -19,38 +19,11 @@
 
 <script type="text/javascript">
 
-	/*$(function() {
-		$( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yy'});		
-	});*/
-
 	function submitir(){
 		validarForm("pacienteFormId","../paciente","validarPacienteForm","PacienteForm");
 	}
 
-	/*function cargarRolesSegunEntidad(){
-		dwr.util.removeAllOptions("idRol");
-		var data = [ { nombre:"Cargando...", id:-1 }];
-		dwr.util.addOptions("idRol", data, "id", "rol");
-
-		var idEntidad = $("select[name='usuarioDTO.entidad.id'] ").val();
-		idEntidad = (idEntidad == null)? $('#idSelectEntidad').val():idEntidad;
-		RolFachada.cargarRolesSegunEntidad(idEntidad,'${usuario.id}', cargarRolesSegunEntidadCallback);
-	}
-
-	function cargarRolesSegunEntidadCallback(roles){
-		dwr.util.removeAllOptions("idRol");
-		dwr.util.addOptions("idRol", roles,"id","rol");
-		if(''!='${usu.rol.id}'){
-			dwr.util.setValue("idRol",'${usu.rol.id}');
-		}
-	}
-
-	$(document).ready(function() {
-		cargarRolesSegunEntidad()
-		});*/
 </script>
-
-<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>--> <!-- Estilo Viejo -->
 
 <!-- Estilo Nuevo -->
 <c:if test="${exitoGrabado != null}">
@@ -64,7 +37,6 @@
 </c:if>	
 <!-- Estilo Nuevo -->
 
-<!--<div id="errores" class="rojoAdvertencia">${error}</div>--> <!-- Estilo Viejo -->
 
 <!-- Estilo Nuevo -->
 	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0">
@@ -79,111 +51,7 @@
 <html:form action="paciente" styleId="pacienteFormId">
 	<html:hidden property="metodo" value="altaPaciente"/>
 
-	<!--  <table border="0" class="cuadrado" align="center" width="60%" cellpadding="2" cellspacing="0">
-		<tr>
-			<td colspan="2"  class="azulAjustado" >Alta de Paciente</td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>				
-		<tr>
-			<td class="botoneralNegritaRight" width="40%" style="background-color: #f4f9fd">Nombre</td>
-			<td align="left" style="background-color: #f4f9fd">
-				<html:text property="pacienteDTO.nombre" value="" styleClass="botonerab" styleId="nombre"/>
-			</td>
-		</tr>	
-		<tr>
-			<td class="botoneralNegritaRight" width="40%" style="background-color: #f4f9fd">Apellido</td>
-			<td  align="left" style="background-color: #f4f9fd">
-				<html:text property="pacienteDTO.apellido" value="" styleClass="botonerab"/>			
-			</td>
-		</tr>
-		<tr>
-			<td class="botoneralNegritaRight" width="40%">Fecha de Nacimiento</td>
-			<td  align="left">
-				<input id="datepicker" class="botonerab" type="text" size="15" name="pacienteDTO.fechaNacimiento">						
-				<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>							
-			</td>
-		</tr>
-		<tr>
-			<td class="botoneralNegritaRight" width="40%">
-				DNI
-			</td>
-			<td  align="left">
-				<html:text property="pacienteDTO.dni" value="" onkeypress="javascript:esNumerico(event);" styleClass="botonerab"/>			
-			</td>
-		</tr>				
-		<tr>
-			<td class="botoneralNegritaRight" width="40%">
-				Dirección
-			</td>
-			<td  align="left">
-				<html:text property="pacienteDTO.direccion" value="" styleClass="botonerab"/>			
-			</td>
-		</tr>
-		<tr>
-			<td class="botoneralNegritaRight" width="40%">
-				Telefono
-			</td>
-			<td  align="left">
-				<html:text property="pacienteDTO.telefono" value="" styleClass="botonerab"/>			
-			</td>
-		</tr>
-		<tr>
-			<td class="botoneralNegritaRight" width="40%">
-				E-Mail
-			</td>
-			<td  align="left">
-				<html:text property="pacienteDTO.email" value="" styleClass="botonerab"/>			
-			</td>
-		</tr>
-		<tr>
-			<td class="botoneralNegritaRight" width="40%">
-				Obra Social
-			</td>
-			<td  align="left">
-				<select id="obraSocial" class="botonerab" name="pacienteDTO.obraSocial.id">
-					<option value="-1">
-						-Seleccione una Obra Social-
-					</option>		
-					<c:forEach items="${obrasSociales}" var="os">
-						<option value="${os.id}">
-							<c:out value="${os.nombre}"></c:out>
-						</option>
-					</c:forEach>										
-				</select>			
-			</td>
-		</tr>
-		<tr>
-			<td class="botoneralNegritaRight" width="40%">
-				Nro Carnet Obra Social
-			</td>
-			<td  align="left">
-				<html:text property="pacienteDTO.nroCarnetObraSocial" value="" styleClass="botonerab"/>			
-			</td>
-		</tr>
-		<tr>
-			<td class="botoneralNegritaRight" width="40%">
-				Observaciones
-			</td>
-			<td  align="left">
-				<html:text property="pacienteDTO.observaciones" value="" styleClass="botonerab"/>			
-			</td>
-		</tr>								
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2">				
-				<input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:submitir();">
-			</td>
-		</tr>
-		<tr>
-			<td height="10" colspan="2"></td>
-		</tr>									
-	</table>-->
-
-
+	<%-- 
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
 	<tr><td>
 	<div class="well-sm-bootstrap well-bootstrap">
@@ -295,6 +163,137 @@
 			</tr>
 			<tr>
 				<td height="20"></td>
+			</tr>									
+		</table>
+	</div>
+	</td></tr>
+	</table>
+	--%>
+
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
+	<tr><td>
+	<div class="well-sm-bootstrap well-bootstrap">
+
+		<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2" cellspacing="0">
+			<tr>
+				<td colspan="4"  class="tituloTablaBoots" >Alta de Paciente</td>
+			</tr>
+			<tr>
+				<td height="20" colspan="4"></td>
+			</tr>				
+			<tr>
+				<td width="35%" align="right" class="labelForm">Nombre</td>
+				<td align="left">
+					<html:text property="pacienteDTO.nombre" value="" styleClass="form-control form-control-sm" styleId="nombre"/>
+				</td>
+				<td width="30%" colspan="2"></td>
+			</tr>	
+			<tr>
+				<td width="35%" align="right" class="labelForm">Apellido</td>
+				<td  align="left">
+					<html:text property="pacienteDTO.apellido" value="" styleClass="form-control form-control-sm"/>			
+				</td>
+				<td width="30%" colspan="2"></td>
+			</tr>
+			<!--  <tr>
+				<td width="35%" align="right" class="labelForm">Fecha de Nacimiento</td>
+				<td  align="left">
+					<input id="datepicker" class="form-control form-control-sm" type="text" size="15" name="pacienteDTO.fechaNacimiento" placeholder="dd/mm/aaaa">																	
+				</td>
+				<td width="5%" align="left"><img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'></td>
+				<td width="25%"></td>
+			</tr>-->
+			<tr>
+				<td width="35%" align="right" class="labelForm">Fecha de Nacimiento</td>
+				<td  align="left">
+					<div class="input-group ">
+						<div class="input-group-prepend">
+							<span class="form-control form-control-sm" id="basic-addon1">
+								<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>
+							</span>
+						</div>
+					  
+						<input id="datepicker" class="form-control form-control-sm" type="text" size="15" name="pacienteDTO.fechaNacimiento" placeholder="dd/mm/aaaa">																	
+					</div>																			
+				</td>				
+				<td width="30%" colspan="2"></td>
+			</tr>			
+			<tr>
+				<td width="35%" align="right" class="labelForm">DNI</td>
+				<td  align="left">
+					<html:text property="pacienteDTO.dni" value="" onkeypress="javascript:esNumerico(event);" styleClass="form-control form-control-sm"/>			
+				</td>
+				<td width="30%" colspan="2"></td>
+			</tr>				
+			<tr>
+				<td width="35%" align="right" class="labelForm">Dirección</td>
+				<td  align="left">
+					<html:text property="pacienteDTO.direccion" value="" styleClass="form-control form-control-sm"/>			
+				</td>
+				<td width="30%" colspan="2"></td>
+			</tr>
+			<tr>
+				<td width="35%" align="right" class="labelForm">Telefono</td>
+				<td  align="left">
+					<html:text property="pacienteDTO.telefono" value="" styleClass="form-control form-control-sm"/>			
+				</td>
+				<td width="30%" colspan="2"></td>
+			</tr>
+			<tr>
+				<td width="35%" align="right" class="labelForm">E-Mail</td>
+				<td  align="left">
+					<html:text property="pacienteDTO.email" value="" styleClass="form-control form-control-sm"/>			
+				</td>
+				<td width="30%" colspan="2"></td>
+			</tr>
+			<tr>
+				<td width="35%" align="right" class="labelForm">Obra Social</td>
+				<td  align="left">
+					<select id="obraSocial" class="custom-select custom-select-sm" name="pacienteDTO.obraSocial.id">
+						<option value="-1">
+							-Seleccione una Obra Social-
+						</option>		
+						<c:forEach items="${obrasSociales}" var="os">
+							<option value="${os.id}">
+								<c:out value="${os.nombre}"></c:out>
+							</option>
+						</c:forEach>										
+					</select>			
+				</td>
+				<td width="30%" colspan="2"></td>
+			</tr>
+			<tr>
+				<td width="35%" align="right" class="labelForm">Nro Carnet Obra Social</td>
+				<td  align="left">
+					<html:text property="pacienteDTO.nroCarnetObraSocial" value="" styleClass="form-control form-control-sm"/>			
+				</td>
+				<td width="30%" colspan="2"></td>
+			</tr>
+			<tr>
+				<td width="35%" align="right" class="labelForm">Observaciones</td>
+				<td  align="left">
+					<html:text property="pacienteDTO.observaciones" value="" styleClass="form-control form-control-sm"/>			
+				</td>
+				<td width="30%" colspan="2"></td>
+			</tr>								
+			<tr>
+				<td height="15" colspan="4"></td>
+			</tr>									
+		</table>
+
+		<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
+			<tr>
+				<td height="10" colspan="3"></td>
+			</tr>			
+			<tr>
+				<td width="45%"></td>
+				<td align="center">							
+					<input type="button" class="btn btn-primary btn-block" value="Aceptar" onclick="javascript:submitir();">
+				</td>
+				<td width="45%"></td>
+			</tr>
+			<tr>
+				<td height="20" colspan="3"></td>
 			</tr>									
 		</table>
 	</div>

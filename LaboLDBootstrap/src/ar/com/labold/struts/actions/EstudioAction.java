@@ -610,7 +610,6 @@ public class EstudioAction extends ValidadorAction {
 			
 			Estudio estudio = estudioFachada.getEstudioPorNroProtocolo(Long.valueOf(nroProtocolo));
 			Map<Long,Long> map = this.armarHashMap(estudio);
-			System.out.println(estudio.getValoresEstudio().size());
 			List<GrupoPractica> gruposPracticas = practicaFachada.getGruposPractica();
 			
 			request.setAttribute("gruposPracticas", gruposPracticas);						
@@ -939,6 +938,10 @@ public class EstudioAction extends ValidadorAction {
 																			
 			List<GrupoPractica> gruposPracticas = practicaFachada.getGruposPractica();
 			request.setAttribute("gruposPracticas", gruposPracticas);
+			
+			//PRESELECCION
+			List<EstudioPreSeteado> listaEstudiosPreSeteados = practicaFachada.getEstudiosPreSeteados();
+			request.setAttribute("listaEstudiosPreSeteados", listaEstudiosPreSeteados);			
 			
 		} catch (Throwable t) {
 			MyLogger.logError(t);
@@ -1294,5 +1297,26 @@ public class EstudioAction extends ValidadorAction {
 			Validator.addErrorXML(error, "Error Inesperado - "+t.getMessage());
 			return false;
 		}
-	}	
+	}
+	
+	public static void main(String[] args) {
+		
+		//String n = "1.50";
+		//String n = "3.500";
+		//String n = "350.000";
+		String n = "3.500.000";
+		
+		//System.out.println(n3.indexOf("."));
+		//System.out.println(n3.length());
+		//System.out.println((n3.length()-n3.indexOf("."))>3);
+
+		System.out.println("Numero original: "+n);
+		if((n.length()-n.indexOf("."))>3){
+			
+			n = n.replace(".", "");
+			System.out.println("Numero modificado: "+Double.valueOf(n));			
+		}else {
+			System.out.println("Numero modificado: "+Double.valueOf(n));
+		}
+	}
 }

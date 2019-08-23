@@ -6,6 +6,9 @@
 	src="<html:rewrite page='/js/validacionAjax.js'/>"></script>
 <script type="text/javascript"
 	src="<html:rewrite page='/js/funcUtiles.js'/>"></script>
+	
+
+	
 <script type="text/javascript">
 
 	function submitir(){
@@ -44,67 +47,9 @@
 <html:form action="medico" styleId="medicoFormId" onsubmit="javascript:submitir();">
 
 	<html:hidden property="metodo" value="altaMedico" />
-	
-	<!--    
-	<table border="0" class="cuadrado" align="center" width="60%"
-		cellpadding="2">
-		<tr>
-			<td colspan="2" class="azulAjustado">
-				Alta Medico
-			</td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Nombre</td>
-			<td align="left">
-				<html:text styleClass="botonerab" property="medicoDTO.nombre" value="" 
-						styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
-			</td>
-		</tr>
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Apellido</td>
-			<td align="left">
-				<html:text styleClass="botonerab" property="medicoDTO.apellido" value="" 
-						styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
-			</td>
-		</tr>
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Teléfono</td>
-			<td align="left">
-				<html:text styleClass="botonerab" property="medicoDTO.telefono" value="" 
-						styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
-			</td>
-		</tr>	
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Matricula</td>
-			<td align="left">
-				<html:text styleClass="botonerab" property="medicoDTO.matricula" value="" 
-						styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
-			</td>
-		</tr>
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Especialidad</td>
-			<td align="left">
-				<html:text styleClass="botonerab" property="medicoDTO.especialidad" value="" 
-						styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
-			</td>
-		</tr>					
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2">
-				<input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:submitir();"> 
-			</td>
-		</tr>
-		<tr>
-			<td height="10" colspan="2"></td>
-		</tr>
-	</table>
-	-->
-	<!-- Nuevo Estilo -->  
+
+	<!-- Nuevo Estilo --> 
+	<!--   
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -120,7 +65,7 @@
 						<td height="20" colspan="2"></td>
 					</tr>
 					<tr>
-						<td width="40%" class="fontNegritaRightBootstrap">Nombre</td>
+						<td width="40%" class="tituloCaracteristica">Nombre</td>
 						<td align="left">
 							<html:text styleClass="botonerab" property="medicoDTO.nombre" value="" 
 									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
@@ -175,7 +120,90 @@
 			</div>
 		</td>
 	</tr>
+	</table>-->
+
+
+<!-- Estilo Bootstrap--> 
+	
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">				
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2" cellspacing="1">
+					 				
+					<tr>
+						<td colspan="3" class="tituloTablaBoots">
+							<!--  <h3 class="h3 mb-3 font-weight-normal">Alta de Médico</h3>-->
+							Alta de Médico
+						</td>
+					</tr>
+					
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>
+					
+					<tr>
+						<td width="35%" align="right" class="labelForm">Nombre</td>
+						<td align="left">
+							<html:text styleClass="form-control form-control-sm" property="medicoDTO.nombre" value="" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>										
+						</td>
+						<td width="30%"></td>
+					</tr>
+					<tr>
+						<td width="35%" align="right" class="labelForm">Apellido</td>
+						<td align="left">
+							<html:text styleClass="form-control form-control-sm" property="medicoDTO.apellido" value="" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
+						</td>
+						<td width="30%"></td>
+					</tr>
+					<tr>
+						<td width="35%" align="right" class="labelForm">Teléfono</td>
+						<td align="left">
+							<html:text styleClass="form-control form-control-sm" property="medicoDTO.telefono" value="" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
+						</td>
+					</tr>	
+					<tr>
+						<td width="35%" align="right" class="labelForm">Matricula</td>
+						<td align="left">
+							<html:text styleClass="form-control form-control-sm" property="medicoDTO.matricula" value="" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
+						</td>
+					</tr>
+					<tr>
+						<td width="35%" align="right" class="labelForm">Especialidad</td>
+						<td align="left">
+								<html:text styleClass="form-control form-control-sm" property="medicoDTO.especialidad" value="" 
+										styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>		
+						</td>
+					</tr>					
+					<tr>
+						<td height="15" colspan="2"></td>
+					</tr>
+				</table>	
+
+				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
+					<tr>
+						<td height="10" colspan="3"></td>
+					</tr>			
+					<tr>
+						<td width="45%"></td>
+						<td align="center">							
+							<input type="button" class="btn btn-primary btn-block" value="Aceptar" onclick="javascript:submitir();">
+						</td>
+						<td width="45%"></td>
+					</tr>
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>									
+				</table>
+			</div>
+		</td>
+	</tr>
 	</table>
+
 
 </html:form>
 <script type="text/javascript">

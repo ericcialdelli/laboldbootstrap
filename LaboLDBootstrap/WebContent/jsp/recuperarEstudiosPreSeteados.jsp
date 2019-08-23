@@ -13,13 +13,15 @@
 		
 		clase = $('#'+idTr).attr("class");
 		$('#'+idTr).removeClass(clase);
-		$('#'+idTr).addClass("verdeSeleccionFila");		
+		//$('#'+idTr).addClass("verdeSeleccionFila");
+		$('#'+idTr).addClass("verdeSeleccionFilaLista");		
 	}
 	
 	function despintarFila(idTr){
 		
 		$('#'+idTr).addClass(clase);
-		$('#'+idTr).removeClass("verdeSeleccionFila");
+		//$('#'+idTr).removeClass("verdeSeleccionFila");
+		$('#'+idTr).removeClass("verdeSeleccionFilaLista");
 	}
 
 	function recuperarEstudioPreSeteado(id){
@@ -28,7 +30,6 @@
 	}	
 </script>
 	
-<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>-->
 	
 	<c:if test="${exitoGrabado != null}">
 		<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="2" cellspacing="0">
@@ -42,53 +43,7 @@
 		</table>		
 	</c:if>
 
-	<%-- 
-	<table border="0" class="cuadrado" align="center" width="60%"
-		cellpadding="2">
-		<tr>
-			<td colspan="2" class="azulAjustado">			
-				<c:if test="${forward=='modificacionEstudioPreSeteado'}">
-					Modificacion de Estudio Pre Seteado
-				</c:if>
-				<c:if test="${forward=='eliminarEstudioPreSeteado'}">
-					Eliminar Estudio Pre Seteado
-				</c:if>										
-			</td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<table border="0" class="cuadrado" align="center" width="60%" cellpadding="2">
-					<tr>
-						<td class="azulAjustado">Nombre</td>
-						<td class="azulAjustado"></td>
-					</tr>
-					<%String clase=""; %>
-					<c:forEach items="${listaEstudiosPreSeteados}" var="estudio" varStatus="i">
-						<%clase=(clase.equals("")?"par":""); %>
-	
-						<tr class="<%=clase%>" onmouseover="javascript:pintarFila('idTr<c:out value='${i.index}'></c:out>');"
-							onmouseout="javascript:despintarFila('idTr<c:out value='${i.index}'></c:out>');"
-							id="idTr<c:out value='${i.index}'></c:out>">					
-											
-							<td>${estudio.nombre}</td>
-							<td>
-								<a href="javascript:recuperarEstudioPreSeteado(${estudio.idEstudioPreSeteado});">
-									Seleccionar
-								</a>
-							</td>
-						</tr>
-					</c:forEach>
-				</table>
-			</td>
-		</tr>
-		<tr>
-			<td height="10" colspan="2"></td>
-		</tr>
-	</table>--%>
-	
+<%-- 	
 <table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2">	
 	<tr>
 		<td>
@@ -141,5 +96,57 @@
 		</td>
 	</tr>						
 </table>
+--%>
 
-
+<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2">	
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="2" class="tituloTablaBoots">			
+							<c:if test="${forward=='modificacionEstudioPreSeteado'}">
+								Modificacion de Estudio Pre Seteado
+							</c:if>
+							<c:if test="${forward=='eliminarEstudioPreSeteado'}">
+								Eliminar Estudio Pre Seteado
+							</c:if>										
+						</td>
+					</tr>
+					<tr>
+						<td height="20" colspan="2"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<table border="0" class="cuadradoLista" align="center" width="60%" cellpadding="2">
+								<tr>
+									<td class="subTituloTabla rounded-left">Nombre</td>
+									<td class="subTituloTabla rounded-right"></td>
+								</tr>
+								<%String clase=""; %>
+								<c:forEach items="${listaEstudiosPreSeteados}" var="estudio" varStatus="i">
+									<%clase=(clase.equals("")?"par":""); %>
+				
+									<tr class="<%=clase%>" onmouseover="javascript:pintarFila('idTr<c:out value='${i.index}'></c:out>');"
+										onmouseout="javascript:despintarFila('idTr<c:out value='${i.index}'></c:out>');"
+										id="idTr<c:out value='${i.index}'></c:out>">					
+														
+										<td>${estudio.nombre}</td>
+										<td>
+											<a href="javascript:recuperarEstudioPreSeteado(${estudio.idEstudioPreSeteado});">
+												Seleccionar
+											</a>
+										</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="10" colspan="2"></td>
+					</tr>
+				</table>	
+			</div>
+		</td>
+	</tr>						
+</table>

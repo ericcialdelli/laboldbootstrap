@@ -149,6 +149,9 @@ public class PracticaAction extends ValidadorAction {
 			String idPractica = request.getParameter("id");			
 			Practica practica = practicaFachada.getPractica(Long.valueOf(idPractica));
 			
+			List<GrupoPractica> listaGrupos = practicaFachada.getGruposPractica(); 
+			request.setAttribute("listaGrupos", listaGrupos);			
+			
 			request.setAttribute("practica", practica);
 			
 		} catch (Throwable t) {

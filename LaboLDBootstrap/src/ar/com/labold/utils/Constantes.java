@@ -142,4 +142,35 @@ public class Constantes {
 	
 	public static final String REPORTE_FACTURACION_POR_ANIO = "reporteFacturacionPorAnio";
 	// FIN REPORTES
+	
+	//PARAMETROS
+	//PARAMETROS
+	public static final String VALOR_BACKUP_TODOS_LOS_DIAS = "1";
+	
+	public static final String VALOR_BACKUP_TODOS_LOS_DIAS_DESC = "Todos los dias";
+
+	public static final String VALOR_BACKUP_LMV = "2";
+	
+	public static final String VALOR_BACKUP_LMV_DESC = "Lun_Mier_Vier";	
+	
+	public static final String VALOR_BACKUP_VIERNES = "3";
+	
+	public static final String VALOR_BACKUP_VIERNES_DESC = "Solo los Viernes";
+	
+	public static final String VALOR_BACKUP_NUNCA = "4";
+	
+	public static final String VALOR_BACKUP_NUNCA_DESC = "Nunca";	
+	//FIN PARAMETROS		
+	/*public static final String VALOR_BACKUP_TODOS_LOS_DIAS = "1";
+	
+	public static final String VALOR_BACKUP_TODOS_LOS_DIAS_DESC = "Todos los dias";
+	
+	public static final String VALOR_BACKUP_VIERNES = "2";
+	
+	public static final String VALOR_BACKUP_VIERNES_DESC = "Solo los Viernes";
+	
+	public static final String VALOR_BACKUP_NUNCA = "3";
+	
+	public static final String VALOR_BACKUP_NUNCA_DESC = "Nunca";*/	
+	//FIN PARAMETROS
 }

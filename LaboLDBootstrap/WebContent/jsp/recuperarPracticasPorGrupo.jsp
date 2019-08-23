@@ -27,13 +27,15 @@
 		
 		clase = $('#'+idTr).attr("class");
 		$('#'+idTr).removeClass(clase);
-		$('#'+idTr).addClass("verdeSeleccionFila");		
+		//$('#'+idTr).addClass("verdeSeleccionFila");		
+		$('#'+idTr).addClass("verdeSeleccionFilaLista");
 	}
 
 	function despintarFila(idTr){
 		
 		$('#'+idTr).addClass(clase);
-		$('#'+idTr).removeClass("verdeSeleccionFila");
+		//$('#'+idTr).removeClass("verdeSeleccionFila");
+		$('#'+idTr).removeClass("verdeSeleccionFilaLista");
 	}
 
 	function cargarPracticas(){
@@ -105,7 +107,8 @@
 </table>
 --%>
 
-	<!-- Nuevo Estilo -->  
+	<!-- Nuevo Estilo --> 
+	<%--  
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -151,6 +154,55 @@
 		</td>
 	</tr>
 	</table>
+	--%>
+
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="3" class="tituloTablaBoots">
+							Modificación de Prácticas
+						</td>
+					</tr>	
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>
+					<tr>
+						<td width="33%" align="right" class="labelForm">Grupo Practica</td>
+						<td align="left">
+							<select id="selectGrupoPractica" class="custom-select custom-select-sm" onchange="cargarPracticas();">
+								<option value="-1">
+									Seleccione un Grupo...
+								</option>		
+								<c:forEach items="${listaGrupos}" var="grupo">
+									<option value="${grupo.id}">
+										<c:out value="${grupo.nombre}"></c:out>
+									</option>
+								</c:forEach>										
+							</select>
+						</td>
+						<td width="22%"></td>
+					</tr>	
+					<tr>
+						<td height="10" colspan="3"></td>
+					</tr>	
+					<tr>
+						<td colspan="3">
+							<div id="bloquePracticas"></div>
+						</td>
+					</tr>
+					<tr>
+						<td height="10" colspan="3"></td>
+					</tr>	
+				</table>
+			</div>
+		</td>
+	</tr>
+	</table>
+
 
 <script type="text/javascript">
 	var idGrupoParam = ${idGrupo};

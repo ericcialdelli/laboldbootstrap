@@ -23,43 +23,7 @@
 	
 </script>
 
-<%-- 
-	<table border="0" class="cuadrado" align="center" width="60%" cellpadding="2">
-		<tr>
-			<td colspan="2" class="azulAjustado">
-				Generar Reportes Estudios
-			</td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Nro Protocolo Desde</td>
-			<td align="left">
-				<input type="text" class="botonerab" id="desde" onkeypress="javascript:esNumerico(event);"/>
-			</td>
-		</tr>
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Nro Protocolo Hasta</td>
-			<td align="left">
-				<input type="text" class="botonerab" id="hasta" onkeypress="javascript:esNumerico(event);"/>
-			</td>
-		</tr>
-		
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2">
-				<input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:generarReportesEstudios();"> 
-			</td>
-		</tr>
-		<tr>
-			<td height="10" colspan="2"></td>
-		</tr>
-	</table>
---%>
-		
+	<%-- 	
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -106,6 +70,59 @@
 		</td>
 	</tr>
 	</table>
+	--%>
+
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="65%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2" cellspacing="0">
+					<tr>
+						<td colspan="3"  class="tituloTablaBoots" >Generar Reportes Estudios</td>
+						</tr>		
+					<tr>
+						<td height="30" colspan="3"></td>
+					</tr>
+					<tr>
+						<td width="35%" align="right" class="labelForm">Nro Protocolo Desde</td>
+						<td align="left">
+							<input type="text" class="form-control form-control-sm" id="desde" onkeypress="javascript:esNumerico(event);"/>
+						</td>
+						<td width="30%"></td>
+					</tr>
+					<tr>
+						<td width="35%" align="right" class="labelForm">Nro Protocolo Hasta</td>
+						<td align="left">
+							<input type="text" class="form-control form-control-sm" id="hasta" onkeypress="javascript:esNumerico(event);"/>
+						</td>
+						<td width="30%"></td>
+					</tr>
+					
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>
+				</table>
+				
+				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">					
+					<tr>
+						<td height="10" colspan="3"></td>
+					</tr>			
+					<tr>
+						<td width="45%"></td>
+						<td align="center">							
+							<input type="button" class="btn btn-primary btn-block" value="Generar Reporte" id="enviar" onclick="javascript:generarReportesEstudios();">
+						</td>
+						<td width="45%"></td>
+					</tr>
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>													
+				</table>					
+			</div>
+		</td>
+	</tr>
+	</table>
+
 
 <script type="text/javascript">
 

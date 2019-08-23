@@ -162,4 +162,8 @@ public class Paciente {
 		this.observaciones = observaciones;
 	}
 	
+	public String getDescripcion(){
+		
+		return this.getApellido()+", "+this.getNombre();
+	}	
 }

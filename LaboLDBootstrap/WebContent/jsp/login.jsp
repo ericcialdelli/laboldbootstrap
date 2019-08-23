@@ -6,10 +6,23 @@
 <head>
 <link rel="stylesheet" href="<html:rewrite page='/css/main.css'/>" type="text/css">
 <link rel="stylesheet" href="<html:rewrite page='/css/jqueryslidemenu.css'/>" type="text/css">
+
+<!-- Bootstrap core CSS -->
+<!--  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">-->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 
-<script type="text/javascript"
-	src="<html:rewrite page='/js/JQuery/jquery-1.7.2.min.js'/>"></script>
+<!--  <script type="text/javascript"
+	src="<html:rewrite page='/js/JQuery/jquery-1.7.2.min.js'/>"></script>-->
+	
+	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+	
 <script>
 	function darFoco(){
 		if($('#idUsuario').val()==''){
@@ -95,40 +108,30 @@
 			
 	<!-- Estilo Nuevo -->		
 
+
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="40%" cellpadding="2" cellspacing="0" height="90%">
 	<tr>
-		<td>			
-
-			
-			<c:if test="${error != null}">
-				<div class="alert alert-danger">
-				  <strong>${error}</strong>
-				</div>
-			</c:if>
-			
-					
+		<td>						
+			<img class="mb-4" src="<html:rewrite page='/imagenes/logoLaboLD.jpg'/>" alt="" width="400" height="100">
+			<br>
+			<br>
+			<h1 class="h3 mb-3 font-weight-normal"></h1>
 			<div class="well-sm-bootstrap well-bootstrap">
-	
 				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="4">
 					<tr>
-						<td colspan="4" class="tituloTabla">
-							Bienvenido
-						</td>
+						<td height="30" colspan="3"></td>
 					</tr>
 					<tr>
-						<td height="20" colspan="4"></td>
-					</tr>
-					<tr>
-						<td height="32" width="20%">
+						<td height="32" width="18%">
 							<div align="right">
 								<img src="<html:rewrite page='/imagenes/personitas.jpg'/>" width="33" height="32" alt="Roles">
 							</div>
 						</td>
-						<td width="18%" class="fontNegritaRightBootstrap">Usuario</td>
 						<td align="left">
-							<html:text styleId="idUsuario" property="usuario" styleClass="botonerab" size="15" value=""/>
+							<!--<html:text styleId="idUsuario" property="usuario" styleClass="botonerab" size="15" value=""/>-->
+							<input type="text" id="idUsuario" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
 						</td>
-						<td>&nbsp;</td>
+						<td width="10%">&nbsp;</td>
 					</tr>					
 					
 					<tr>
@@ -137,31 +140,38 @@
 								<img src="<html:rewrite page='/imagenes/llaves.gif'/>" width="33" height="32" alt="Roles">
 							</div>
 						</td>
-						<td class="fontNegritaRightBootstrap">Contraseña</td>
 						<td align="left">
-							<html:password property="password"	styleId="password" styleClass="botonerab" size="15" value=""></html:password>
+							<!--<html:password property="password"	styleId="password" styleClass="botonerab" size="15" value=""></html:password>-->
+							<input type="password" id="password" name="password" class="form-control" placeholder="Password" required autofocus>
 						</td>
 						<td>&nbsp;</td>
 					</tr>									
 					<tr>
-						<td height="5" colspan="4"></td>
+						<td height="5" colspan="3"></td>
 					</tr>
 				</table>	
 
 				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
 					<tr>
-						<td height="10"></td>
+						<td height="10" colspan="3"></td>
 					</tr>			
 					<tr>
+						<td width="10%"></td>
 						<td align="center">							
-							<html:submit styleId="idAceptar" styleClass="btn btn-primary-bootstrap btn-sm" value="Ingresar"></html:submit>
+							<html:submit styleId="idAceptar" styleClass="btn btn-lg btn-primary btn-block" value="Ingresar"></html:submit>
 						</td>
+						<td width="10%"></td>
 					</tr>
 					<tr>
-						<td height="10"></td>
+						<td height="10" colspan="3"></td>
 					</tr>									
 				</table>
 			</div>
+			<c:if test="${error != null}">
+				<div class="alert alert-danger">
+				  <strong>${error}</strong>
+				</div>
+			</c:if>							
 		</td>
 	</tr>
 	</table>				 

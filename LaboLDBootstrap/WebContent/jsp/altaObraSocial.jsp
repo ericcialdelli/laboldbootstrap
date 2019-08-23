@@ -6,6 +6,7 @@
 	src="<html:rewrite page='/js/validacionAjax.js'/>"></script>
 <script type="text/javascript"
 	src="<html:rewrite page='/js/funcUtiles.js'/>"></script>
+<script type="text/javascript" src="<html:rewrite page='/js/validarNum.js'/>"></script>
 <script type="text/javascript">
 
 	function submitir(){
@@ -98,45 +99,49 @@
 	
 				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
 					<tr>
-						<td colspan="2" class="tituloTabla">
+						<td colspan="3" class="tituloTablaBoots">
 							Alta Obra Social
 						</td>
 					</tr>
 					<tr>
-						<td height="20" colspan="2"></td>
+						<td height="20" colspan="3"></td>
 					</tr>
 					<tr>
-						<td width="40%" class="fontNegritaRightBootstrap">Nombre</td>
+						<td width="35%" class="labelForm" align="right">Nombre</td>
 						<td align="left">
-							<html:text styleClass="botonerab" property="obraSocialDTO.nombre" value="" 
+							<html:text styleClass="form-control form-control-sm" property="obraSocialDTO.nombre" value="" 
 									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
 						</td>
+						<td width="25%"></td>
 					</tr>
 					<tr>
-						<td width="40%" class="fontNegritaRightBootstrap">Valor Unidad Bioquimica</td>
+						<td width="35%" class="labelForm" align="right">Valor Unidad Bioquimica</td>
 						<td align="left">						
-							<html:text styleClass="botonerab" property="obraSocialDTO.valorUnidadBioquimica" value="" 
-									styleId="valor" onkeypress="return evitarAutoSubmit(event)"/>						
+							<html:text styleClass="form-control form-control-sm" property="obraSocialDTO.valorUnidadBioquimica" value="" 
+									styleId="valor" onkeypress="return validarNumeroConDecimal(event, this)"/>						
 									
 						</td>
+						<td width="25%"></td>
 					</tr>		
 
 					<tr>
-						<td height="15" colspan="2"></td>
+						<td height="15" colspan="3"></td>
 					</tr>
 				</table>
 
 				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
 					<tr>
-						<td height="10"></td>
+						<td height="10" colspan="3"></td>
 					</tr>			
 					<tr>
+						<td width="45%"></td>
 						<td align="center">							
-							<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Aceptar" onclick="javascript:submitir();">
+							<input type="button" class="btn btn-primary btn-block" value="Aceptar" onclick="javascript:submitir();">
 						</td>
+						<td width="45%"></td>
 					</tr>
 					<tr>
-						<td height="20"></td>
+						<td height="20" colspan="3"></td>
 					</tr>									
 				</table>
 			</div>

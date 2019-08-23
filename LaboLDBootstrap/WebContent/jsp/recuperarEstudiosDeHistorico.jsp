@@ -7,7 +7,7 @@
 <script type="text/javascript"
 	src="<html:rewrite page='/js/funcUtiles.js'/>"></script>
 	
-<!-- Estilo Viejo -->
+<!-- Estilo Viejo 
 <script type="text/javascript"
 	src="<html:rewrite page='/js/JQuery/ui/jquery-ui-1.8.10.custom.min.js'/>"></script>	
 
@@ -16,8 +16,12 @@
 
 <link rel="stylesheet" href="<html:rewrite page='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css'/>"
 	type="text/css">
-<!-- Estilo Viejo -->
+Estilo Viejo -->
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
 
@@ -48,7 +52,6 @@
 	<b>Esta seguro que desea recuperar los Estudios del Historico?</b>
 </div>
 
-<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>-->
 <c:if test="${exitoGrabado != null}">
 	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
 		<tr>
@@ -59,7 +62,6 @@
 	</table>
 </c:if>	
 
-<!--  <div id="errores" class="rojoAdvertencia">${error}</div>-->
 <table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
@@ -71,46 +73,6 @@
 	  
 <html:form action="estudio" styleId="estudioFormId">
 	<html:hidden property="metodo" value="recuperarEstudiosDeHistorico"/>	  
-	 
-	 <%--  
-	<table border="0" class="cuadrado" align="center" width="60%"
-		cellpadding="2">
-		<tr>
-			<td colspan="4" class="azulAjustado">
-				Recuperar Estudios de Historico
-			</td>
-		</tr>
-		<tr>
-			<td height="20" colspan="4"></td>
-		</tr>
-		<tr>
-			<td class="botoneralNegritaRight" width="42%" >Fecha Desde</td>
-			<td align="left">			
-				<input id="datepicker" type="text" name="fechaDesde" class="botonerab">
-				<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>				
-			</td>
-		</tr>
-		<tr>	
-			<td class="botoneralNegritaRight" width="42%" >Fecha Hasta</td>
-			<td align="left">			
-				<input id="datepicker2" type="text" name="fechaHasta" class="botonerab">
-				<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>				
-			</td>			
-			
-		</tr>		
-		
-		<tr>
-			<td height="20" colspan="4"></td>
-		</tr>
-		<tr>
-			<td height="20" colspan="4">
-				<input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:confirmar();"> 
-			</td>
-		</tr>
-		<tr>
-			<td height="10" colspan="4"></td>
-		</tr>
-	</table>--%>
 
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
 	<tr>
@@ -118,7 +80,7 @@
 			<div class="well-sm-bootstrap well-bootstrap">	
 				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
 					<tr>
-						<td colspan="4" class="tituloTabla">
+						<td colspan="4" class="tituloTablaBoots">
 							Recuperar Estudios de Historico
 						</td>
 					</tr>
@@ -126,19 +88,20 @@
 						<td height="20" colspan="4"></td>
 					</tr>
 					<tr>
-						<td class="fontNegritaRightBootstrap" width="42%" >Fecha Desde</td>
+						<td width="35%" align="right" class="labelForm">Fecha Desde</td>
 						<td align="left">			
-							<input id="datepicker" type="text" name="fechaDesde" class="botonerab">
-							<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>				
-						</td>
+							<input id="datepicker" type="text" name="fechaDesde" class="form-control form-control-sm">
+						</td>	
+						<td width="5%" align="left"><img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'></td>
+						<td width="25%"></td>
 					</tr>
 					<tr>	
-						<td class="fontNegritaRightBootstrap" width="42%" >Fecha Hasta</td>
+						<td width="35%" align="right" class="labelForm">Fecha Hasta</td>
 						<td align="left">			
-							<input id="datepicker2" type="text" name="fechaHasta" class="botonerab">
-							<img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'>				
-						</td>			
-						
+							<input id="datepicker2" type="text" name="fechaHasta" class="form-control form-control-sm">
+						</td>	
+						<td width="5%" align="left"><img alt="" src="<html:rewrite page='/imagenes/calendar/calendar2.gif'/>" align="top" width='17' height='21'></td>
+						<td width="25%"></td>
 					</tr>							
 					<tr>
 						<td height="20" colspan="4"></td>
@@ -146,16 +109,19 @@
 				</table>	
 				<table border="0" class="cuadradoSinBorde" align="center" width="100%" cellpadding="2" cellspacing="0">
 					<tr>
-						<td height="10"></td>
+						<td height="10" colspan="3"></td>
 					</tr>			
 					<tr>
-						<td align="center">
-							<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Aceptar" onclick="javascript:confirmar();">									
+						<td width="45%"></td>
+						<td align="center">							
+							<input type="button" class="btn btn-primary btn-block" value="Aceptar" onclick="javascript:confirmar();">
 						</td>
+						<td width="45%"></td>
 					</tr>
 					<tr>
-						<td height="20"></td>
-					</tr>									
+						<td height="20" colspan="3"></td>
+					</tr>						
+														
 				</table>					
 			</div>
 		</td>

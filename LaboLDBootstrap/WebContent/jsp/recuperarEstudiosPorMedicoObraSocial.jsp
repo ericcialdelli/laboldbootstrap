@@ -46,13 +46,15 @@
 		
 		clase = $('#'+idTr).attr("class");
 		$('#'+idTr).removeClass(clase);
-		$('#'+idTr).addClass("verdeSeleccionFila");		
+		//$('#'+idTr).addClass("verdeSeleccionFila");
+		$('#'+idTr).addClass("verdeSeleccionFilaLista");
 	}
 
 	function despintarFila(idTr){
 		
 		$('#'+idTr).addClass(clase);
-		$('#'+idTr).removeClass("verdeSeleccionFila");
+		//$('#'+idTr).removeClass("verdeSeleccionFila");
+		$('#'+idTr).removeClass("verdeSeleccionFilaLista");
 	}
 
 </script>
@@ -71,13 +73,13 @@
 				<div class="well-sm-bootstrap well-bootstrap">
 		
 					<!--  <table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">-->
-					<table border="0" class="cuadrado" align="center" width="100%" cellpadding="2">							
+					<table border="0" class="cuadradoLista" align="center" width="100%" cellpadding="2">							
 					<tr>
-						<td class="subTituloTabla">Número</td>
+						<td class="subTituloTabla rounded-left">Número</td>
 						<td class="subTituloTabla">Paciente</td>
 						<td class="subTituloTabla">Fecha</td>
 						<td class="subTituloTabla">Estado</td>
-						<td class="subTituloTabla"></td>
+						<td class="subTituloTabla rounded-right"></td>
 					</tr>
 					<%String clase=""; %>
 					<c:forEach items="${estudios}" var="estudio" varStatus="i">

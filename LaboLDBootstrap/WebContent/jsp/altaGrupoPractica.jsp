@@ -6,6 +6,8 @@
 	src="<html:rewrite page='/js/validacionAjax.js'/>"></script>
 <script type="text/javascript"
 	src="<html:rewrite page='/js/funcUtiles.js'/>"></script>
+<script type="text/javascript" src="<html:rewrite page='/js/validarNum.js'/>"></script>	
+	
 <script type="text/javascript">
 
 	function submitir(){
@@ -43,56 +45,10 @@
 <html:form action="grupoPractica" styleId="grupoPracticaFormId" onsubmit="javascript:submitir();">
 
 	<html:hidden property="metodo" value="altaGrupoPractica" />
-<%-- 	
-	<table border="0" class="cuadrado" align="center" width="60%"
-		cellpadding="2">
-		<tr>
-			<td colspan="2" class="azulAjustado">
-				Alta de Grupo Práctica
-			</td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Nombre</td>
-			<td align="left">
-				<html:text styleClass="botonerab" property="grupoPracticaDTO.nombre" value="" 
-						styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
-			</td>
-		</tr>
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Unidad Bioquimica</td>
-			<td align="left">
-				<html:text styleClass="botonerab" property="grupoPracticaDTO.unidadBioquimica" value="" 
-						styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
-			</td>
-		</tr>
+
 		
-		<tr>
-			<td width="40%" class="botoneralNegritaRight">Código Faba</td>
-			<td align="left">
-				<html:text styleClass="botonerab" property="grupoPracticaDTO.codigoFaba" value="" 
-						styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
-			</td>
-		</tr>		
-		
-		<tr>
-			<td height="20" colspan="2"></td>
-		</tr>
-		<tr>
-			<td height="20" colspan="2">
-				<input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:submitir();"> 
-			</td>
-		</tr>
-		<tr>
-			<td height="10" colspan="2"></td>
-		</tr>
-	</table>
---%>
-		
-		
-	<!-- Nuevo Estilo -->  
+	<!-- Nuevo Estilo -->
+	<%--   
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -151,6 +107,72 @@
 		</td>
 	</tr>
 	</table>
+	--%>
+	
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+					<tr>
+						<td colspan="3" class="tituloTablaBoots">
+							Alta de Grupo Práctica
+						</td>
+					</tr>		
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>
+					<tr>
+						<td width="35%" align="right" class="labelForm">Nombre</td>
+						<td align="left">
+							<html:text styleClass="form-control form-control-sm" property="grupoPracticaDTO.nombre" value="" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
+						</td>
+						<td width="30%"></td>
+					</tr>
+					<tr>
+						<td width="35%" align="right" class="labelForm">Unidad Bioquimica</td>
+						<td align="left">
+							<html:text styleClass="form-control form-control-sm" property="grupoPracticaDTO.unidadBioquimica" value="" 
+									styleId="nombre" onkeypress="return validarNumeroConDecimal(event, this)"/>
+						</td>
+						<td width="30%"></td>
+					</tr>
+					
+					<tr>
+						<td width="35%" align="right" class="labelForm">Código Faba</td>
+						<td align="left">
+							<html:text styleClass="form-control form-control-sm" property="grupoPracticaDTO.codigoFaba" value="" 
+									styleId="nombre" onkeypress="return evitarAutoSubmit(event)"/>
+						</td>
+						<td width="30%"></td>
+					</tr>		
+					
+					<tr>
+						<td height="15" colspan="3"></td>
+					</tr>
+				</table>
+				<table border="0" class="cuadradoSinBorde" align="center" width="85%" cellpadding="2" cellspacing="0">
+					<tr>
+						<td height="10" colspan="3"></td>
+					</tr>			
+					<tr>
+						<td width="45%"></td>
+						<td align="center">							
+							<input type="button" class="btn btn-primary btn-block" value="Aceptar" onclick="javascript:submitir();">
+						</td>
+						<td width="45%"></td>
+					</tr>
+					<tr>
+						<td height="20" colspan="3"></td>
+					</tr>									
+				</table>				
+			</div>
+		</td>
+	</tr>
+	</table>		
+	
 </html:form>
 <script type="text/javascript">
 

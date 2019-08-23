@@ -21,6 +21,10 @@
 	font-weight: bold;
 }
 
+.colorRed {
+	color: red;
+}
+
 .negritaLeft {
 	font-weight: bold;
 	text-align: left;
@@ -166,9 +170,31 @@
 	color: black;
 }
 
+.grisMuyClaroSubtituloCenterLetraChica {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #E9E5E5;
+	text-align: center;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
 .verdeClaroSubtituloCenter {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 10px;
+	font-weight: bold;
+	background-color: #BACE8D;
+	text-align: center;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.verdeClaroSubtituloCenterListaPracticas {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
 	font-weight: bold;
 	background-color: #BACE8D;
 	text-align: center;
@@ -235,6 +261,29 @@
 	border: 1px #CCCCCC solid;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 10px;
+	line-height: 14px;	
+}
+
+.cuadradoListaPracticas {
+	text-align: center;
+	border: 1px #CCCCCC solid;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;	
+}
+
+.cuadradoListaPracticasSubItems {
+	text-align: center;
+	border: 1px #b9b9b9 solid;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	/*background-color: #dfdfdf;*/	
+}
+
+.cuadradoSinFont {
+
+	border: 1px #CCCCCC solid;
 	line-height: 14px;	
 }
 
@@ -458,14 +507,26 @@
 	border: none;
 }
 
+.cuadradoSinBordeBootstrapConFontSubItmes {
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	border: none;
+}
+
+.tituloSubItemPractica{
+	background-color: #c0c0c0;
+}
+
 .fontNegritaRightBootstrap {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 11px;
+	font-size: 12px;
 	line-height: 14px;
 	text-align: right;
 	vertical-align: center;
 	font-weight: bold;
-	color: #000;
+	/*color: #000;*/
 }
 
 .fontNegritaCenterBootstrap {
@@ -480,7 +541,7 @@
 
 .fontNegritaLeftBootstrap {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 11px;
+	font-size: 12px;
 	line-height: 14px;
 	text-align: left;
 	vertical-align: center;
@@ -565,181 +626,88 @@
 	BORDER-RIGHT: #e1e8fb 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #def1f5 1px solid; PADDING-LEFT: 4px; FONT-WEIGHT: normal; FONT-SIZE: 11px; LIST-STYLE-IMAGE: none; PADDING-BOTTOM: 2px; BORDER-LEFT: 0px solid; COLOR: #535353; LINE-HEIGHT: 17px; PADDING-TOP: 2px; BORDER-BOTTOM: 0px solid; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f4f9fd
 }
 .tituloTabla {
-	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 24px; BACKGROUND-COLOR: #0080b7; border-radius: 3px;
+	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 24px; BACKGROUND-COLOR: #337ab7; border-radius: 3px;
+}
+.tituloTablaBoots {
+	FONT-SIZE: 18px; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.42857143; BACKGROUND-COLOR: #337ab7; border-radius: 3px; HEIGHT: 24px;
 }
 .subTituloTabla {
-	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 24px; BACKGROUND-COLOR: #0080b7; border-radius: 3px;
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 24px; BACKGROUND-COLOR: #0080b7; 
 }
 
-  /*********************************/
- /******* Botones Bootstrap *******/
-/*********************************/
-		.btn {
-		  display: inline-block;
-		  padding: 6px 12px;
-		  margin-bottom: 0;
-		  font-size: 12px;
-		  font-weight: normal;
-		  line-height: 1.42857143;
-		  text-align: center;
-		  white-space: nowrap;
-		  vertical-align: middle;
-		  -ms-touch-action: manipulation;
-		      touch-action: manipulation;
-		  cursor: pointer;
-		  -webkit-user-select: none;
-		     -moz-user-select: none;
-		      -ms-user-select: none;
-		          user-select: none;
-		  background-image: none;
-		  border: 1px solid transparent;
-		  border-radius: 4px;
-		}
-		.btn-success {
-		  color: #fff;
-		  background-color: #5cb85c;
-		  border-color: #4cae4c;
-		}
-		.btn-success:focus,
-		.btn-success.focus {
-		  color: #fff;
-		  background-color: #449d44;
-		  border-color: #255625;
-		}
-		.btn-success:hover {
-		  color: #fff;
-		  background-color: #449d44;
-		  border-color: #398439;
-		}
-		.btn-success:active,
-		.btn-success.active,
-		.open > .dropdown-toggle.btn-success {
-		  color: #fff;
-		  background-color: #449d44;
-		  border-color: #398439;
-		}
-		.btn-success:active:hover,
-		.btn-success.active:hover,
-		.open > .dropdown-toggle.btn-success:hover,
-		.btn-success:active:focus,
-		.btn-success.active:focus,
-		.open > .dropdown-toggle.btn-success:focus,
-		.btn-success:active.focus,
-		.btn-success.active.focus,
-		.open > .dropdown-toggle.btn-success.focus {
-		  color: #fff;
-		  background-color: #398439;
-		  border-color: #255625;
-		}
-		.btn-success:active,
-		.btn-success.active,
-		.open > .dropdown-toggle.btn-success {
-		  background-image: none;
-		}
-		.btn-success.disabled,
-		.btn-success[disabled],
-		fieldset[disabled] .btn-success,
-		.btn-success.disabled:hover,
-		.btn-success[disabled]:hover,
-		fieldset[disabled] .btn-success:hover,
-		.btn-success.disabled:focus,
-		.btn-success[disabled]:focus,
-		fieldset[disabled] .btn-success:focus,
-		.btn-success.disabled.focus,
-		.btn-success[disabled].focus,
-		fieldset[disabled] .btn-success.focus,
-		.btn-success.disabled:active,
-		.btn-success[disabled]:active,
-		fieldset[disabled] .btn-success:active,
-		.btn-success.disabled.active,
-		.btn-success[disabled].active,
-		fieldset[disabled] .btn-success.active {
-		  background-color: #5cb85c;
-		  border-color: #4cae4c;
-		}
-		.btn-success .badge {
-		  color: #5cb85c;
-		  background-color: #fff;
-		}
+.fondoPractica {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #141414; FONT-STYLE: normal; FONT-FAMILY: Helvetica Neue, Helvetica, Arial, sans-serif; HEIGHT: 20px; BACKGROUND-COLOR: #c0c0c0; 
+}
 
+.fondoPracticaSeleccion {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Helvetica Neue, Helvetica, Arial, sans-serif; HEIGHT: 20px; BACKGROUND-COLOR: #799b9f; 
+	
+	/*FONT-FAMILY: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #799b9f;
+	text-align: middle;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;*/
+}
 
-  /*********************************/
- /******* Alerts Bootstrap ********/
-/*********************************/
-		.alert {
-		  padding: 15px;
-		  margin-bottom: 20px;
-		  border: 1px solid transparent;
-		  border-radius: 4px;
-		  font-family: sans-serif;
-		  text-align: center;
-		}
-		.alert h4 {
-		  margin-top: 0;
-		  color: inherit;
-		}
-		.alert .alert-link {
-		  font-weight: bold;
-		}
-		.alert > p,
-		.alert > ul {
-		  margin-bottom: 0;
-		}
-		.alert > p + p {
-		  margin-top: 5px;
-		}
-		.alert-dismissable,
-		.alert-dismissible {
-		  padding-right: 35px;
-		}
-		.alert-dismissable .close,
-		.alert-dismissible .close {
-		  position: relative;
-		  top: -2px;
-		  right: -21px;
-		  color: inherit;
-		}
-		.alert-success {
-		  color: #3c763d;
-		  background-color: #dff0d8;
-		  border-color: #d6e9c6;
-		}
-		.alert-success hr {
-		  border-top-color: #c9e2b3;
-		}
-		.alert-success .alert-link {
-		  color: #2b542c;
-		}
-		.alert-info {
-		  color: #31708f;
-		  background-color: #d9edf7;
-		  border-color: #bce8f1;
-		}
-		.alert-info hr {
-		  border-top-color: #a6e1ec;
-		}
-		.alert-info .alert-link {
-		  color: #245269;
-		}
-		.alert-warning {
-		  color: #8a6d3b;
-		  background-color: #fcf8e3;
-		  border-color: #faebcc;
-		}
-		.alert-warning hr {
-		  border-top-color: #f7e1b5;
-		}
-		.alert-warning .alert-link {
-		  color: #66512c;
-		}
-		.alert-danger {
-		  color: #a94442;
-		  background-color: #f2dede;
-		  border-color: #ebccd1;
-		}
-		.alert-danger hr {
-		  border-top-color: #e4b9c0;
-		}
-		.alert-danger .alert-link {
-		  color: #843534;
-		}
+.fontNegritaRightBootstrap2{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 12px; 
+	COLOR: #000; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+	HEIGHT: 24px; 	
+	border-radius: 3px;
+}
+
+.labelForm{
+	FONT-SIZE: 15px; 
+	COLOR: #4d4d4d; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	line-height: 1.42857143;  
+	border-radius: 3px; 
+	FONT-WEIGHT: bold;
+}
+
+.labelForm2{
+	FONT-SIZE: 18px; 
+	COLOR: #4d4d4d; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	line-height: 1.42857143;  
+	border-radius: 3px; 
+	FONT-WEIGHT: bold;
+}
+
+.cuadradoLista {
+	text-align: center;
+	border: 1px #CCCCCC solid;
+	COLOR: #292929; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	line-height: 1.42857143;  
+	border-radius: 3px;
+	FONT-SIZE: 12px;	
+}
+
+.verdeSeleccionFilaLista {
+	FONT-FAMILY: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #799b9f;
+	text-align: middle;
+	vertical-align: middle;
+	font-style: normal;
+	color: black;
+}
+
+.tituloCaracteristica {
+	text-align: right;
+	vertical-align: center; 
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 12px; 
+	COLOR: #373737; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+	line-height: 14px;
+}
+

@@ -56,7 +56,8 @@
 			--%>
 			
 			
-	<!-- Nuevo Estilo -->  
+	<!-- Nuevo Estilo --> 
+	<%--  
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="80%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
@@ -102,7 +103,58 @@
 			</div>
 		</td>
 	</tr>
-	</table>			
+	</table>
+	--%>
+		
+	<%int i=0; %>	
+	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="80%" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>
+			<div class="well-sm-bootstrap well-bootstrap">
+	
+				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
+				
+					<c:forEach items="${subItems}" var="subItem" varStatus="i">
+						<c:if test="${fn:length(map[subItem.id])>0}">
+							<tr>
+								<td class="fontNegritaLeftBootstrap">
+									${subItem.nombre}		
+									<table border="0" class="cuadradoLista" align="center" width="100%" cellpadding="2">
+										<tr>
+											<td class="subTituloTabla  rounded-left" width="10%">Orden</td>
+											<td class="subTituloTabla" width="75%">Nombre</td>
+											<td class="subTituloTabla rounded-right" width="15%"></td>
+										</tr>
+										<%String clase=""; %>
+									
+										<c:forEach items="${map[subItem.id]}" var="practica" varStatus="i">
+											<%clase=(clase.equals("")?"par":""); %>	
+											<tr class="<%=clase%>" onmouseover="javascript:pintarFila('idTr<%=i%>');"
+												onmouseout="javascript:despintarFila('idTr<%=i%>');"
+												id="idTr<%=i%>">					
+												
+												<td>${practica.orden}</td>				
+												<td>${practica.nombre}</td>
+												<td>
+													<a href="javascript:recuperarPractica(${practica.id});">
+														Seleccionar
+													</a>
+												</td>
+											</tr>
+											<%i++; %>
+										</c:forEach>						
+									</table>
+									<br>
+								</td>	
+							</tr>
+						</c:if>								
+					</c:forEach>
+				</table>			
+			</div>
+		</td>
+	</tr>
+	</table>	
+				
 	</c:when>
 	<c:otherwise>
 		No existen prácticas para este grupo

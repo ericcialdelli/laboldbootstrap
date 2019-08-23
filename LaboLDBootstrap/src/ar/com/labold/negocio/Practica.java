@@ -125,6 +125,32 @@ public class Practica {
 		this.valorReferencia = valorReferencia;
 	}
 
+	public Double getValorNormalDesdeNumerico() {			
+		
+		return this.getValorGenericoNumerico(this.getValorNormalDesde());
+	}	
+
+	public Double getValorNormalHastaNumerico() {			
+		
+		return this.getValorGenericoNumerico(this.getValorNormalHasta());
+	}	
+
+	public Double getValorReferenciaNumerico() {			
+		
+		return this.getValorGenericoNumerico(this.getValorReferencia());
+	}	
+	
+	public Double getValorGenericoNumerico(String valor) {
+		
+		
+		if((valor.length()-valor.indexOf("."))>3){
+			
+			valor = valor.replace(".", "");					
+		}		
+		
+		return Double.valueOf(valor);
+	}	
+	
 	/*public Practica getPadre() {
 		return padre;
 	}

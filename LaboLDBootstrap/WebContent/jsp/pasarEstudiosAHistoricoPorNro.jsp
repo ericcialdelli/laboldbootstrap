@@ -7,7 +7,7 @@
 <script type="text/javascript"
 	src="<html:rewrite page='/js/funcUtiles.js'/>"></script>
 	
-<!-- Estilo Viejo -->
+<!-- Estilo Viejo
 <script type="text/javascript"
 	src="<html:rewrite page='/js/JQuery/ui/jquery-ui-1.8.10.custom.min.js'/>"></script>	
 
@@ -16,8 +16,12 @@
 
 <link rel="stylesheet" href="<html:rewrite page='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css'/>"
 	type="text/css">
-<!-- Estilo Viejo -->
+Estilo Viejo -->
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
 
@@ -44,7 +48,6 @@
 	<b>Esta seguro que desea pasar los Estudios a Historico?</b>
 </div>
 
-<!--  <div id="exitoGrabado" class="verdeExito">${exitoGrabado}</div>-->
 <c:if test="${exitoGrabado != null}">
 	<table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0" id="tablaExitoGrabado">
 		<tr>
@@ -55,7 +58,6 @@
 	</table>
 </c:if>	
 
-<!--  <div id="errores" class="rojoAdvertencia">${error}</div>-->
 <table border="0" class="cuadradoSinBordeBootstrap" align="center" width="60%" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
@@ -68,86 +70,51 @@
 <html:form action="estudio" styleId="estudioFormId">
 	<html:hidden property="metodo" value="pasarEstudiosAHistoricoPorNro"/>	  
 	
-	<%--   
-	<table border="0" class="cuadrado" align="center" width="60%"
-		cellpadding="2">
-		<tr>
-			<td colspan="4" class="azulAjustado">
-				Pasar Estudios a Historico por Numero
-			</td>
-		</tr>
-		<tr>
-			<td height="20" colspan="4"></td>
-		</tr>
-		<tr>
-			<td class="botoneralNegritaRight" width="42%" >Numero Desde</td>
-			<td align="left">			
-				<input id="nroDesde" type="text" name="nroDesde" class="botonerab">(inclusive)				
-			</td>
-		</tr>
-		<tr>	
-			<td class="botoneralNegritaRight" width="42%" >Numero Hasta</td>
-			<td align="left">			
-				<input type="text" name="nroHasta" class="botonerab">(inclusive)				
-			</td>			
-			
-		</tr>		
-		
-		<tr>
-			<td height="20" colspan="4"></td>
-		</tr>
-		<tr>
-			<td height="20" colspan="4">
-				<input type="button" class="botonerab" value="Aceptar" id="enviar" onclick="javascript:confirmar();"> 
-			</td>
-		</tr>
-		<tr>
-			<td height="10" colspan="4"></td>
-		</tr>
-	</table>--%>
-
 	<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="60%" cellpadding="2" cellspacing="0">
 	<tr>
 		<td>
 			<div class="well-sm-bootstrap well-bootstrap">
 				<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
 					<tr>
-						<td colspan="4" class="tituloTabla">
+						<td colspan="3" class="tituloTablaBoots">
 							Pasar Estudios a Historico por Numero
 						</td>
 					</tr>
 					<tr>
-						<td height="20" colspan="4"></td>
+						<td height="20" colspan="3"></td>
 					</tr>
 					<tr>
-						<td class="fontNegritaRightBootstrap" width="42%" >Numero Desde</td>
+						<td width="35%" align="right" class="labelForm">Numero Desde</td>
 						<td align="left">			
-							<input id="nroDesde" type="text" name="nroDesde" class="botonerab"><b class="fontNegritaRightBootstrap">(inclusive)</b>				
+							<input id="nroDesde" type="text" name="nroDesde" class="form-control form-control-sm">			
 						</td>
+						<td width="25%" align="left"><b class="labelForm">(inclusive)</b></td>
 					</tr>
 					<tr>	
-						<td class="fontNegritaRightBootstrap" width="42%" >Numero Hasta</td>
+						<td width="35%" align="right" class="labelForm">Numero Hasta</td>
 						<td align="left">			
-							<input type="text" name="nroHasta" class="botonerab"><b class="fontNegritaRightBootstrap">(inclusive)</b>
+							<input type="text" name="nroHasta" class="form-control form-control-sm">
 						</td>			
-						
+						<td width="25%" align="left"><b class="labelForm">(inclusive)</b></td>
 					</tr>		
 					
 					<tr>
-						<td height="20" colspan="4"></td>
+						<td height="20" colspan="3"></td>
 					</tr>
 				</table>	
 				<table border="0" class="cuadradoSinBorde" align="center" width="100%" cellpadding="2" cellspacing="0">
 					<tr>
-						<td height="10"></td>
+						<td height="10" colspan="3"></td>
 					</tr>			
 					<tr>
-						<td align="center">
-							<input type="button" class="btn btn-primary-bootstrap btn-sm" value="Aceptar" onclick="javascript:confirmar();">									
+						<td width="45%"></td>
+						<td align="center">							
+							<input type="button" class="btn btn-primary btn-block" value="Aceptar" onclick="javascript:confirmar();">
 						</td>
+						<td width="45%"></td>
 					</tr>
 					<tr>
-						<td height="20"></td>
+						<td height="20" colspan="3"></td>
 					</tr>									
 				</table>
 			</div>
