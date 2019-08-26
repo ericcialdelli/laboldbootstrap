@@ -17,15 +17,22 @@
 
 
 <!-- Estilo Viejo -->
+<!--
 <script type="text/javascript"
 	src="<html:rewrite page='/js/JQuery/ui/jquery-ui-1.8.10.custom.min.js'/>"></script>	
-
 <link rel="stylesheet" href="<html:rewrite page='/css/ui-lightness/jquery-ui-1.8.10.custom.css'/>"
 	type="text/css">
-
 <link rel="stylesheet" href="<html:rewrite page='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css'/>"
 	type="text/css">
+-->	
 <!-- Estilo Viejo -->
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 <script type="text/javascript">
 
@@ -112,7 +119,7 @@
 		if($('#checkPractica'+ind).is(':checked')){
 			//$('#trPractica'+ind).addClass("verdeClaroSubtituloCenter");
 			$('#trPractica'+ind).addClass("verdeClaroSubtituloCenterListaPracticas");
-			$('#hiddenPractica'+ind).val($('#checkPractica'+ind).val());	
+			$('#hiddenPractica'+ind).val($('#checkPractica'+ind).val());				
 		}
 		else{
 			//$('#trPractica'+ind).removeClass("verdeClaroSubtituloCenter");
@@ -382,7 +389,7 @@
 					<tr>
 						<td width="35%" align="right" class="labelForm">Nombre</td>
 						<td align="left">			
-							<html:text property="nombre" value="" styleClass="form-control form-control-sm"/>
+							<html:text property="nombre" value="" styleClass="form-control form-control-sm" styleId="idNombre"/>
 						</td>
 						<td width="30%"></td>				
 					</tr>	
@@ -419,7 +426,7 @@
 						
 						<tr style="display: none" id="trGrupo<c:out value='${iGrupo.index}'></c:out>">
 							<td colspan="2">
-								<table border="0" class="cuadradoListaPracticas" align="left" width="100%" cellpadding="2" >
+								<table border="0" class="cuadradoListaPracticas" align="left" width="100%" cellpadding="3" >
 									<tr>
 										<td height="5" colspan="4" align="right">
 											<a href="javascript:seleccionarTodos(<c:out value='${iGrupo.index}'></c:out>)">Seleccionar Todos</a>
@@ -430,7 +437,7 @@
 									<c:forEach items="${grupo.practicas}" var="practica" varStatus="iPractica">
 										<c:if test="${practica.subItemPractica == null}">
 											<tr id="trPractica<%=i%>"
-												class="trG<c:out value='${iGrupo.index}'></c:out>" 
+												class="trG<c:out value='${iGrupo.index}'></c:out> cuadradoListaPracticas" 
 												onmouseover="javascript:pintarPractica(<%=i%>);"
 												onmouseout="javascript:despintarPractica(<%=i%>);">
 												
@@ -447,85 +454,93 @@
 												<td align="left" width="65%" onclick="javascript:clickCheckFila(<%=i%>);">
 													${practica.nombre}
 												</td>
-												<td align="right" width="25%">
+												<td align="right" width="25%" onclick="javascript:clickCheckFila(<%=i%>);">
 													<c:if test="${practica.codigoFaba != null && practica.codigoFaba != ''}">
 														Codigo Faba
 													</c:if>	
 												</td>
-												<td align="left" width="5%">
+												<td align="left" width="5%" onclick="javascript:clickCheckFila(<%=i%>);">
 													${practica.codigoFaba}
 												</td>																						
 											</tr>	
 											<%i++; %>	
 										</c:if>											
 									</c:forEach>
-									
+
 									<c:forEach items="${grupo.subItemsPractica}" var="subItem" varStatus="iSubItem">
-										<tr>
-											<td colspan="4" height="10">&nbsp;</td>							
-										</tr>
-										<tr>
-											<td width="5%">
-											</td>
-											<%-- <td width="65%" class="negritaLeft">--%>
-											<td width="65%" align="left">
-												<b>${subItem.nombre}	
-												<c:if test="${subItem.codigoFaba != null && subItem.codigoFaba != ''}">					
-													- (${subItem.codigoFaba})										
-												</c:if>	</b>
-											</td>
-											<td colspan="2" align="right">
-												<a href="javascript:seleccionarTodosSubItem(<c:out value='${iGrupo.index},${iSubItem.index}'></c:out>)">Seleccionar Todos</a>
-												/
-												<a href="javascript:desSeleccionarTodosSubItem(<c:out value='${iGrupo.index},${iSubItem.index}'></c:out>)">Deseleccionar Todos</a>									
-											</td>															
-										</tr>
-										<tr>
-											<td width="5%">
-											</td>
-											<td width="95%" colspan="3">
-												<table border="0" class="cuadradoListaPracticas" align="left" width="100%" cellpadding="2" >
-													<tr>
-														<td height="5" colspan="2"></td>
-													</tr>															
-													<c:forEach items="${subItem.practicas}" var="prac" varStatus="iPrac">											
-														<tr id="trPractica<%=i%>"
-															class="trG<c:out value='${iGrupo.index}'></c:out>"
-															onmouseover="javascript:pintarPractica(<%=i%>);"
-															onmouseout="javascript:despintarPractica(<%=i%>);">
-															
-															<td width="5%">	
-																<input type="hidden" class="grupo<c:out value='${iGrupo.index}'></c:out>" 
-																	value="<%=i%>">
-																<input type="hidden" class="subItem<c:out value='${iGrupo.index}'></c:out>-<c:out value='${iSubItem.index}'></c:out>" 
-																	value="<%=i%>">															
-																																										
-																<input type="hidden" name="listaPracticas[<%=i%>].id" 
-																	id="hiddenPractica<%=i%>">												
-												
-																<input type="checkbox" 
-																	class="checkG<c:out value='${iGrupo.index}'></c:out> checkSI<c:out value='${iGrupo.index}'></c:out>-<c:out value='${iSubItem.index}'></c:out>"
-																	onchange="clickCheck(<%=i%>)" 
-																	id="checkPractica<%=i%>"
-																	value="${prac.id}">													
-															</td>														
-															<td align="left" width="80%" onclick="javascript:clickCheckFila(<%=i%>);">
-																${prac.nombre}
-															</td>
-															<td align="left" width="10%">
-																<c:if test="${prac.codigoFaba != null && prac.codigoFaba != ''}">
-																	Codigo Faba
-																</c:if>	
-															</td>
-															<td align="left" width="5%">
-																${prac.codigoFaba}
-															</td>																
-														</tr>
-														<%i++; %>						
-													</c:forEach>																		
-												</table>							
-											</td>							
-										</tr>							
+									<tr>
+										<td colspan="4">
+											<table border="0" class="cuadradoSinBordeBootstrapConFontSubItmes" align="left" width="100%" cellpadding="3" >			
+												<tr>
+													<td colspan="4" height="10">&nbsp;</td>							
+												</tr>
+												<tr>
+													<td width="5%">
+													</td>
+													<td width="60%" align="left" class="tituloSubItemPractica">
+														<b>${subItem.nombre}	
+														<c:if test="${subItem.codigoFaba != null && subItem.codigoFaba != ''}">					
+															- (${subItem.codigoFaba})										
+														</c:if>	</b>
+													</td>
+													<td width="30%" align="right" class="tituloSubItemPractica">
+														<a href="javascript:seleccionarTodosSubItem(<c:out value='${iGrupo.index},${iSubItem.index}'></c:out>)">Seleccionar Todos</a>
+														/
+														<a href="javascript:desSeleccionarTodosSubItem(<c:out value='${iGrupo.index},${iSubItem.index}'></c:out>)">Deseleccionar Todos</a>									
+													</td>
+													<td width="5%">
+													</td>																								
+												</tr>
+												<tr>
+													<td width="5%">
+													</td>
+													<td width="90%" colspan="2">
+														<table border="0" class="cuadradoListaPracticas" align="left" width="100%" cellpadding="2" >
+															<!--  <tr>
+																<td height="5" colspan="2"></td>
+															</tr>-->															
+															<c:forEach items="${subItem.practicas}" var="prac" varStatus="iPrac">											
+																<tr id="trPractica<%=i%>"
+																	class="trG<c:out value='${iGrupo.index}'></c:out> cuadradoListaPracticas"
+																	onmouseover="javascript:pintarPractica(<%=i%>);"
+																	onmouseout="javascript:despintarPractica(<%=i%>);">
+																	
+																	<td width="5%">	
+																		<input type="hidden" class="grupo<c:out value='${iGrupo.index}'></c:out>" 
+																			value="<%=i%>">
+																		<input type="hidden" class="subItem<c:out value='${iGrupo.index}'></c:out>-<c:out value='${iSubItem.index}'></c:out>" 
+																			value="<%=i%>">															
+																																												
+																		<input type="hidden" name="listaPracticas[<%=i%>].id" 
+																			id="hiddenPractica<%=i%>">												
+														
+																		<input type="checkbox" 
+																			class="checkG<c:out value='${iGrupo.index}'></c:out> checkSI<c:out value='${iGrupo.index}'></c:out>-<c:out value='${iSubItem.index}'></c:out>"
+																			onchange="clickCheck(<%=i%>)" 
+																			id="checkPractica<%=i%>"
+																			value="${prac.id}">													
+																	</td>														
+																	<td align="left" width="80%" onclick="javascript:clickCheckFila(<%=i%>);">
+																		${prac.nombre}
+																	</td>
+																	<td align="left" width="10%" onclick="javascript:clickCheckFila(<%=i%>);">
+																		<c:if test="${prac.codigoFaba != null && prac.codigoFaba != ''}">
+																			Codigo Faba
+																		</c:if>	
+																	</td>
+																	<td align="left" width="5%" onclick="javascript:clickCheckFila(<%=i%>);">
+																		${prac.codigoFaba}
+																	</td>																
+																</tr>
+																<%i++; %>						
+															</c:forEach>																		
+														</table>							
+													</td>
+													<td width="5%"></td>							
+												</tr>
+											</table>
+										</td>
+									</tr>															
 									</c:forEach>
 									<tr>
 										<td height="10" colspan="2"></td>							
@@ -564,3 +579,8 @@
 	</table>
 </html:form>
 
+<script type="text/javascript">
+
+	$('#idNombre').focus();
+
+</script>
