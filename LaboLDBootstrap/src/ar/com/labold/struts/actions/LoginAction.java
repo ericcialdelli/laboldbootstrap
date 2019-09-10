@@ -45,6 +45,7 @@ public class LoginAction extends DispatchActionSupport {
 			UsuarioDTO usrDTO = loginFachada.login(usuario, password);
 
 			request.getSession().setAttribute(Constantes.USER_LABEL_SESSION, usrDTO);
+			request.setAttribute(Constantes.USER_LABEL_SESSION, usrDTO);
 
 			MyLogger.log("Se logueo el usuario: " + usrDTO.getNombreUsuario());
 			

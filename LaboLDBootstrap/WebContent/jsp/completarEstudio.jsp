@@ -655,61 +655,71 @@
 											</c:forEach>
 					
 											<c:forEach items="${grupo.valorSubItemPractica}" var="valorSubItem" varStatus="iSubItem">
-												<tr>
-													<td height="10" colspan="5">
-													</td>							
-												</tr>											
-												<tr>
-													<td width="5%">
-													</td>
-													<td colspan="4" align="left">
-														<b>${valorSubItem.nombre}</b>								
-													</td>							
-												</tr>
-												<tr>
-													<td width="5%">
-													</td>
-													<td colspan="4">
-														<table border="0" class="cuadradoListaPracticas" align="left" width="100%" cellpadding="2" >
-															<tr>
-																<td height="5" colspan="5"></td>
-															</tr>															
-															<c:forEach items="${valorSubItem.valoresPracticas}" var="prac" varStatus="iPrac">											
-																<tr id="trPractica<%=i%>" class="trG<c:out value='${iGrupo.index}'></c:out>">											
-																	<td width="3%"></td>														
-																	<td align="left" width="25%">
-																		${prac.practica.nombre}
-																		<input type="hidden" name="listaValoresPractica[<%=i%>].id" value="${prac.id}">
-																	</td>																	
-																	<td width="25%" align="left">
-																		<input type="text" size="25" class="form-control form-control-sm" name="listaValoresPractica[<%=i%>].valor"
-																			value="${prac.valor}" onkeyup="verificarValor('<%=i%>');" id="valor<%=i%>"
-																			title="${map[prac.practica.id]}">
-																	</td>
-																	<td width="5%"></td>
-																	<td width="42%" align="left" id="tdReferencia<%=i%>">
-																		<c:choose>
-																			<c:when test="${prac.practica.valorReferencia != null}">
-																				Valor de Referencia: ${prac.practica.mayorMenor} ${prac.practica.valorReferencia} ${prac.practica.unidad}
-																				<input type="hidden" value="${prac.practica.valorReferenciaNumerico}" id="valorReferencia<%=i%>">
-																				<input type="hidden" value="${valorPractica.practica.mayorMenor}" id="mayorMenor<%=i%>">	
-																			</c:when>
-																			<c:when test="${prac.practica.valorNormalDesde != null}">
-																				Valor de Referencia: ${prac.practica.valorNormalDesde} a ${prac.practica.valorNormalHasta} ${prac.practica.unidad}
-																				<input type="hidden" value="${prac.practica.valorNormalDesdeNumerico}" id="valorNormalDesde<%=i%>">
-																				<input type="hidden" value="${prac.practica.valorNormalHastaNumerico}" id="valorNormalHasta<%=i%>">		 	
-																			</c:when>
-																			<c:when test="${prac.practica.valorRefLibre != null}">
-																				${prac.practica.valorRefLibreConBr}		 	
-																			</c:when>																						
-																		</c:choose>										
-																	</td>																												
-																</tr>
-																<%i++; %>						
-															</c:forEach>																		
-														</table>							
-													</td>							
-												</tr>							
+			<tr>
+				<td colspan="5">
+					<table border="0" class="cuadradoSinBordeBootstrapConFontSubItmes" align="left" width="100%" cellpadding="3" >											
+						<tr>
+							<td height="10" colspan="5">
+							</td>							
+						</tr>											
+						<tr>
+							<td width="5%">
+							</td>
+							<td colspan="3" align="left" class="tituloSubItemPractica">
+								<b>${valorSubItem.nombre}</b>								
+							</td>
+							<td width="5%">
+							</td>														
+						</tr>
+						<tr>
+							<td width="5%">
+							</td>
+							<td colspan="3">
+								<table border="0" class="cuadradoListaPracticas" align="left" width="100%" cellpadding="2" >
+									<tr>
+										<td height="5" colspan="5"></td>
+									</tr>															
+									<c:forEach items="${valorSubItem.valoresPracticas}" var="prac" varStatus="iPrac">											
+										<tr id="trPractica<%=i%>" class="trG<c:out value='${iGrupo.index}'></c:out>">											
+											<td width="3%"></td>														
+											<td align="left" width="25%">
+												${prac.practica.nombre}
+												<input type="hidden" name="listaValoresPractica[<%=i%>].id" value="${prac.id}">
+											</td>																	
+											<td width="25%" align="left">
+												<input type="text" size="25" class="form-control form-control-sm" name="listaValoresPractica[<%=i%>].valor"
+													value="${prac.valor}" onkeyup="verificarValor('<%=i%>');" id="valor<%=i%>"
+													title="${map[prac.practica.id]}">
+											</td>
+											<td width="5%"></td>
+											<td width="42%" align="left" id="tdReferencia<%=i%>">
+												<c:choose>
+													<c:when test="${prac.practica.valorReferencia != null}">
+														Valor de Referencia: ${prac.practica.mayorMenor} ${prac.practica.valorReferencia} ${prac.practica.unidad}
+														<input type="hidden" value="${prac.practica.valorReferenciaNumerico}" id="valorReferencia<%=i%>">
+														<input type="hidden" value="${valorPractica.practica.mayorMenor}" id="mayorMenor<%=i%>">	
+													</c:when>
+													<c:when test="${prac.practica.valorNormalDesde != null}">
+														Valor de Referencia: ${prac.practica.valorNormalDesde} a ${prac.practica.valorNormalHasta} ${prac.practica.unidad}
+														<input type="hidden" value="${prac.practica.valorNormalDesdeNumerico}" id="valorNormalDesde<%=i%>">
+														<input type="hidden" value="${prac.practica.valorNormalHastaNumerico}" id="valorNormalHasta<%=i%>">		 	
+													</c:when>
+													<c:when test="${prac.practica.valorRefLibre != null}">
+														${prac.practica.valorRefLibreConBr}		 	
+													</c:when>																						
+												</c:choose>										
+											</td>																												
+										</tr>
+										<%i++; %>						
+									</c:forEach>																		
+								</table>							
+							</td>
+							<td width="5%">
+							</td>							
+						</tr>
+					</table>
+				</td>
+			</tr>													
 											</c:forEach>
 											<tr>
 												<td height="10" colspan="5"></td>							

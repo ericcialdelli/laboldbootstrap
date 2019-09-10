@@ -81,7 +81,7 @@
 <table height="17" width="100%" style="color: #337ab7">
 	<tr>
 		<td>-->
-<div style="background-color: #337ab7; border: 0px dotted #333; padding: 1px; margin: 0px auto";>		
+<div style="background-color: #007bff; border: 0px dotted #333; padding: 1px; margin: 0px auto";>		
 			<%@include file="/jsp/tiles/menu3.jsp"%>		
 </div>			
 <!--		</td>

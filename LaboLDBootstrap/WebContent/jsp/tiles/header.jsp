@@ -31,14 +31,14 @@ function arrancarAjaxTimer(){
 			<!--  <img height="80%" width="100%" src="../../imagenes/Arba.jpg">-->
 			<img height="80%" width="100%" src="../../imagenes/logoLaboLD.jpg">	
 		</td>
-		<td width="60%" style="text-align: center; font-weight: bold"><jsp:useBean
-			id="now" class="java.util.Date" /> <br>
-			Usuario: <label id="usuario"></label> <br>
-			Roles: <label id="roles"></label> <br>
+		<td width="80%" style="text-align: center; font-weight: bold;">
+			<jsp:useBean id="now" class="java.util.Date" /> <br>
+			Usuario: <c:out value="${usuario.nombreUsuario}"></c:out><br>
+			Roles: <c:out value="${usuario.rol.rol}"></c:out><br>
 		</td>
-		 <td width="20%">
-		 	<!-- <img src="../../imagenes/LaProvincia.jpg"> -->
-		</td>
+		 <!--  <td width="20%" style="background-image: url('../../imagenes/imagenFondo.jpg'); width: 100%; ">
+	
+		</td>-->
 	</tr>	
 	
 </table>

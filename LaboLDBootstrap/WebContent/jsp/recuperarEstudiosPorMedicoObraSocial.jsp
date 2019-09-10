@@ -60,14 +60,14 @@
 </script>
 
 
-		<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="80%" cellpadding="2">
+		<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2">
 			<tr>
 				<td class="fontNegritaRightBootstrap">Cantidad de estudios: <c:out value='${cantEstudios}'></c:out></td>
 			</tr>
 		</table>
 		
 		<!-- Nuevo Estilo -->  
-		<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="80%" cellpadding="2" cellspacing="0">
+		<table border="0" class="cuadradoSinBordeBootstrapSinFont" align="center" width="100%" cellpadding="2" cellspacing="0">
 		<tr>
 			<td>
 				<div class="well-sm-bootstrap well-bootstrap">

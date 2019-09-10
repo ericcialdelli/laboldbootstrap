@@ -549,42 +549,52 @@
 									</c:forEach>
 			
 									<c:forEach items="${grupo.valorSubItemPractica}" var="valorSubItem" varStatus="iSubItem">
-										<tr>
-											<td height="10" colspan="2">
-											</td>							
-										</tr>									
-										<tr>
-											<td width="5%">
-											</td>
-											<td align="left">
-												<b>${valorSubItem.nombre}</b>								
-											</td>							
-										</tr>
-										<tr>
-											<td width="5%">
-											</td>
-											<td width="95%">
-												<table border="0" class="cuadradoListaPracticas" align="left" width="100%" cellpadding="2" >
-													<tr>
-														<td height="5" colspan="2"></td>
-													</tr>															
-													<c:forEach items="${valorSubItem.valoresPracticas}" var="prac" varStatus="iPrac">											
-														<tr id="trPractica<%=i%>" class="trG<c:out value='${iGrupo.index}'></c:out>">											
-															<td width="3%">																					
-																
-															</td>														
-															<td align="left" width="97%">
-																${prac.practica.nombre}
-															</td>				
-														</tr>
-														<%i++; %>
-														<tr>
-															<td colspan="2" height="1"></td>							
-														</tr>																				
-													</c:forEach>																		
-												</table>							
-											</td>							
-										</tr>							
+		<tr>
+			<td colspan="5">
+				<table border="0" class="cuadradoSinBordeBootstrapConFontSubItmes" align="left" width="100%" cellpadding="3" >										
+					<tr>
+						<td height="10" colspan="3">
+						</td>							
+					</tr>									
+					<tr>
+						<td width="5%">
+						</td>
+						<td align="left" class="tituloSubItemPractica">
+							<b>${valorSubItem.nombre}</b>								
+						</td>
+						<td width="5%">
+						</td>													
+					</tr>
+					<tr>
+						<td width="5%">
+						</td>
+						<td>
+							<table border="0" class="cuadradoListaPracticas" align="left" width="100%" cellpadding="2" >
+								<tr>
+									<td height="5" colspan="2"></td>
+								</tr>															
+								<c:forEach items="${valorSubItem.valoresPracticas}" var="prac" varStatus="iPrac">											
+									<tr id="trPractica<%=i%>" class="trG<c:out value='${iGrupo.index}'></c:out>">											
+										<td width="3%">																					
+											
+										</td>														
+										<td align="left" width="97%">
+											${prac.practica.nombre}
+										</td>				
+									</tr>
+									<%i++; %>
+									<tr>
+										<td colspan="2" height="1"></td>							
+									</tr>																				
+								</c:forEach>																		
+							</table>							
+						</td>
+						<td width="5%">
+						</td>													
+					</tr>
+				</table>
+			</td>
+		</tr>												
 									</c:forEach>
 									<tr>
 										<td height="10" colspan="2"></td>							
