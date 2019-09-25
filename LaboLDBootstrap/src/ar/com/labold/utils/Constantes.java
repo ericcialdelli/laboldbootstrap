@@ -141,6 +141,10 @@ public class Constantes {
 	public static final String REPORTE_PRESUPUESTO_ESTUDIO = "reportePresupuestoEstudio";
 	
 	public static final String REPORTE_FACTURACION_POR_ANIO = "reporteFacturacionPorAnio";
+	
+	public static final String REPORTE_FACTURACION_POR_MES_POR_ANIO = "reporteFacturacionPorMesPorAnio";
+	
+	public static final String REPORTE_FACTURACION_POR_MES = "reporteFacturacionPorMes";
 	// FIN REPORTES
 	
 	//PARAMETROS

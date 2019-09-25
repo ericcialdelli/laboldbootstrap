@@ -275,6 +275,13 @@ public class EstudioFachada {
 		return lista;
 	}
 	
+	public List<Integer> recuperarAnioEstudios(){
+		
+		List<Integer> lista = null;
+		lista = estudioDAO.recuperarAnioEstudios();
+		return lista;
+	}
+	
 	//****************************************************************************************************//
 	//***************************** PASAR ESTUDIOS A HISTORICO *******************************************//
 	//****************************************************************************************************//

@@ -97,4 +97,20 @@ public class ReportesFachada {
 				
 		return reportesDAO.generarReporteFacturacionPorAnio(Constantes.REPORTE_FACTURACION_POR_ANIO);				
 	}
+	
+	public byte[] generarReporteFacturacionPorMesPorAnio(int anio) throws Exception {
+		
+		Map parameters = new HashMap();
+		parameters.put("anio", anio);
+
+		return reportesDAO.generarReporte(Constantes.REPORTE_FACTURACION_POR_MES_POR_ANIO, parameters);							
+	}
+	
+	public byte[] generarReporteFacturacionPorMes(int mes) throws Exception {
+		
+		Map parameters = new HashMap();
+		parameters.put("mes", mes);
+
+		return reportesDAO.generarReporte(Constantes.REPORTE_FACTURACION_POR_MES, parameters);							
+	}
 }

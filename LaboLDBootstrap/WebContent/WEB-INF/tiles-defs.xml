@@ -253,7 +253,17 @@
 	<definition name=".generarReportesEstudios" extends=".base">
 		<put name="title" value="LaboLD" />
 		<put name="body" value="/jsp/generarReportesEstudios.jsp" />
-	</definition>		
+	</definition>	
+
+	<definition name=".reporteFacturacionPorMesPorAnio" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/reporteFacturacionPorMesPorAnio.jsp" />
+	</definition>
+	
+	<definition name=".reporteFacturacionPorMes" extends=".base">
+		<put name="title" value="LaboLD" />
+		<put name="body" value="/jsp/reporteFacturacionPorMes.jsp" />
+	</definition>				
 	<!-- FIN REPORTES -->		
 	
 	<!-- FACTURACION -->

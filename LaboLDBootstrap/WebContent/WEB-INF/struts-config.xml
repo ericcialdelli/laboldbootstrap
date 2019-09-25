@@ -59,6 +59,7 @@
 			<forward name=".altaGrupoPractica" path=".altaGrupoPractica" />
 			<forward name=".generarReportesEstudios" path=".generarReportesEstudios" />
 			<forward name=".reporteFacturacionEntreFechas" path=".reporteEstudiosEntreFechas" />
+			<forward name=".reporteFacturacionPorMes" path=".reporteFacturacionPorMes" />
 			<forward name=".altaMedico" path=".altaMedico" />
 			<forward name=".pasarEstudiosAHistorico" path=".pasarEstudiosAHistorico" /><!--ESTUDIO_HISTORICO-->
 			<forward name=".recuperarEstudiosDeHistorico" path=".recuperarEstudiosDeHistorico" /><!--RECUPERAR_ESTUDIO_HISTORICO-->
@@ -217,8 +218,8 @@
 		<!-- FIN ESTUDIO -->
 
 		<!-- REPORTE -->
-		<action path="/reporte" type="ar.com.labold.struts.actions.ReportesAction"
-			parameter="metodo" scope="request">											
+		<action path="/reporte" type="ar.com.labold.struts.actions.ReportesAction" parameter="metodo" scope="request">
+			<forward name="cargarReporteFacturacionPorMesPorAnio" path=".reporteFacturacionPorMesPorAnio" />											
 		</action>				
 		<!-- FIN REPORTE -->
 

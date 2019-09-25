@@ -9,6 +9,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.springframework.web.context.WebApplicationContext;
 
+import ar.com.labold.fachada.EstudioFachada;
 import ar.com.labold.fachada.ReportesFachada;
 import ar.com.labold.utils.MyLogger;
 
@@ -196,6 +197,91 @@ public class ReportesAction extends ValidadorAction {
 			
 			//reportesFachada.generarReporteFacturacionPorAnio();
 			
+			
+		} catch (Throwable t) {
+			MyLogger.logError(t);
+			request.setAttribute("error", "Error Inesperado - "+t.getMessage());
+			return mapping.findForward("errorSinMenu");
+		}
+
+		return null;
+	}
+	
+	public ActionForward cargarReporteFacturacionPorMesPorAnio(ActionMapping mapping,
+			ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+
+		String strForward = "cargarReporteFacturacionPorMesPorAnio";
+		
+		try {
+			
+			WebApplicationContext ctx = getWebApplicationContext();
+			EstudioFachada estudioFachada = (EstudioFachada) ctx.getBean("estudioFachada");			
+			
+			request.setAttribute("anioEstudios", estudioFachada.recuperarAnioEstudios());
+			
+		} catch (Throwable t) {
+			MyLogger.logError(t);
+			request.setAttribute("error", "Error Inesperado - "+t.getMessage());
+			return mapping.findForward("errorSinMenu");
+		}
+		
+		return mapping.findForward(strForward);
+	}
+	
+	public ActionForward generarReporteFacturacionPorMesPorAnio(ActionMapping mapping,
+			ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+
+		try {
+			
+			int anio = Integer.valueOf(request.getParameter("anio"));
+			
+			String path = request.getSession().getServletContext()
+					.getRealPath("jasper");
+
+			WebApplicationContext ctx = getWebApplicationContext();
+			ReportesFachada reportesFachada = (ReportesFachada) ctx.getBean("reportesFachada");
+			
+			byte[] bytes = reportesFachada
+					.generarReporteFacturacionPorMesPorAnio(anio);
+
+			// Lo muestro en la salida del response
+			response.setContentType("application/pdf");
+			ServletOutputStream out = response.getOutputStream();
+			out.write(bytes, 0, bytes.length);
+			out.flush();			
+			
+		} catch (Throwable t) {
+			MyLogger.logError(t);
+			request.setAttribute("error", "Error Inesperado - "+t.getMessage());
+			return mapping.findForward("errorSinMenu");
+		}
+
+		return null;
+	}
+	
+	public ActionForward generarReporteFacturacionPorMes(ActionMapping mapping,
+			ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+
+		try {
+			
+			int mes = Integer.valueOf(request.getParameter("mes"));
+			
+			String path = request.getSession().getServletContext()
+					.getRealPath("jasper");
+
+			WebApplicationContext ctx = getWebApplicationContext();
+			ReportesFachada reportesFachada = (ReportesFachada) ctx.getBean("reportesFachada");
+			
+			byte[] bytes = reportesFachada.generarReporteFacturacionPorMes(mes);
+
+			// Lo muestro en la salida del response
+			response.setContentType("application/pdf");
+			ServletOutputStream out = response.getOutputStream();
+			out.write(bytes, 0, bytes.length);
+			out.flush();			
 			
 		} catch (Throwable t) {
 			MyLogger.logError(t);

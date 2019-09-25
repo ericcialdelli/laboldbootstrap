@@ -152,8 +152,12 @@ public class ReportesDAO extends HibernateDaoSupport {
 		porcentaje1 = porcentaje1/cantEstudiosAnioAnterior;
 		porcentaje1 = porcentaje1*100;
 		
-		System.out.println(porcentaje1);
-		System.out.println(String.format("%.2f", porcentaje1));
+		//System.out.println(porcentaje1);
+		//System.out.println(String.format("%.2f", porcentaje1));
+		
+		String a = "123,5";
+		System.out.println(a.replaceAll(",","."));
+		//System.out.println(new Double("22,4"));
 	}
 	
 }

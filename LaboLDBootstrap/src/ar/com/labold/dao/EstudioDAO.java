@@ -1,9 +1,11 @@
 package ar.com.labold.dao;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -150,6 +152,19 @@ public class EstudioDAO extends HibernateDaoSupport {
 		
 		return estudios;		
 	}	
+	
+	public List<Integer> recuperarAnioEstudios(){
+		
+		List<Integer> lista = new ArrayList<Integer>();
+		Query query = getSession().createQuery("SELECT YEAR(e.fecha) AS anio FROM Estudio e GROUP BY YEAR(e.fecha) ORDER BY YEAR(e.fecha) DESC");
+		List<Integer> listDatos = query.list();
+		for (Integer datos : listDatos) {
+			System.out.println(datos);
+			lista.add(datos);
+		}		
+		
+		return lista;
+	}
 	
 	//ESTUDIO_HISTORICO
 	public List<Estudio> getEstudiosEntreFechas(String pFechaDesde, String pFechaHasta){
